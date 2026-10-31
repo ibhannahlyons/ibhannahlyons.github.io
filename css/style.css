@@ -294,6 +294,13 @@ section { padding: 3rem 0; }
   text-transform: uppercase;
 }
 .hero-meta span { display: block; }
+.hero-meta .hero-date {
+  font-size: clamp(1.6rem, 6.5vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: .2em;
+  line-height: 1.25;
+  margin-bottom: .35rem;
+}
 .countdown {
   margin-top: 2rem;
   font-style: italic;
