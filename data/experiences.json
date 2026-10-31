@@ -1,37 +1,44 @@
 [
   {
-    "id": "sunset-dinner",
-    "title": "Sunset dinner for two",
-    "description": "A long, candlelit dinner somewhere with a view, staying until the sky goes dark.",
-    "amount": 75,
-    "photo": "img/gallery/thumbs/photo-0058.jpg"
-  },
-  {
     "id": "morning-coffee",
     "title": "Slow morning coffee",
-    "description": "Coffee and pastries at a little café while we plan absolutely nothing.",
+    "description": "Coffee and pastries for two at a little café while we plan absolutely nothing.",
     "amount": 25,
     "photo": "img/gallery/thumbs/photo-0035.jpg"
   },
   {
+    "id": "golden-hour-drinks",
+    "title": "Drinks at golden hour",
+    "description": "A round of cocktails somewhere with a view, toasting to the two of us as the sun goes down.",
+    "amount": 50,
+    "photo": "img/gallery/thumbs/photo-0058.jpg"
+  },
+  {
+    "id": "wine-tasting",
+    "title": "A wine tasting",
+    "description": "An afternoon of tasting flights for two at a local winery, plus a bottle of our favorite to take home.",
+    "amount": 75,
+    "photo": "img/gallery/thumbs/photo-0056.jpg"
+  },
+  {
     "id": "hike-day",
     "title": "A day in the hills",
-    "description": "A guided hike through misty woods and wildflowers, picnic included.",
+    "description": "A guided hike for two through misty woods and wildflowers, picnic included.",
     "amount": 100,
     "photo": "img/gallery/thumbs/photo-0010.jpg"
   },
   {
-    "id": "boat-trip",
-    "title": "Out on the water",
-    "description": "An afternoon boat trip along the coast, with a stop for a swim if it's warm enough.",
+    "id": "sunset-dinner",
+    "title": "Sunset dinner for two",
+    "description": "A long, candlelit dinner with a bottle of wine, staying until the sky goes dark.",
     "amount": 150,
-    "photo": "img/gallery/thumbs/photo-0028.jpg"
+    "photo": "img/gallery/thumbs/photo-0060.jpg"
   },
   {
-    "id": "cozy-cabin",
-    "title": "One night somewhere cozy",
-    "description": "A night at a little inn with a fireplace, thick blankets, and a good book each.",
+    "id": "boat-trip",
+    "title": "Out on the water",
+    "description": "A boat excursion for two along the coast, with a stop for a swim if it's warm enough.",
     "amount": 200,
-    "photo": "img/gallery/thumbs/photo-0033.jpg"
+    "photo": "img/gallery/thumbs/photo-0028.jpg"
   }
 ]

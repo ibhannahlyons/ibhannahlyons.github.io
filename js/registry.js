@@ -30,6 +30,7 @@ async function buildFund() {
   const root = document.querySelector("[data-fund]");
   if (!root) return;
   const experiences = await loadJson("data/experiences.json", []);
+  experiences.sort((a, b) => a.amount - b.amount);
 
   for (const x of experiences) {
     const card = document.createElement("article");
@@ -51,7 +52,7 @@ async function buildFund() {
     <div class="card-body">
       <svg class="flourish" viewBox="0 0 200 40" aria-hidden="true"><use href="img/botanical.svg#sprig"></use></svg>
       <h3>Contribute any amount</h3>
-      <p>Every little bit becomes part of the adventure.</p>
+      <p>Don't see the perfect fit? Give whatever feels right, and we'll put it toward the whole adventure.</p>
       <a class="btn" href="${venmoLink(null, "Honeymoon fund")}" target="_blank" rel="noopener">Contribute</a>
     </div>`;
   root.appendChild(any);

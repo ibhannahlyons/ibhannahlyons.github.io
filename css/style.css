@@ -477,13 +477,16 @@ section { padding: 4.5rem 0; }
   margin: .2rem 0 .9rem;
 }
 .any-amount {
+  grid-column: 1 / -1;
   justify-content: center;
   text-align: center;
   background: var(--pine);
   color: var(--parchment);
   border-color: var(--pine);
 }
-.any-amount .card-body { justify-content: center; align-items: center; padding: 2.5rem 1.5rem; }
+.any-amount .card-body { justify-content: center; align-items: center; padding: 3rem 1.5rem; }
+.any-amount h3 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 400; }
+.any-amount p { max-width: 30rem; }
 .any-amount .card-body .btn { align-self: center; margin-top: .5rem; }
 .any-amount .flourish { color: var(--rose); margin-bottom: 1.2rem; width: 6rem; }
 
