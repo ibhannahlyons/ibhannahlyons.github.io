@@ -1,5 +1,4 @@
-// Honeymoon fund: builds contribution cards from data/experiences.json,
-// with optional progress from data/funds.json (edited by hand).
+// Honeymoon fund: builds contribution cards from data/experiences.json.
 const VENMO_USER = "Hannah-Lyons-12";
 
 function venmoLink(amount, note) {
@@ -30,33 +29,17 @@ async function loadJson(path, fallback) {
 async function buildFund() {
   const root = document.querySelector("[data-fund]");
   if (!root) return;
-  const [experiences, funds] = await Promise.all([
-    loadJson("data/experiences.json", []),
-    loadJson("data/funds.json", {}),
-  ]);
+  const experiences = await loadJson("data/experiences.json", []);
 
   for (const x of experiences) {
-    const raised = funds[x.id];
     const card = document.createElement("article");
     card.className = "card fund-card reveal";
-    let progress = "";
-    if (x.goal && raised !== undefined) {
-      const pct = Math.min(100, Math.round((raised / x.goal) * 100));
-      progress = `
-        <div class="progress">
-          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="${x.goal}" aria-valuenow="${raised}" aria-label="${escapeHtml(x.title)} funding">
-            <div class="progress-fill" data-pct="${pct}"></div>
-          </div>
-          <div class="progress-label">${raised >= x.goal ? "Fully funded — thank you!" : `${dollars(raised)} of ${dollars(x.goal)} funded`}</div>
-        </div>`;
-    }
     card.innerHTML = `
       <img src="${escapeHtml(x.photo)}" alt="" loading="lazy">
       <div class="card-body">
         <h3>${escapeHtml(x.title)}</h3>
         <p>${escapeHtml(x.description)}</p>
         <div class="amount">${dollars(x.amount)}</div>
-        ${progress}
         <a class="btn" href="${venmoLink(x.amount, x.title)}" target="_blank" rel="noopener">Contribute</a>
       </div>`;
     root.appendChild(card);
@@ -76,10 +59,6 @@ async function buildFund() {
   root.querySelectorAll(".reveal").forEach((el) => {
     if (typeof reveal === "function") reveal(el);
     else el.classList.add("in");
-  });
-  // let the bars grow in once they're on screen
-  requestAnimationFrame(() => {
-    root.querySelectorAll(".progress-fill").forEach((f) => { f.style.width = f.dataset.pct + "%"; });
   });
 }
 

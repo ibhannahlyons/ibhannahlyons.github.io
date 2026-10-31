@@ -22,24 +22,15 @@ Placeholder text is marked with `<!-- TODO -->` comments. Search for `TODO` to f
 
 ```json
 {
-  "id": "sunset-dinner",              // short unique id, used by funds.json
+  "id": "sunset-dinner",              // short unique id
   "title": "Sunset dinner for two",   // also becomes the Venmo note
   "description": "A long, candlelit dinner...",
   "amount": 75,                        // suggested contribution (prefilled in Venmo)
-  "goal": 300,                         // optional; total for the progress bar
   "photo": "img/honeymoon/dinner.jpg"
 }
 ```
 
 Put experience photos in `img/honeymoon/` (around 1200px wide, under 400 KB).
-
-**Update progress:** when a gift comes in, edit `data/funds.json` and add to that experience's total:
-
-```json
-{ "sunset-dinner": 150 }
-```
-
-The card then shows "$150 of $300 funded". Leave an id out (or remove `goal`) to hide its bar.
 
 Every Contribute button opens
 `https://venmo.com/?txn=pay&recipients=Hannah-Lyons-12&amount=…&note=…&audience=private`.

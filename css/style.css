@@ -476,22 +476,6 @@ section { padding: 4.5rem 0; }
   color: var(--blackberry);
   margin: .2rem 0 .9rem;
 }
-.progress { margin: 0 0 1.2rem; }
-.progress-track {
-  height: .5rem;
-  background: var(--mist);
-  border-radius: 999px;
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%;
-  background: var(--seaglass);
-  border-radius: 999px;
-  width: 0;
-  transition: width 1.6s ease;
-}
-.progress-label { font-size: .92rem; margin-top: .35rem; color: var(--storm); }
-
 .any-amount {
   justify-content: center;
   text-align: center;
@@ -634,7 +618,7 @@ section { padding: 4.5rem 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .progress-fill, .gallery img { transition: none; }
+  .gallery img { transition: none; }
 }
 
 /* no-JS fallback: show everything */
