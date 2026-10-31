@@ -387,6 +387,42 @@ section { padding: 4.5rem 0; }
 }
 .gallery button:hover img { transform: scale(1.03); filter: saturate(1); }
 
+/* Through the years reads left to right, in date order */
+.gallery[data-gallery="years"] {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+  align-items: start;
+}
+.gallery[data-gallery="years"] button { margin: 0; }
+.gallery[data-gallery="years"] img { aspect-ratio: 4 / 5; object-fit: cover; }
+@media (min-width: 52rem) {
+  .gallery[data-gallery="years"] { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+}
+
+/* captioned photos (Through the years) */
+.gallery button.captioned {
+  background: var(--parchment);
+  border: 1px solid rgba(132, 150, 136, .5);
+  box-shadow: var(--shadow);
+  text-align: left;
+  color: var(--noir);
+}
+.gallery button.captioned:hover img { transform: none; }
+.g-cap { display: block; padding: .6rem .75rem .75rem; }
+.g-cap-text { display: block; font-size: 1rem; line-height: 1.35; font-style: italic; }
+.g-cap-meta {
+  display: block;
+  margin-top: .3rem;
+  font-family: var(--serif-display);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--mauve-ink);
+}
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -399,7 +435,7 @@ section { padding: 4.5rem 0; }
 .lightbox.open { display: flex; }
 .lightbox img {
   max-width: calc(100vw - 2rem);
-  max-height: calc(100svh - 6rem);
+  max-height: calc(100svh - 9rem);
   width: auto;
   height: auto;
   border-radius: 3px;
@@ -421,15 +457,17 @@ section { padding: 4.5rem 0; }
 .lb-close { top: .5rem; right: .5rem; }
 .lb-prev { left: 0; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 0; top: 50%; transform: translateY(-50%); }
-.lb-count {
+.lb-foot {
   position: absolute;
-  bottom: 1rem;
-  left: 0; right: 0;
+  bottom: .75rem;
+  left: 1rem; right: 1rem;
   text-align: center;
   color: var(--mist);
-  font-size: .9rem;
-  letter-spacing: .2em;
 }
+.lb-count { font-size: .9rem; letter-spacing: .2em; }
+.lb-caption .g-cap { padding: 0 0 .35rem; }
+.lb-caption .g-cap-text { font-size: 1.1rem; color: var(--parchment); }
+.lb-caption .g-cap-meta { color: var(--rose); }
 
 /* ---------- details ---------- */
 

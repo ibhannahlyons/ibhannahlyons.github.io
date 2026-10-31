@@ -78,6 +78,26 @@ document.querySelectorAll("[data-gallery]").forEach((root) => {
     });
 });
 
+// "Caption" plus a small "March 2026 · Park City, UT" line, built as text nodes.
+function captionEl(p, tag) {
+  const el = document.createElement(tag);
+  el.className = "g-cap";
+  if (p.caption) {
+    const c = document.createElement("span");
+    c.className = "g-cap-text";
+    c.textContent = p.caption;
+    el.appendChild(c);
+  }
+  const meta = [p.date, p.place].filter(Boolean).join(" · ");
+  if (meta) {
+    const m = document.createElement("span");
+    m.className = "g-cap-meta";
+    m.textContent = meta;
+    el.appendChild(m);
+  }
+  return el;
+}
+
 function buildGallery(root, photos, name) {
   const label = root.dataset.label || "Hannah and Liam";
   photos.forEach((p, i) => {
@@ -85,6 +105,10 @@ function buildGallery(root, photos, name) {
     btn.type = "button";
     btn.setAttribute("aria-label", `Open photo ${i + 1} of ${photos.length}`);
     btn.innerHTML = `<img src="img/${name}/thumbs/${p.file}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async" alt="${label}, photo ${i + 1}">`;
+    if (p.caption || p.date) {
+      btn.classList.add("captioned");
+      btn.appendChild(captionEl(p, "span"));
+    }
     btn.addEventListener("click", () => openLightbox(i));
     root.appendChild(btn);
   });
@@ -99,11 +123,12 @@ function buildGallery(root, photos, name) {
     <button class="lb-close" aria-label="Close">&times;</button>
     <button class="lb-prev" aria-label="Previous photo">&lsaquo;</button>
     <button class="lb-next" aria-label="Next photo">&rsaquo;</button>
-    <div class="lb-count"></div>`;
+    <div class="lb-foot"><div class="lb-caption"></div><div class="lb-count"></div></div>`;
   document.body.appendChild(lb);
 
   const img = lb.querySelector("img");
   const count = lb.querySelector(".lb-count");
+  const caption = lb.querySelector(".lb-caption");
   let current = 0;
   let lastFocus = null;
 
@@ -112,6 +137,7 @@ function buildGallery(root, photos, name) {
     img.src = `img/${name}/${photos[current].file}`;
     img.alt = `${label}, photo ${current + 1}`;
     count.textContent = `${current + 1} / ${photos.length}`;
+    caption.replaceChildren(captionEl(photos[current], "div"));
     // warm the cache for the next photo
     new Image().src = `img/${name}/${photos[(current + 1) % photos.length].file}`;
   }

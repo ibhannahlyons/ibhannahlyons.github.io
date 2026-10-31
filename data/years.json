@@ -1,1 +1,294 @@
-[]
+[
+ {
+  "file": "2020-07-07-img-9218.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "July 2020",
+  "caption": "Summer 2020, and already inseparable.",
+  "place": "Louisa, VA"
+ },
+ {
+  "file": "2020-10-17-img-3059.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2020",
+  "caption": "Rooftop views and city lights."
+ },
+ {
+  "file": "2020-12-31-img-3516-1.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "December 2020",
+  "caption": "Ringing in 2021 together."
+ },
+ {
+  "file": "2021-05-15-img-1164.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "May 2021",
+  "caption": "Graduation day!",
+  "place": "Blacksburg, VA"
+ },
+ {
+  "file": "2021-12-04-img-8211.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "December 2021",
+  "caption": "Dirt bikes and fall leaves."
+ },
+ {
+  "file": "2021-12-31-img-5637.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "December 2021",
+  "caption": "New Year's Eve, round two."
+ },
+ {
+  "file": "2022-03-07-img-0303.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2022",
+  "caption": "Sunset on the dock."
+ },
+ {
+  "file": "2022-03-08-img-0344.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2022",
+  "caption": "Fog rolling over the mountains."
+ },
+ {
+  "file": "2022-03-10-img-0435.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "March 2022",
+  "caption": "A bluebird ski day."
+ },
+ {
+  "file": "2022-08-12-img-2299.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "August 2022",
+  "caption": "Sun, sand, and an epic sandcastle hole."
+ },
+ {
+  "file": "2022-10-01-img-2667.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2022",
+  "caption": "All dressed up on a crisp fall day."
+ },
+ {
+  "file": "2022-10-29-img-2863.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2022",
+  "caption": "Halloween as Greek gods."
+ },
+ {
+  "file": "2023-01-22-img-3497.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "January 2023",
+  "caption": "Sunset at sea."
+ },
+ {
+  "file": "2023-02-11-img-3850.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "February 2023",
+  "caption": "A winter walk in the woods."
+ },
+ {
+  "file": "2023-03-05-img-6052.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2023",
+  "caption": "Snowed in, and loving it.",
+  "place": "Park City, UT"
+ },
+ {
+  "file": "2023-03-09-img-4037.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2023",
+  "caption": "Mountain views out west."
+ },
+ {
+  "file": "2023-09-01-img-5112.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "September 2023",
+  "caption": "Cheers to Labor Day weekend."
+ },
+ {
+  "file": "2023-09-02-img-5164.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "September 2023",
+  "caption": "Game day at Lane Stadium.",
+  "place": "Blacksburg, VA"
+ },
+ {
+  "file": "2023-10-07-img-5334.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2023",
+  "caption": "Road trip selfie."
+ },
+ {
+  "file": "2023-11-18-img-1373.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "November 2023",
+  "caption": "Game day in Harrisonburg.",
+  "place": "Harrisonburg, VA"
+ },
+ {
+  "file": "2024-02-09-resized-resized-20240209-094839-1707512028136-1707512030824.jpg",
+  "w": 700,
+  "h": 323,
+  "date": "February 2024",
+  "caption": "Riding the chairlift up."
+ },
+ {
+  "file": "2024-02-28-img-5937.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "February 2024",
+  "caption": "Back on the slopes."
+ },
+ {
+  "file": "2024-02-28-img-5951.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "February 2024",
+  "caption": "Après-ski in the sunshine."
+ },
+ {
+  "file": "2024-03-23-img-1182.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2024",
+  "caption": "Dressed to the nines."
+ },
+ {
+  "file": "2024-06-21-img-6652.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "June 2024",
+  "caption": "Red carpet ready."
+ },
+ {
+  "file": "2024-10-26-img-7182.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2024",
+  "caption": "Halloween 2024."
+ },
+ {
+  "file": "2025-01-10-img-2928.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "January 2025",
+  "caption": "He'd carry her down the mountain if he had to.",
+  "place": "Massanutten, VA"
+ },
+ {
+  "file": "2025-03-01-img-7670.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "March 2025",
+  "caption": "Hiking with a fluffy new friend."
+ },
+ {
+  "file": "2025-04-18-img-0416.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "April 2025",
+  "caption": "Spring in the woods."
+ },
+ {
+  "file": "2025-05-17-img-8055.jpg",
+  "w": 467,
+  "h": 700,
+  "date": "May 2025",
+  "caption": "Wedding guests, taking notes."
+ },
+ {
+  "file": "2025-09-13-img-0297.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "September 2025",
+  "caption": "Renaissance faire, in full costume."
+ },
+ {
+  "file": "2025-10-25-img-0665.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "October 2025",
+  "caption": "Raising a glass."
+ },
+ {
+  "file": "2026-03-05-0-image000001.jpg",
+  "w": 700,
+  "h": 394,
+  "caption": "The question.",
+  "date": "March 2026"
+ },
+ {
+  "file": "2026-03-05-img-1354.jpg",
+  "w": 394,
+  "h": 700,
+  "date": "March 2026",
+  "caption": "She said yes!"
+ },
+ {
+  "file": "2026-06-06-26742656-unknown.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "June 2026",
+  "caption": "A drink bigger than both our heads."
+ },
+ {
+  "file": "2026-06-06-26744000-unknown.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "June 2026",
+  "caption": "Date night."
+ },
+ {
+  "file": "2026-06-06-26744048-unknown.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "June 2026",
+  "caption": "Cheers to us."
+ },
+ {
+  "file": "2026-08-08-img-3579.jpg",
+  "w": 700,
+  "h": 525,
+  "date": "August 2026",
+  "caption": "Found our cartoon twins."
+ },
+ {
+  "file": "2026-09-18-29110240-unknown.jpg",
+  "w": 525,
+  "h": 700,
+  "date": "September 2026",
+  "caption": "Crab night."
+ },
+ {
+  "file": "2026-09-19-dsc03420.jpg",
+  "w": 468,
+  "h": 700,
+  "date": "September 2026",
+  "caption": "Wedding season, again."
+ },
+ {
+  "file": "undated-ccad7fef-6a10-4a63-8479-a1515fd31029.jpg",
+  "w": 560,
+  "h": 700,
+  "caption": "Christmas in matching plaid."
+ }
+]
