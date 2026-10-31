@@ -84,7 +84,7 @@ Each folder has a `thumbs/` subfolder; don't edit that by hand.
 **Add photos:** put the originals in any folder and run
 `python tools/galleries.py import <that folder> years` (or `engagement`). They're resized and added.
 
-**Captions (Through the years):** each photo in `data/years.json` can have a `caption`, `date`
+**Dates & places (Through the years):** each photo in `data/years.json` can have a `date`
 (e.g. "March 2023") and `place` (e.g. "Park City, UT"). Edit or remove them there; sync keeps them.
 Imported photos are named by the date they were taken, so the gallery stays in time order.
 
