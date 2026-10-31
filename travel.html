@@ -42,26 +42,17 @@
           <svg class="flourish" viewBox="0 0 200 40" aria-hidden="true"><use href="img/botanical.svg#sprig"></use></svg>
           <span class="eyebrow">Where to stay</span>
           <h2>Hotels</h2>
-          <p class="narrow">We'll share hotel blocks here soon. Book early, since spring weekends fill up fast.</p>
+          <p class="narrow">Book early, since spring weekends fill up fast.</p>
         </div>
-        <!-- TODO: replace with real hotels, booking links, and block codes -->
-        <div class="grid" style="margin-top:2rem">
+        <div class="grid" style="margin:2rem auto 0; max-width:48rem">
           <article class="card card-rose reveal">
             <div class="card-body">
-              <span class="eyebrow">Hotel block</span>
-              <h3>Hotel name</h3>
-              <p>Town, VA · about 20 minutes from the Mill</p>
-              <p>Mention <em>Lyons–Wilson wedding</em> for our rate. Book by February 15, 2028.</p>
-              <a class="btn" href="#">Book a room</a>
-            </div>
-          </article>
-          <article class="card card-rose reveal">
-            <div class="card-body">
-              <span class="eyebrow">Hotel block</span>
-              <h3>Hotel name</h3>
-              <p>Town, VA · about 25 minutes from the Mill</p>
-              <p>Details coming soon.</p>
-              <a class="btn" href="#">Book a room</a>
+              <span class="eyebrow">Our hotel</span>
+              <h3>Residence Inn Short Pump at the Notch</h3>
+              <p>Short Pump area · about 15 miles from the Mill</p>
+              <p>1800 Wilkes Ridge Circle, Richmond, VA<br>
+                <a href="tel:+18044635600">804-463-5600</a></p>
+              <a class="btn" href="https://www.marriott.com/ricrn" target="_blank" rel="noopener">Book a room</a>
             </div>
           </article>
           <article class="card card-rose reveal">
@@ -84,6 +75,23 @@
         <p>Washington, D.C. airports (DCA, IAD) are about 2½ hours away if you'd like more flight options.</p>
         <span class="eyebrow" style="margin-top:2rem">Driving</span>
         <p>The Mill sits on the James River west of Richmond. Search <a href="https://www.google.com/maps/search/?api=1&query=The+Mill+at+Fine+Creek+Powhatan+VA" target="_blank" rel="noopener">The Mill at Fine Creek</a> in your maps app. Parking is on site.</p>
+      </div>
+    </section>
+
+    <section class="family-gate">
+      <div class="narrow center">
+        <button class="gate-toggle" type="button" aria-expanded="false" aria-controls="gate-form">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><use href="img/botanical.svg#moon"></use></svg>
+          Family &amp; wedding party
+        </button>
+        <form id="gate-form" class="gate-form" data-gate hidden>
+          <label for="gate-word">Enter the passphrase we sent you</label>
+          <div class="gate-row">
+            <input id="gate-word" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+            <button class="btn" type="submit">Enter</button>
+          </div>
+          <p class="gate-msg" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>

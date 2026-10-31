@@ -47,6 +47,24 @@ The "Contribute any amount" card leaves out the amount.
 
 **Before invites go out:** tap a few Contribute buttons on an iPhone *and* an Android phone and check that the amount and note are prefilled. On desktop Venmo may only open the profile, which is why the page shows a QR code there.
 
+## Family-only cottages page
+
+The "Family & wedding party" link at the bottom of `travel.html` asks for a passphrase. The page it opens is
+`cottages-<hash>.html`, where `<hash>` is the first 16 characters of the SHA-256 of the passphrase
+(lowercased, with extra spaces trimmed). Nothing on the public pages links to it, and it is marked `noindex`.
+
+To change the passphrase, rename the file:
+
+```bash
+python -c "import hashlib;print(hashlib.sha256('new passphrase'.encode()).hexdigest()[:16])"
+git mv cottages-OLDHASH.html cottages-NEWHASH.html
+```
+
+This keeps casual guests out, but it is not real security. The repo is public, so anyone browsing it on GitHub
+can see the file. Don't put anything truly private on that page.
+
+To open the cottages to everyone later, add a normal card on `travel.html` linking to the page.
+
 ## Gallery
 
 Photos live in `img/gallery/` (2000px) and `img/gallery/thumbs/` (700px), listed in `data/gallery.json`.
