@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <!-- Centered divider: thin rules with a heather sprig and a crescent moon -->
+  <!-- Centered divider: thin rules with a heather sprig and a tiny four-leaf clover -->
   <symbol id="sprig" viewBox="0 0 200 40">
     <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
       <path d="M4 22 H70" />
@@ -19,15 +19,24 @@
       <circle cx="127.5" cy="10.5" r="1" />
       <circle cx="80" cy="25.5" r="1.2" />
     </g>
-    <!-- crescent -->
-    <path fill="currentColor" d="M100 6.2 a3.6 3.6 0 1 0 3.2 5.4 a2.9 2.9 0 1 1 -3.2 -5.4 Z" opacity=".85" />
+    <!-- tiny clover above the sprig -->
+    <g transform="translate(100 8) scale(.4) translate(-20 -18)">
+      <use href="#clover-leaves" />
+    </g>
   </symbol>
 
-  <!-- Small crescent moon with a sprig, used in the footer -->
-  <symbol id="moon" viewBox="0 0 40 40">
-    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-      d="M24 6 A14 14 0 1 0 34 26 A11 11 0 1 1 24 6 Z" />
-    <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-      d="M14 34 C 18 28, 24 24, 30 22 M19 29.5 C 18 26, 20 24, 22 23.5 M24 26 C 26 28.5, 29 28.5, 31 27.5" />
+  <!-- One heart-shaped leaf pointing up from the center (20,18), repeated four times -->
+  <g id="clover-leaves" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path id="clover-leaf" d="M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z" />
+    <use href="#clover-leaf" transform="rotate(90 20 18)" />
+    <use href="#clover-leaf" transform="rotate(180 20 18)" />
+    <use href="#clover-leaf" transform="rotate(270 20 18)" />
+  </g>
+
+  <!-- Curly four-leaf clover: thin line, used in the footer and the family link -->
+  <symbol id="clover" viewBox="0 0 40 40">
+    <use href="#clover-leaves" transform="translate(0 -2) rotate(20 20 18)" />
+    <path fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
+      d="M21.5 18.5 C 23 23, 26.5 25, 25 29.5 C 24 32.5, 20.5 32.5, 21 30 C 21.4 28.2, 23.6 28.6, 23.4 30.2" />
   </symbol>
 </svg>

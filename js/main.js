@@ -83,6 +83,43 @@ if (gate) {
   });
 }
 
+// ---- click animations: a ripple on anything tappable, clovers from buttons ----
+const quiet = window.matchMedia("(prefers-reduced-motion: reduce)");
+const tappable = ".btn, .nav-toggle, .theme-toggle, .gate-toggle, .link-cards a.card, .gallery button";
+document.addEventListener("pointerdown", (e) => {
+  if (quiet.matches) return;
+  const el = e.target.closest(tappable);
+  if (!el) return;
+  const box = el.getBoundingClientRect();
+  const size = Math.max(box.width, box.height) * 2.2;
+  const r = document.createElement("span");
+  r.className = "ripple";
+  r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - box.left}px;top:${e.clientY - box.top}px`;
+  el.appendChild(r);
+  r.addEventListener("animationend", () => r.remove());
+});
+document.addEventListener("click", (e) => {
+  if (quiet.matches) return;
+  const btn = e.target.closest(".btn");
+  if (!btn) return;
+  for (let i = 0; i < 7; i++) {
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    c.setAttribute("viewBox", "0 0 40 40");
+    c.setAttribute("class", "clover-pop");
+    c.innerHTML = '<use href="img/botanical.svg#clover"></use>';
+    const angle = -Math.PI / 2 + (Math.random() - 0.5) * 2.4;
+    const dist = 50 + Math.random() * 60;
+    c.style.left = e.clientX + "px";
+    c.style.top = e.clientY + "px";
+    c.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+    c.style.setProperty("--dy", `${Math.sin(angle) * dist}px`);
+    c.style.setProperty("--spin", `${(Math.random() - 0.5) * 220}deg`);
+    c.style.animationDelay = `${i * 25}ms`;
+    document.body.appendChild(c);
+    c.addEventListener("animationend", () => c.remove());
+  }
+});
+
 // ---- galleries + lightbox ----
 // Each [data-gallery="name"] loads data/name.json and photos from img/name/.
 // A gallery with no photos shows its [data-empty] message instead.
