@@ -3,8 +3,7 @@
   "file": "2020-07-07-img-9218.jpg",
   "w": 525,
   "h": 700,
-  "date": "July 2020",
-  "place": "Louisa, VA"
+  "date": "July 2020"
  },
  {
   "file": "2020-10-17-img-3059.jpg",
@@ -22,8 +21,7 @@
   "file": "2021-05-15-img-1164.jpg",
   "w": 525,
   "h": 700,
-  "date": "May 2021",
-  "place": "Blacksburg, VA"
+  "date": "May 2021"
  },
  {
   "file": "2021-12-04-img-8211.jpg",
@@ -74,6 +72,12 @@
   "date": "October 2022"
  },
  {
+  "file": "2022-12-ccad7fef-6a10-4a63-8479-a1515fd31029.jpg",
+  "w": 560,
+  "h": 700,
+  "date": "December 2022"
+ },
+ {
   "file": "2023-01-22-img-3497.jpg",
   "w": 525,
   "h": 700,
@@ -89,8 +93,7 @@
   "file": "2023-03-05-img-6052.jpg",
   "w": 525,
   "h": 700,
-  "date": "March 2023",
-  "place": "Park City, UT"
+  "date": "March 2023"
  },
  {
   "file": "2023-03-09-img-4037.jpg",
@@ -108,8 +111,7 @@
   "file": "2023-09-02-img-5164.jpg",
   "w": 525,
   "h": 700,
-  "date": "September 2023",
-  "place": "Blacksburg, VA"
+  "date": "September 2023"
  },
  {
   "file": "2023-10-07-img-5334.jpg",
@@ -121,8 +123,7 @@
   "file": "2023-11-18-img-1373.jpg",
   "w": 525,
   "h": 700,
-  "date": "November 2023",
-  "place": "Harrisonburg, VA"
+  "date": "November 2023"
  },
  {
   "file": "2024-02-09-resized-resized-20240209-094839-1707512028136-1707512030824.jpg",
@@ -164,8 +165,7 @@
   "file": "2025-01-10-img-2928.jpg",
   "w": 525,
   "h": 700,
-  "date": "January 2025",
-  "place": "Massanutten, VA"
+  "date": "January 2025"
  },
  {
   "file": "2025-03-01-img-7670.jpg",
@@ -244,10 +244,5 @@
   "w": 468,
   "h": 700,
   "date": "September 2026"
- },
- {
-  "file": "undated-ccad7fef-6a10-4a63-8479-a1515fd31029.jpg",
-  "w": 560,
-  "h": 700
  }
 ]
