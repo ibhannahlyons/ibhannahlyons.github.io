@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Centered divider: thin rules with a heather sprig and a crescent moon -->
+  <symbol id="sprig" viewBox="0 0 200 40">
+    <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 22 H70" />
+      <path d="M130 22 H196" />
+      <!-- stem -->
+      <path d="M78 26 C 90 22, 104 20, 122 14" />
+      <!-- leaves -->
+      <path d="M88 23.5 C 86 17, 90 14, 94 13 C 94 18, 92 21, 88 23.5 Z" />
+      <path d="M96 21.5 C 99 27, 104 28.5, 108 28 C 106 24, 101 21.5, 96 21.5 Z" />
+      <path d="M104 19.5 C 103 13, 107 10, 111 9.5 C 110.5 14, 108.5 17.5, 104 19.5 Z" />
+      <path d="M112 17.5 C 115 22, 119 23, 123 22 C 121 18.5, 117 17, 112 17.5 Z" />
+    </g>
+    <!-- heather buds -->
+    <g fill="currentColor">
+      <circle cx="122" cy="14" r="1.6" />
+      <circle cx="125" cy="12" r="1.3" />
+      <circle cx="127.5" cy="10.5" r="1" />
+      <circle cx="80" cy="25.5" r="1.2" />
+    </g>
+    <!-- crescent -->
+    <path fill="currentColor" d="M100 6.2 a3.6 3.6 0 1 0 3.2 5.4 a2.9 2.9 0 1 1 -3.2 -5.4 Z" opacity=".85" />
+  </symbol>
+
+  <!-- Small crescent moon with a sprig, used in the footer -->
+  <symbol id="moon" viewBox="0 0 40 40">
+    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+      d="M24 6 A14 14 0 1 0 34 26 A11 11 0 1 1 24 6 Z" />
+    <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+      d="M14 34 C 18 28, 24 24, 30 22 M19 29.5 C 18 26, 20 24, 22 23.5 M24 26 C 26 28.5, 29 28.5, 31 27.5" />
+  </symbol>
+</svg>

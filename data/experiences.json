@@ -1,0 +1,42 @@
+[
+  {
+    "id": "sunset-dinner",
+    "title": "Sunset dinner for two",
+    "description": "A long, candlelit dinner somewhere with a view, staying until the sky goes dark.",
+    "amount": 75,
+    "goal": 300,
+    "photo": "img/gallery/thumbs/photo-0058.jpg"
+  },
+  {
+    "id": "morning-coffee",
+    "title": "Slow morning coffee",
+    "description": "Coffee and pastries at a little café while we plan absolutely nothing.",
+    "amount": 25,
+    "goal": 100,
+    "photo": "img/gallery/thumbs/photo-0035.jpg"
+  },
+  {
+    "id": "hike-day",
+    "title": "A day in the hills",
+    "description": "A guided hike through misty woods and wildflowers, picnic included.",
+    "amount": 100,
+    "goal": 200,
+    "photo": "img/gallery/thumbs/photo-0010.jpg"
+  },
+  {
+    "id": "boat-trip",
+    "title": "Out on the water",
+    "description": "An afternoon boat trip along the coast, with a stop for a swim if it's warm enough.",
+    "amount": 150,
+    "goal": 300,
+    "photo": "img/gallery/thumbs/photo-0028.jpg"
+  },
+  {
+    "id": "cozy-cabin",
+    "title": "One night somewhere cozy",
+    "description": "A night at a little inn with a fireplace, thick blankets, and a good book each.",
+    "amount": 200,
+    "goal": 400,
+    "photo": "img/gallery/thumbs/photo-0033.jpg"
+  }
+]
