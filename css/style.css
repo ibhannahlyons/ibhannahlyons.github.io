@@ -765,23 +765,6 @@ a[href^="tel:"] { white-space: nowrap; }
 .btn:active, .nav-toggle:active, .theme-toggle:active { transform: scale(.96); }
 .link-cards a.card:active, .gallery button:active { transform: scale(.985); }
 
-/* tiny clovers that float up from a button press */
-.clover-pop {
-  position: fixed;
-  z-index: 300;
-  width: 1.1rem;
-  height: 1.1rem;
-  pointer-events: none;
-  color: var(--lilac);
-  animation: clover-pop 1s cubic-bezier(.2, .7, .3, 1) forwards;
-}
-:root[data-theme="light"] .clover-pop { color: var(--mauve); }
-@keyframes clover-pop {
-  0%   { transform: translate(-50%, -50%) scale(.3) rotate(0); opacity: 0; }
-  15%  { opacity: 1; }
-  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(var(--spin)); opacity: 0; }
-}
-
 /* the photo viewer opens with a gentle zoom */
 .lightbox.open { animation: fade-in .35s ease; }
 .lightbox.open img { animation: zoom-in .45s cubic-bezier(.2, .8, .3, 1); }
@@ -800,7 +783,7 @@ a[href^="tel:"] { white-space: nowrap; }
 @keyframes page-in { from { opacity: 0; transform: translateY(8px); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .ripple, .clover-pop { display: none; }
+  .ripple { display: none; }
   .lightbox.open, .lightbox.open img, .nav.open .nav-links { animation: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
   .btn:active, .nav-toggle:active, .theme-toggle:active,
