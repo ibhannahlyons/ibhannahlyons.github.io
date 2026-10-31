@@ -1,4 +1,4 @@
-# Hannah & Liam: wedding website
+# Liam & Hannah: wedding website
 
 Static site on GitHub Pages: https://ibhannahlyons.github.io (later: https://liamandhannah.com)
 

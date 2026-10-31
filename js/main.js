@@ -99,7 +99,7 @@ function captionEl(p, tag) {
 }
 
 function buildGallery(root, photos, name) {
-  const label = root.dataset.label || "Hannah and Liam";
+  const label = root.dataset.label || "Liam and Hannah";
   photos.forEach((p, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
