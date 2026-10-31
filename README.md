@@ -67,10 +67,25 @@ can see the file. Don't put anything truly private on that page.
 2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
 3. Update the rehearsal-dinner "both nights" note once that plan is settled.
 
-## Gallery
+## Galleries (Our Story page)
 
-Photos live in `img/gallery/` (2000px) and `img/gallery/thumbs/` (700px), listed in `data/gallery.json`.
-The originals are not in this repo.
+Two galleries, each with its own folder:
+
+| Gallery | Photos | List |
+|---|---|---|
+| Engagement photos | `img/engagement/` | `data/engagement.json` |
+| Through the years | `img/years/` | `data/years.json` |
+
+Each folder has a `thumbs/` subfolder; don't edit that by hand.
+
+**Remove photos:** delete them from `img/engagement/` or `img/years/`, then run
+`python tools/galleries.py sync` to clear their thumbnails and rebuild the list.
+
+**Add photos:** put the originals in any folder and run
+`python tools/galleries.py import <that folder> years` (or `engagement`). They're resized and added.
+
+Photos used elsewhere on the site (the home page hero, page banners, honeymoon cards) live in `img/site/`,
+so deleting gallery photos never breaks a page.
 
 ## Custom domain (liamandhannah.com)
 

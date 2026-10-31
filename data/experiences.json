@@ -4,41 +4,41 @@
     "title": "Slow morning coffee",
     "description": "Treat us to coffee and pastries at a little café, on a morning when we plan absolutely nothing.",
     "amount": 25,
-    "photo": "img/gallery/thumbs/photo-0035.jpg"
+    "photo": "img/site/thumbs/photo-0035.jpg"
   },
   {
     "id": "golden-hour-drinks",
     "title": "Drinks at golden hour",
     "description": "A round of cocktails somewhere with a view, so we can toast to you as the sun goes down.",
     "amount": 50,
-    "photo": "img/gallery/thumbs/photo-0058.jpg"
+    "photo": "img/site/thumbs/photo-0058.jpg"
   },
   {
     "id": "wine-tasting",
     "title": "A wine tasting",
     "description": "An afternoon of tasting flights at a local winery, and maybe a bottle of our favorite to bring home.",
     "amount": 75,
-    "photo": "img/gallery/thumbs/photo-0056.jpg"
+    "photo": "img/site/thumbs/photo-0056.jpg"
   },
   {
     "id": "hike-day",
     "title": "A day in the hills",
     "description": "Help us spend a day out exploring misty woods and wildflowers, with a picnic along the way.",
     "amount": 100,
-    "photo": "img/gallery/thumbs/photo-0010.jpg"
+    "photo": "img/site/thumbs/photo-0010.jpg"
   },
   {
     "id": "sunset-dinner",
     "title": "Sunset dinner for two",
     "description": "A long, candlelit dinner with a bottle of wine, staying until the sky goes dark.",
     "amount": 150,
-    "photo": "img/gallery/thumbs/photo-0060.jpg"
+    "photo": "img/site/thumbs/photo-0060.jpg"
   },
   {
     "id": "boat-trip",
     "title": "Out on the water",
     "description": "Help us get out on the water for a day, with a stop for a swim if it's warm enough.",
     "amount": 200,
-    "photo": "img/gallery/thumbs/photo-0028.jpg"
+    "photo": "img/site/thumbs/photo-0028.jpg"
   }
 ]

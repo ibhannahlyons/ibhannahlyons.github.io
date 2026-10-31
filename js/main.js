@@ -65,20 +65,26 @@ if (gate) {
   });
 }
 
-// ---- gallery + lightbox ----
-const gallery = document.querySelector("[data-gallery]");
-if (gallery) {
-  fetch("data/gallery.json")
+// ---- galleries + lightbox ----
+// Each [data-gallery="name"] loads data/name.json and photos from img/name/.
+// A gallery with no photos shows its [data-empty] message instead.
+document.querySelectorAll("[data-gallery]").forEach((root) => {
+  const name = root.dataset.gallery;
+  fetch(`data/${name}.json`, { cache: "no-store" })
     .then((r) => r.json())
-    .then((photos) => buildGallery(gallery, photos));
-}
+    .then((photos) => {
+      if (photos.length) buildGallery(root, photos, name);
+      else root.parentElement.querySelector("[data-empty]")?.removeAttribute("hidden");
+    });
+});
 
-function buildGallery(root, photos) {
+function buildGallery(root, photos, name) {
+  const label = root.dataset.label || "Hannah and Liam";
   photos.forEach((p, i) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.setAttribute("aria-label", `Open photo ${i + 1} of ${photos.length}`);
-    btn.innerHTML = `<img src="img/gallery/thumbs/${p.file}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async" alt="Hannah and Liam, engagement photo ${i + 1}">`;
+    btn.innerHTML = `<img src="img/${name}/thumbs/${p.file}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async" alt="${label}, photo ${i + 1}">`;
     btn.addEventListener("click", () => openLightbox(i));
     root.appendChild(btn);
   });
@@ -103,11 +109,11 @@ function buildGallery(root, photos) {
 
   function show(i) {
     current = (i + photos.length) % photos.length;
-    img.src = `img/gallery/${photos[current].file}`;
-    img.alt = `Hannah and Liam, engagement photo ${current + 1}`;
+    img.src = `img/${name}/${photos[current].file}`;
+    img.alt = `${label}, photo ${current + 1}`;
     count.textContent = `${current + 1} / ${photos.length}`;
     // warm the cache for the next photo
-    new Image().src = `img/gallery/${photos[(current + 1) % photos.length].file}`;
+    new Image().src = `img/${name}/${photos[(current + 1) % photos.length].file}`;
   }
   function openLightbox(i) {
     lastFocus = document.activeElement;
