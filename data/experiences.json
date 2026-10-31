@@ -2,28 +2,28 @@
   {
     "id": "morning-coffee",
     "title": "Slow morning coffee",
-    "description": "Coffee and pastries for two at a little café while we plan absolutely nothing.",
+    "description": "Treat us to coffee and pastries at a little café, on a morning when we plan absolutely nothing.",
     "amount": 25,
     "photo": "img/gallery/thumbs/photo-0035.jpg"
   },
   {
     "id": "golden-hour-drinks",
     "title": "Drinks at golden hour",
-    "description": "A round of cocktails somewhere with a view, toasting to the two of us as the sun goes down.",
+    "description": "A round of cocktails somewhere with a view, so we can toast to you as the sun goes down.",
     "amount": 50,
     "photo": "img/gallery/thumbs/photo-0058.jpg"
   },
   {
     "id": "wine-tasting",
     "title": "A wine tasting",
-    "description": "An afternoon of tasting flights for two at a local winery, plus a bottle of our favorite to take home.",
+    "description": "An afternoon of tasting flights at a local winery, and maybe a bottle of our favorite to bring home.",
     "amount": 75,
     "photo": "img/gallery/thumbs/photo-0056.jpg"
   },
   {
     "id": "hike-day",
     "title": "A day in the hills",
-    "description": "A guided hike for two through misty woods and wildflowers, picnic included.",
+    "description": "Help us spend a day out exploring misty woods and wildflowers, with a picnic along the way.",
     "amount": 100,
     "photo": "img/gallery/thumbs/photo-0010.jpg"
   },
@@ -37,7 +37,7 @@
   {
     "id": "boat-trip",
     "title": "Out on the water",
-    "description": "A boat excursion for two along the coast, with a stop for a swim if it's warm enough.",
+    "description": "Help us get out on the water for a day, with a stop for a swim if it's warm enough.",
     "amount": 200,
     "photo": "img/gallery/thumbs/photo-0028.jpg"
   }
