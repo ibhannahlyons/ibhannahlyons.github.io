@@ -16,6 +16,12 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 
 Placeholder text is marked with `<!-- TODO -->` comments. Search for `TODO` to find them all.
 
+## Colors: dark and light
+
+The site opens in a dark theme (deep blues and plums). The "Light" button in the nav switches to the
+original parchment look, and each visitor's choice is remembered. Both themes are defined as color
+tokens at the top of `css/style.css`: the defaults are dark, and `:root[data-theme="light"]` holds the light values.
+
 ## Honeymoon fund
 
 **Add or change an experience:** edit `data/experiences.json`.

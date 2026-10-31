@@ -12,6 +12,24 @@ if (nav && toggle) {
   });
 }
 
+// ---- light / dark theme (dark is the default) ----
+const themeToggle = document.querySelector(".theme-toggle");
+function labelThemeToggle() {
+  const light = document.documentElement.dataset.theme === "light";
+  themeToggle.textContent = light ? "Dark" : "Light";
+  themeToggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+}
+if (themeToggle) {
+  labelThemeToggle();
+  themeToggle.addEventListener("click", () => {
+    const light = document.documentElement.dataset.theme !== "light";
+    if (light) document.documentElement.dataset.theme = "light";
+    else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
+    labelThemeToggle();
+  });
+}
+
 // ---- fade-ins ----
 const revealer = "IntersectionObserver" in window
   ? new IntersectionObserver((entries) => {
