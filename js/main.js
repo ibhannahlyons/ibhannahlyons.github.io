@@ -15,9 +15,8 @@ if (nav && toggle) {
 // ---- light / dark theme (dark is the default) ----
 const themeToggle = document.querySelector(".theme-toggle");
 function labelThemeToggle() {
-  const light = document.documentElement.dataset.theme === "light";
-  themeToggle.textContent = light ? "Dark" : "Light";
-  themeToggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+  // a switch: "on" means light mode
+  themeToggle.setAttribute("aria-checked", document.documentElement.dataset.theme === "light");
 }
 if (themeToggle) {
   labelThemeToggle();
