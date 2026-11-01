@@ -358,6 +358,53 @@ section { padding: 3rem 0; }
   color: var(--rose);
 }
 .countdown-done { font-style: italic; font-size: 1.3rem; }
+
+/* "Click me!" under the countdown: bursts 18 clovers, one for the 18th */
+.clover-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.4rem;
+  padding: .55rem 1.2rem;
+  border: 1px solid rgba(243, 238, 232, .45);
+  border-radius: 999px;
+  background: rgba(20, 27, 38, .38);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  color: var(--parchment);
+  font-family: var(--serif-display);
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .3s ease, color .3s ease, transform .18s ease;
+}
+.clover-button svg { width: 1.2rem; height: 1.2rem; color: var(--rose); transition: transform .5s ease; }
+.clover-button:hover { border-color: var(--rose); color: var(--rose); }
+.clover-button:hover svg { transform: rotate(25deg); }
+.clover-button:active { transform: scale(.95); }
+
+.clover-burst {
+  position: fixed;
+  z-index: 300;
+  width: var(--size, 1.4rem);
+  height: var(--size, 1.4rem);
+  pointer-events: none;
+  color: var(--tint, var(--lilac));
+  filter: drop-shadow(0 1px 3px rgba(20, 27, 38, .6)); /* stands out over the photo */
+  animation: clover-burst 1.6s cubic-bezier(.15, .7, .3, 1) forwards;
+}
+@keyframes clover-burst {
+  0%   { transform: translate(-50%, -50%) scale(.2) rotate(0); opacity: 0; }
+  12%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(var(--spin)); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clover-burst { animation: clover-fade 1.4s ease forwards; transform: translate(calc(-50% + var(--dx) / 3), calc(-50% + var(--dy) / 3)); }
+  @keyframes clover-fade { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
+}
 @media (min-width: 52rem) {
   .countdown { gap: .85rem; }
   .cd-unit { min-width: 5.6rem; padding: .7rem .5rem .6rem; }

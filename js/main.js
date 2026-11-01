@@ -116,6 +116,43 @@ document.addEventListener("pointerdown", (e) => {
   r.addEventListener("animationend", () => r.remove());
 });
 
+// ---- "Click me!": 18 clovers burst out, one for each day up to the 18th ----
+const burstButton = document.querySelector("[data-clover-burst]");
+if (burstButton) {
+  const tints = ["var(--lilac)", "var(--rose)", "var(--parchment)", "var(--sage)"];
+  // drawn inline: <use> pointing at the sprite file doesn't render when added by script
+  const leaf = "M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z";
+  const clover =
+    '<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' +
+    '<g transform="translate(0 -2) rotate(20 20 18)">' +
+    [0, 90, 180, 270].map((r) => `<path d="${leaf}" transform="rotate(${r} 20 18)"/>`).join("") +
+    "</g>" +
+    '<path d="M21.5 18.5 C 23 23, 26.5 25, 25 29.5 C 24 32.5, 20.5 32.5, 21 30"/></g>';
+  burstButton.addEventListener("click", () => {
+    const box = burstButton.getBoundingClientRect();
+    const x = box.left + box.width / 2, y = box.top + box.height / 2;
+    const count = 18;
+    for (let i = 0; i < count; i++) {
+      const c = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      c.setAttribute("viewBox", "0 0 40 40");
+      c.setAttribute("class", "clover-burst");
+      c.innerHTML = clover;
+      // spread evenly around a circle, with a little wobble
+      const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.3;
+      const dist = 90 + Math.random() * 90;
+      c.style.left = `${x}px`;
+      c.style.top = `${y}px`;
+      c.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+      c.style.setProperty("--dy", `${Math.sin(angle) * dist}px`);
+      c.style.setProperty("--spin", `${(Math.random() - 0.5) * 540}deg`);
+      c.style.setProperty("--size", `${1.8 + Math.random() * 1.2}rem`);
+      c.style.setProperty("--tint", tints[i % tints.length]);
+      document.body.appendChild(c);
+      c.addEventListener("animationend", () => c.remove());
+    }
+  });
+}
+
 // ---- galleries + lightbox ----
 // Each [data-gallery="name"] loads data/name.json and photos from img/name/.
 // A gallery with no photos shows its [data-empty] message instead.
