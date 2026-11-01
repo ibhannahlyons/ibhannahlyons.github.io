@@ -48,6 +48,42 @@ function reveal(el) {
 }
 document.querySelectorAll(".reveal").forEach(reveal);
 
+// ---- one photo continued across several sections ----
+// Every .photo-slice with the same data-slice-group shows the next stretch of the
+// same photo, as if the sections (minus the gaps between them) were one window.
+const sliceGroups = {};
+document.querySelectorAll(".photo-slice").forEach((el) => {
+  (sliceGroups[el.dataset.sliceGroup] ||= []).push(el);
+});
+Object.values(sliceGroups).forEach((slices) => {
+  const img = new Image();
+  img.src = slices[0].dataset.src;
+  const [fx, fy] = (slices[0].dataset.focus || "50 50").split(" ").map((n) => n / 100);
+  const layout = () => {
+    if (!img.naturalWidth) return;
+    const sections = slices.map((el) => el.parentElement);
+    const width = document.documentElement.clientWidth;
+    const total = sections.reduce((sum, sec) => sum + sec.offsetHeight, 0);
+    const scale = Math.max(width / img.naturalWidth, total / img.naturalHeight);
+    const w = img.naturalWidth * scale, h = img.naturalHeight * scale;
+    const ox = (w - width) * fx, oy = (h - total) * fy;
+    let top = 0;
+    slices.forEach((el, i) => {
+      const sec = sections[i].getBoundingClientRect(), box = el.getBoundingClientRect();
+      el.style.backgroundImage = `url("${img.src}")`;
+      el.style.backgroundSize = `${w}px ${h}px`;
+      el.style.backgroundPosition = `${-(ox + box.left - sec.left)}px ${-(oy + top + box.top - sec.top)}px`;
+      top += sections[i].offsetHeight;
+    });
+  };
+  img.onload = layout;
+  window.addEventListener("resize", layout);
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(layout);
+    slices.forEach((el) => ro.observe(el.parentElement));
+  }
+});
+
 // ---- countdown ----
 const countdown = document.querySelector("[data-countdown]");
 if (countdown) {

@@ -143,16 +143,6 @@ section { padding: 3rem 0; }
 
 /* a section with a soft, blurred photo behind it */
 .has-photo { position: relative; overflow: hidden; isolation: isolate; }
-.section-photo {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(5px) saturate(.7);
-  transform: scale(1.08); /* hides the blurred edges */
-}
 .has-photo::before {
   content: "";
   position: absolute;
@@ -160,6 +150,22 @@ section { padding: 3rem 0; }
   z-index: -1;
   background: linear-gradient(180deg, rgba(58, 43, 64, .82), rgba(30, 42, 56, .72) 50%, rgba(58, 43, 64, .84));
 }
+/* One photo shared by several sections: each shows the next part of it
+   (positions are worked out in main.js so it lines up on any screen) */
+.photo-slice {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-color: var(--noir);
+}
+.banner .photo-slice { z-index: 0; filter: saturate(.7) contrast(.95); }
+.photo-slice.blurred {
+  inset: -14px; /* blurred edges stay outside the section */
+  filter: blur(5px) saturate(.7);
+}
+.site-footer.has-photo { position: relative; }
+
 :root[data-theme="light"] .has-photo::before {
   background: linear-gradient(180deg, rgba(53, 68, 75, .84), rgba(30, 42, 56, .72) 50%, rgba(53, 68, 75, .86));
 }
