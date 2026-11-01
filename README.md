@@ -24,6 +24,10 @@ tokens at the top of `css/style.css`: the defaults are dark, and `:root[data-the
 
 ## Honeymoon fund
 
+**Right now the page shows only "Contribute any amount."** The experience ideas are kept in
+`data/experiences.json` but hidden. To show them again, add `data-show-ideas` to the fund grid in
+`registry.html`: `<div class="grid fund-solo" data-fund data-show-ideas>` (and drop `fund-solo`).
+
 **Add or change an experience:** edit `data/experiences.json`.
 
 ```json
