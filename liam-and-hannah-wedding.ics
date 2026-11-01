@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Liam & Hannah//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:liam-hannah-wedding-20280318@ibhannahlyons.github.io
+DTSTAMP:20261101T230446Z
+DTSTART:20280318T200000Z
+DTEND:20280319T030000Z
+SUMMARY:Liam & Hannah's Wedding
+LOCATION:The Mill at Fine Creek\, Powhatan\, VA
+DESCRIPTION:Guests arrive at 4:00 pm\, ceremony at 4:30 pm. Details: https://ibhannahlyons.github.io/
+URL:https://ibhannahlyons.github.io/
+END:VEVENT
+END:VCALENDAR

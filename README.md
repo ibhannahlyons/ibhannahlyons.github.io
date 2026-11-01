@@ -103,6 +103,16 @@ Imported photos are named by the date they were taken, so the gallery stays in t
 Photos used elsewhere on the site (the home page hero, page banners, honeymoon cards) live in `img/site/`,
 so deleting gallery photos never breaks a page.
 
+## Link previews & calendar
+
+- Every page has link-preview tags (`og:*`) so texted/shared links show a title, description and photo.
+  Preview images are 1200×630 crops in `img/share/`.
+- `liam-and-hannah-wedding.ics` is the "Apple / Outlook" calendar file (4:00–11:00 pm Eastern on
+  March 18, 2028); the "Google Calendar" option is a link built from the same details.
+- These use the full site address `https://ibhannahlyons.github.io/`. **When liamandhannah.com goes live,
+  replace that address everywhere** (search the site for `ibhannahlyons.github.io`: the page `<head>`s,
+  the `.ics` file, and the Google Calendar links on `index.html` and `details.html`).
+
 ## Custom domain (liamandhannah.com)
 
 Do these in order, after buying the domain:

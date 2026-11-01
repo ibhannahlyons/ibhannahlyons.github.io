@@ -153,6 +153,22 @@ if (burstButton) {
   });
 }
 
+// ---- "Add to calendar" menus ----
+document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
+  const toggle = menu.querySelector(".cal-toggle");
+  const options = menu.querySelector(".cal-options");
+  const setOpen = (open) => {
+    options.hidden = !open;
+    toggle.setAttribute("aria-expanded", open);
+  };
+  toggle.addEventListener("click", () => setOpen(options.hidden));
+  options.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("click", (e) => { if (!menu.contains(e.target)) setOpen(false); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !options.hidden) { setOpen(false); toggle.focus(); }
+  });
+});
+
 // ---- galleries + lightbox ----
 // Each [data-gallery="name"] loads data/name.json and photos from img/name/.
 // A gallery with no photos shows its [data-empty] message instead.
