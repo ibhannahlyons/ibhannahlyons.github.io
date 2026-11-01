@@ -1,0 +1,2 @@
+# keep calendar files byte-for-byte (the format wants CRLF line endings)
+*.ics -text
