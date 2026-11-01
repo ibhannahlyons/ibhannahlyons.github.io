@@ -10,6 +10,7 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 |---|---|
 | `index.html` | Home / hero |
 | `story.html` | Our story + Through the years gallery |
+| `party.html` | Wedding party (Team Hannah & Team Liam) |
 | `details.html` | Date, venue, schedule |
 | `travel.html` | Hotels, airports |
 | `registry.html` | Honeymoon fund |
@@ -76,6 +77,14 @@ can see the file. Don't put anything truly private on that page.
 1. On `travel.html`, add a card next to the Residence Inn that links to `cottages-<hash>.html` ("Stay at the Mill").
 2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
 3. Update the rehearsal-dinner "both nights" note once that plan is settled.
+
+## Wedding party
+
+`party.html` builds its zigzag of polaroids from `data/party.json`: a `hannah` list and a `liam` list,
+each person with `name`, `role` (e.g. "Maid of Honor", "Bridesmaid", "Best Man", "Groomsman"),
+`relation` (e.g. "Hannah's sister") and `photo`. Put photos in `img/party/` (portrait, about
+800px tall) and set `"photo": "img/party/their-name.jpg"`. With no photo, a "Photo coming soon"
+placeholder shows. "Maid of Honor" and "Best Man" get a filled badge automatically.
 
 ## Through the years gallery (Our Story page)
 

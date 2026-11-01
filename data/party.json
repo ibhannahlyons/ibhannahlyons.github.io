@@ -1,0 +1,19 @@
+{
+  "hannah": [
+    { "name": "Girl 1", "role": "Maid of Honor", "relation": "Hannah's ___", "photo": "" },
+    { "name": "Girl 2", "role": "Bridesmaid", "relation": "Hannah's ___", "photo": "" },
+    { "name": "Girl 3", "role": "Bridesmaid", "relation": "Hannah's ___", "photo": "" },
+    { "name": "Girl 4", "role": "Bridesmaid", "relation": "Hannah's ___", "photo": "" },
+    { "name": "Girl 5", "role": "Bridesmaid", "relation": "Hannah's ___", "photo": "" }
+  ],
+  "liam": [
+    { "name": "Guy 1", "role": "Best Man", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 2", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 3", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 4", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 5", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 6", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 7", "role": "Groomsman", "relation": "Liam's ___", "photo": "" },
+    { "name": "Guy 8", "role": "Groomsman", "relation": "Liam's ___", "photo": "" }
+  ]
+}

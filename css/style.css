@@ -292,7 +292,7 @@ section { padding: 3rem 0; }
 .theme-toggle:hover, .nav-toggle:hover { border-color: var(--rose); }
 .nav-toggle:hover { color: var(--rose); }
 
-@media (min-width: 52rem) {
+@media (min-width: 70rem) { /* full menu bar once all six links fit on one line */
   .nav-toggle { display: none; }
   .nav-links { margin-left: auto; }
   .theme-toggle { margin: 0 0 0 2rem; }
@@ -856,6 +856,186 @@ section { padding: 3rem 0; }
 }
 .gate-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .gate-msg { min-height: 1.5em; margin-top: .75rem; font-size: 1rem; color: var(--accent-strong); }
+
+/* ---------- wedding party ---------- */
+
+.team-vs {
+  margin: 1.5rem 0 .25rem;
+  font-family: var(--script);
+  font-size: clamp(2.1rem, 8vw, 3.2rem);
+  line-height: 1.15;
+}
+.team-vs a { color: var(--text); text-decoration: none; white-space: nowrap; transition: color .3s ease; }
+.team-vs a:hover { color: var(--accent-strong); }
+.team-vs .amp { color: var(--accent); font-size: .7em; margin: 0 .35em; }
+.team-count {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .2rem .6rem;
+  font-family: var(--serif-display);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* the zigzag: a dotted path down the middle, people alternating sides */
+.party-list {
+  position: relative;
+  list-style: none;
+  max-width: 50rem;
+  margin: 2.25rem auto 0;
+  padding: 0;
+}
+.party-list::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(to bottom, var(--accent) 0 5px, transparent 5px 13px);
+  opacity: .45;
+}
+.party-member {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.6rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.party-member:last-child { margin-bottom: 0; }
+.party-member .polaroid { grid-column: 1; justify-self: end; }
+.party-member .party-text { grid-column: 2; grid-row: 1; text-align: left; }
+.party-member:nth-child(even) .polaroid { grid-column: 2; justify-self: start; }
+.party-member:nth-child(even) .party-text { grid-column: 1; text-align: right; }
+
+/* little clover stop on the path */
+.party-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: .3rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-alt);
+  box-shadow: 0 0 0 2px var(--line);
+  color: var(--accent-strong);
+}
+#team-liam .party-node { background: var(--bg); }
+.party-node svg { width: 100%; height: 100%; display: block; }
+
+/* polaroids with a strip of washi tape */
+.polaroid {
+  position: relative;
+  width: 100%;
+  max-width: 15rem;
+  margin: 0;
+  padding: .55rem .55rem 0;
+  background: #F6F2EC;
+  border: 1px solid rgba(30, 42, 56, .08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .18), 0 12px 28px rgba(0, 0, 0, .25);
+  transform: rotate(var(--tilt, -2deg));
+  transition: transform .5s cubic-bezier(.3, 1.5, .5, 1), box-shadow .4s ease;
+  cursor: pointer;
+}
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -.7rem;
+  left: 50%;
+  width: 4.6rem;
+  height: 1.4rem;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(201, 174, 203, .62);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+}
+.party-member:nth-child(even) .polaroid::before { background: rgba(217, 188, 175, .7); transform: translateX(-50%) rotate(5deg); }
+.polaroid:hover { transform: rotate(0) scale(1.04); box-shadow: 0 4px 8px rgba(0, 0, 0, .2), 0 18px 36px rgba(0, 0, 0, .3); }
+.polaroid.wiggle { animation: wiggle .7s ease; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(var(--tilt, -2deg)); }
+  20% { transform: rotate(-7deg) scale(1.05); }
+  45% { transform: rotate(6deg) scale(1.05); }
+  70% { transform: rotate(-3deg) scale(1.02); }
+}
+.polaroid-photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--storm), var(--blackberry));
+}
+.polaroid-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85); }
+.party-placeholder {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .6rem;
+  height: 100%;
+  color: var(--rose);
+  text-align: center;
+}
+.party-placeholder svg { width: 42%; max-width: 4.5rem; opacity: .85; }
+.party-placeholder span {
+  font-family: var(--serif-display);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 0 .5rem;
+}
+.polaroid-name {
+  padding: .45rem .25rem .6rem;
+  font-family: var(--script);
+  font-size: clamp(1.3rem, 4.6vw, 1.75rem);
+  line-height: 1.1;
+  color: var(--noir);
+  text-align: center;
+}
+
+.party-text h3 {
+  margin: .45rem 0 .15rem;
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  font-weight: 400;
+}
+.party-text p { margin: 0; font-style: italic; font-size: 1.02rem; color: var(--text-muted); }
+.party-role {
+  display: inline-block;
+  padding: .25rem .7rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-family: var(--serif-display);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.party-role.lead { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--noir); }
+:root[data-theme="light"] .party-role.lead { color: var(--parchment); }
+
+/* each person slides in from their own side */
+.party-member.reveal { transform: translateX(-28px); }
+.party-member.reveal:nth-child(even) { transform: translateX(28px); }
+.party-member.reveal.in { transform: none; }
+
+@media (max-width: 30rem) {
+  .team-vs a, .team-vs .amp { display: block; }
+  .team-vs .amp { margin: .1em 0; }
+  .party-member { column-gap: 2.6rem; margin-bottom: 1.9rem; }
+  .party-node { width: 1.6rem; height: 1.6rem; }
+  .party-role { font-size: .6rem; letter-spacing: .12em; padding: .2rem .55rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .polaroid, .polaroid:hover { transition: none; }
+  .polaroid.wiggle { animation: none; }
+  .party-member.reveal { transform: none; }
+}
 
 /* ---------- footer ---------- */
 
