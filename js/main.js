@@ -149,6 +149,7 @@ if (burstButton) {
       c.style.setProperty("--tint", tints[i % tints.length]);
       document.body.appendChild(c);
       c.addEventListener("animationend", () => c.remove());
+      setTimeout(() => c.remove(), 2000); // backup if animationend never fires (e.g. background tab)
     }
   });
 }
