@@ -325,10 +325,42 @@ section { padding: 3rem 0; }
   margin-bottom: .35rem;
 }
 .countdown {
-  margin-top: 2rem;
-  font-style: italic;
-  font-size: 1.15rem;
-  opacity: .9;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: 1.75rem;
+}
+.cd-unit {
+  min-width: 4.3rem;
+  padding: .55rem .35rem .5rem;
+  border: 1px solid rgba(243, 238, 232, .35);
+  border-radius: var(--radius);
+  background: rgba(20, 27, 38, .38);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.cd-num {
+  display: block;
+  font-family: var(--serif-display);
+  font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  font-variant-numeric: lining-nums tabular-nums; /* digits don't jiggle as they change */
+}
+.cd-label {
+  display: block;
+  margin-top: .2rem;
+  font-family: var(--serif-display);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+.countdown-done { font-style: italic; font-size: 1.3rem; }
+@media (min-width: 52rem) {
+  .countdown { gap: .85rem; }
+  .cd-unit { min-width: 5.6rem; padding: .7rem .5rem .6rem; }
 }
 
 /* shorter banner for inner pages */

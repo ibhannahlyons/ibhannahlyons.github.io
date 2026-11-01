@@ -49,14 +49,31 @@ function reveal(el) {
 document.querySelectorAll(".reveal").forEach(reveal);
 
 // ---- countdown ----
+// Days / hours / minutes / seconds until the ceremony, updated once a second.
 const countdown = document.querySelector("[data-countdown]");
 if (countdown) {
   const target = new Date(countdown.dataset.countdown);
-  const days = Math.ceil((target - new Date()) / 86400000);
-  if (days > 1) countdown.textContent = `${days.toLocaleString()} days to go`;
-  else if (days === 1) countdown.textContent = "Tomorrow!";
-  else if (days === 0) countdown.textContent = "Today's the day";
-  else countdown.textContent = "Happily married";
+  const cells = Object.fromEntries(
+    [...countdown.querySelectorAll("[data-unit]")].map((el) => [el.dataset.unit, el])
+  );
+  const pad = (n) => String(n).padStart(2, "0");
+  let timer;
+  const tick = () => {
+    const left = target - new Date();
+    if (left <= 0) {
+      clearInterval(timer);
+      const sameDay = left > -12 * 3600000; // the rest of the wedding day
+      countdown.innerHTML = `<p class="countdown-done">${sameDay ? "Today's the day!" : "Happily married"}</p>`;
+      return;
+    }
+    const s = Math.floor(left / 1000);
+    cells.days.textContent = Math.floor(s / 86400).toLocaleString();
+    cells.hours.textContent = pad(Math.floor(s / 3600) % 24);
+    cells.minutes.textContent = pad(Math.floor(s / 60) % 60);
+    cells.seconds.textContent = pad(s % 60);
+  };
+  tick();
+  timer = setInterval(tick, 1000);
 }
 
 // ---- family passphrase gate ----
