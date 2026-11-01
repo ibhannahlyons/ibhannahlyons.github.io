@@ -277,18 +277,20 @@ section { padding: 3rem 0; }
 }
 .tt-knob svg {
   position: absolute;
-  inset: .22rem;
-  width: auto;
-  height: auto;
+  top: 50%;
+  left: 50%;
+  width: .95rem;
+  height: .95rem;
+  transform: translate(-50%, -50%);
   transition: opacity .3s ease, transform .4s ease;
 }
 .tt-star { fill: var(--mauve-ink); }
-.tt-sun { fill: none; stroke: var(--rust); stroke-width: 2; stroke-linecap: round; opacity: 0; transform: rotate(-90deg); }
+.tt-sun { fill: none; stroke: var(--rust); stroke-width: 2; stroke-linecap: round; opacity: 0; transform: translate(-50%, -50%) rotate(-90deg); }
 .tt-sun circle { fill: var(--rust); stroke: none; }
 :root[data-theme="light"] .theme-toggle { background: rgba(217, 188, 175, .35); }
 :root[data-theme="light"] .tt-knob { left: calc(100% - 1.6rem); }
-:root[data-theme="light"] .tt-star { opacity: 0; transform: rotate(90deg); }
-:root[data-theme="light"] .tt-sun { opacity: 1; transform: none; }
+:root[data-theme="light"] .tt-star { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+:root[data-theme="light"] .tt-sun { opacity: 1; transform: translate(-50%, -50%); }
 .theme-toggle:hover, .nav-toggle:hover { border-color: var(--rose); }
 .nav-toggle:hover { color: var(--rose); }
 
@@ -311,6 +313,7 @@ section { padding: 3rem 0; }
 .hero {
   position: relative;
   min-height: 100svh;
+  min-height: var(--app-h, 100svh); /* locked height: phone toolbars can't resize it mid-scroll */
   display: grid;
   place-items: center;
   text-align: center;
@@ -450,7 +453,8 @@ section { padding: 3rem 0; }
 .banner {
   position: relative;
   min-height: 72vh;
-  min-height: 72svh; /* phones: ignore the browser toolbar */
+  min-height: 72svh;
+  min-height: calc(var(--app-h, 100svh) * .72); /* locked height: phone toolbars can't resize it mid-scroll */
   display: grid;
   place-items: center;
   text-align: center;
@@ -472,7 +476,7 @@ section { padding: 3rem 0; }
 .banner-inner { position: relative; z-index: 1; padding: 5rem var(--gutter) 2.25rem; }
 .banner h1 { font-size: clamp(2.6rem, 9vw, 4rem); font-weight: 300; letter-spacing: .04em; }
 @media (min-width: 52rem) {
-  .banner { min-height: 80vh; min-height: 80svh; }
+  .banner { min-height: 80vh; min-height: 80svh; min-height: calc(var(--app-h, 100svh) * .8); }
   .banner h1 { font-size: clamp(3.4rem, 6vw, 5rem); }
 }
 .banner .eyebrow { color: var(--rose); }
