@@ -108,6 +108,12 @@ Do these in order, after buying the domain:
 
 Don't add the `CNAME` file before DNS is set up. Otherwise github.io will redirect to a domain that doesn't work yet.
 
+## After changing CSS or JavaScript
+
+Each page loads `css/style.css`, `js/main.js` (and `js/registry.js`) with a `?v=...` tag. When you change
+one of those files, bump the tag on every page (search for `?v=`) so browsers fetch the new version
+and nobody gets a stale copy.
+
 ## Preview locally
 
 ```bash
