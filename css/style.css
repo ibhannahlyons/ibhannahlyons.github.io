@@ -867,7 +867,9 @@ section { padding: 3rem 0; }
 }
 .team-vs a { color: var(--text); text-decoration: none; white-space: nowrap; transition: color .3s ease; }
 .team-vs a:hover { color: var(--accent-strong); }
-.team-vs .amp { color: var(--accent); font-size: .7em; margin: 0 .35em; }
+.team-vs .amp { display: inline-block; color: var(--accent); margin: 0 .3em; vertical-align: middle; }
+.team-vs .amp svg { display: block; width: .8em; height: .8em; transition: transform .6s ease; }
+.team-vs:hover .amp svg { transform: rotate(25deg); }
 .team-count {
   display: flex;
   flex-wrap: wrap;
@@ -1026,7 +1028,8 @@ section { padding: 3rem 0; }
 
 @media (max-width: 30rem) {
   .team-vs a, .team-vs .amp { display: block; }
-  .team-vs .amp { margin: .1em 0; }
+  .team-vs .amp { margin: .15em auto; }
+  .team-vs .amp svg { margin: 0 auto; }
   .party-member { column-gap: 2.6rem; margin-bottom: 1.9rem; }
   .party-node { width: 1.6rem; height: 1.6rem; }
   .party-role { font-size: .6rem; letter-spacing: .12em; padding: .2rem .55rem; }
