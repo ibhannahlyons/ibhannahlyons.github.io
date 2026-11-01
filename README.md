@@ -9,7 +9,7 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 | File | Page |
 |---|---|
 | `index.html` | Home / hero |
-| `story.html` | Our story + engagement gallery |
+| `story.html` | Our story + Through the years gallery |
 | `details.html` | Date, venue, schedule |
 | `travel.html` | Hotels, airports |
 | `registry.html` | Honeymoon fund |
@@ -73,22 +73,15 @@ can see the file. Don't put anything truly private on that page.
 2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
 3. Update the rehearsal-dinner "both nights" note once that plan is settled.
 
-## Galleries (Our Story page)
+## Through the years gallery (Our Story page)
 
-Two galleries, each with its own folder:
+Photos live in `img/years/` (with a `thumbs/` subfolder; don't edit that by hand), listed in `data/years.json`.
 
-| Gallery | Photos | List |
-|---|---|---|
-| Engagement photos | `img/engagement/` | `data/engagement.json` |
-| Through the years | `img/years/` | `data/years.json` |
-
-Each folder has a `thumbs/` subfolder; don't edit that by hand.
-
-**Remove photos:** delete them from `img/engagement/` or `img/years/`, then run
+**Remove photos:** delete them from `img/years/`, then run
 `python tools/galleries.py sync` to clear their thumbnails and rebuild the list.
 
 **Add photos:** put the originals in any folder and run
-`python tools/galleries.py import <that folder> years` (or `engagement`). They're resized and added.
+`python tools/galleries.py import <that folder> years`. They're resized and added.
 
 **Dates (Through the years):** each photo in `data/years.json` has a `date` (e.g. "March 2023")
 shown under it. Edit it there; sync keeps it.

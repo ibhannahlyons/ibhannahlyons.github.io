@@ -1,10 +1,10 @@
 """Keep the Our Story galleries in sync with their photo folders.
 
     python tools/galleries.py sync
-        After deleting photos from img/engagement/ or img/years/, removes their
-        leftover thumbnails and rebuilds data/engagement.json and data/years.json.
+        After deleting photos from img/years/, removes their leftover
+        thumbnails and rebuilds data/years.json.
 
-    python tools/galleries.py import <folder> <engagement|years>
+    python tools/galleries.py import <folder> years
         Resizes original photos from <folder> into the gallery (2000px web copy +
         700px thumbnail, metadata stripped), then syncs. Files are named by the
         date they were taken, so the gallery runs in time order.
@@ -24,7 +24,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 SITE = Path(__file__).resolve().parent.parent
-GALLERIES = ("engagement", "years")
+GALLERIES = ("years",)
 EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".dng"}
 
 try:
