@@ -141,6 +141,14 @@ section { padding: 3rem 0; }
 }
 .section-pine { background: var(--band-2); color: var(--parchment); }
 
+/* Details schedule: picks up where the chapel banner leaves off.
+   Computers: the bottom of the photo (doors, the two of us, the bridge).
+   Phones: the banner already shows the whole chapel, so this moves in close. */
+.chapel-continued { object-position: 50% 100%; }
+@media (max-width: 51.99rem) {
+  .has-photo .chapel-continued { object-position: 50% 82%; transform: scale(2.1); transform-origin: 50% 80%; }
+}
+
 /* a section with a soft, blurred photo behind it */
 .has-photo { position: relative; overflow: hidden; isolation: isolate; }
 .section-photo {
