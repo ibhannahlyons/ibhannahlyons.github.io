@@ -863,6 +863,41 @@ section { padding: 3rem 0; }
 .place-link::after { content: " \2192"; }
 .place-link:hover { color: var(--accent-strong); }
 
+/* ---------- a secret: tap "L & H" three times for clover rain ---------- */
+
+.rain-drop {
+  position: fixed;
+  top: -3rem;
+  left: var(--x);
+  z-index: 300;
+  pointer-events: none;
+  color: var(--tint);
+  opacity: 0;
+  animation: rain-fall var(--dur) linear var(--delay) forwards;
+}
+.rain-clover {
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  filter: drop-shadow(0 1px 2px rgba(20, 27, 38, .45));
+  animation: rain-sway var(--sway-dur) ease-in-out infinite alternate;
+}
+@keyframes rain-fall {
+  0%   { transform: translateY(0); opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(calc(var(--app-h, 100vh) + 6rem)); opacity: 0; }
+}
+@keyframes rain-sway {
+  from { transform: translateX(-14px) rotate(-28deg); }
+  to   { transform: translateX(14px) rotate(28deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rain-drop { top: calc(var(--delay) * 20vh + 4rem); animation: rain-fade 2.4s ease var(--delay) forwards; }
+  .rain-clover { animation: none; }
+  @keyframes rain-fade { 0%, 100% { opacity: 0; } 30%, 70% { opacity: .9; } }
+}
+
 /* ---------- a secret: tap "4:20" on the Details page ---------- */
 
 .secret-puff { cursor: pointer; -webkit-tap-highlight-color: transparent; }

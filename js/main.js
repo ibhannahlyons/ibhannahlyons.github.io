@@ -156,6 +156,46 @@ function burstClovers(x, y, count = 18) {
   }
 }
 
+// a gentle rain of clovers drifting down the whole screen
+function cloverRain(count = 30) {
+  for (let i = 0; i < count; i++) {
+    const drop = document.createElement("span");
+    drop.className = "rain-drop";
+    drop.appendChild(makeClover("rain-clover", 2.2));
+    const dur = 4.2 + Math.random() * 2.8;
+    const delay = Math.random() * 2.4;
+    drop.style.setProperty("--x", `${Math.random() * 100}vw`);
+    drop.style.setProperty("--size", `${0.9 + Math.random() * 1.1}rem`);
+    drop.style.setProperty("--dur", `${dur.toFixed(2)}s`);
+    drop.style.setProperty("--delay", `${delay.toFixed(2)}s`);
+    drop.style.setProperty("--sway-dur", `${(1.2 + Math.random() * 1.2).toFixed(2)}s`);
+    drop.style.setProperty("--tint", CLOVER_TINTS[i % CLOVER_TINTS.length]);
+    document.body.appendChild(drop);
+    setTimeout(() => drop.remove(), (dur + delay) * 1000 + 600);
+  }
+}
+
+// ---- a secret: tap "L & H" three times quickly for clover rain ----
+// One tap still goes home (after a short pause to listen for more taps).
+document.querySelectorAll(".nav-brand").forEach((brand) => {
+  let taps = 0, timer;
+  brand.addEventListener("click", (e) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    taps++;
+    clearTimeout(timer);
+    if (taps >= 3) {
+      taps = 0;
+      cloverRain();
+      return;
+    }
+    timer = setTimeout(() => {
+      if (taps > 0 && taps < 3) window.location.href = brand.href;
+      taps = 0;
+    }, 420);
+  });
+});
+
 // ---- "Click me!": 18 clovers burst out, one for each day up to the 18th ----
 const burstButton = document.querySelector("[data-clover-burst]");
 if (burstButton) {
