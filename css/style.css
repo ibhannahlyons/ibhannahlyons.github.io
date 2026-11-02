@@ -1,48 +1,48 @@
-/* Liam & Hannah — velvet plum: blackberry nights, dusty roses, a little opal shimmer */
+/* Liam & Hannah — amethyst dusk: jewel-toned violets, orchids, mirror silver */
 
 :root {
-  --night: #1A0F1F;
-  --aubergine: #2E1838;
-  --plum: #3F1E4A;
-  --berry: #5A2048;
-  --mauve: #A08AAE;
-  --moonstone: #DCD3E3;
-  --mist: #EFE6F0;
-  --pearl: #F5F0F5;
+  --night: #160F26;
+  --aubergine: #2A1A4A;
+  --plum: #3B2266;
+  --berry: #4E1F55;
+  --mauve: #9C8CC4;
+  --moonstone: #D6D8EE;
+  --mist: #ECE8F6;
+  --pearl: #F4F2FA;
   --ember: #B5543C;
-  --rose: #E9A9C0;
-  /* deep plum for links and small text on light backgrounds (passes WCAG AA) */
-  --plum-ink: #6A2C74;
-  --ink: #120A16;
-  /* opal foil (silver with a pink and lavender sheen), used on buttons and the hero names */
-  --foil: linear-gradient(115deg, #A99BB3 0%, #F7F2FA 20%, #EBC9DC 36%, #CFC9EE 52%, #FFFFFF 68%, #E4C3D6 84%, #A99BB3 100%);
+  --rose: #E3A6D8;
+  /* deep violet for links and small text on light backgrounds (passes WCAG AA) */
+  --plum-ink: #5B2E9E;
+  --ink: #0E0919;
+  /* mirror silver with a faint violet edge, used on buttons and the hero names */
+  --foil: linear-gradient(115deg, #8F8CA8 0%, #F5F5FB 22%, #B4B3CC 42%, #FFFFFF 60%, #CFC8EC 76%, #8F8CA8 100%);
 
   --serif-display: "Cormorant Garamond", Georgia, serif;
   --serif-body: "EB Garamond", Georgia, serif;
   --script: "Pinyon Script", cursive;
 
-  /* Theme tokens. Dark (blackberry and plum) is the default;
+  /* Theme tokens. Dark (deep amethyst) is the default;
      [data-theme="light"] below is the lavender-pearl daytime look. */
   --bg: var(--night);
-  --bg-alt: #23142A;
+  --bg-alt: #1D1433;
   --band: var(--aubergine);
-  --band-2: #43183A;
-  --surface: #2A1833;
-  --surface-warm: #3A1A36;
+  --band-2: #3A1846;
+  --surface: #241839;
+  --surface-warm: #33183F;
   --text: var(--pearl);
-  --text-muted: #C4B5C7;
+  --text-muted: #BDB6D3;
   --accent: var(--moonstone);
   --accent-strong: var(--rose);
-  --line: rgba(220, 211, 227, .28);
-  --chip: #34203D;
+  --line: rgba(214, 216, 238, .28);
+  --chip: #2E2150;
   --input-bg: var(--ink);
   --btn-text: var(--night);
   --btn-outline-text: var(--pearl);
   --footer-bg: var(--ink);
-  /* orchid light at the top of the page, a little rose in the corner */
+  /* violet dusk at the top of the page, a little orchid in the corner */
   --glow:
-    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(214, 150, 220, .13), transparent 70%),
-    radial-gradient(ellipse 55% 45% at 100% 100%, rgba(233, 169, 192, .10), transparent 70%);
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(140, 110, 255, .17), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 100% 100%, rgba(227, 166, 216, .11), transparent 70%);
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .38);
 
   --radius: 6px;
@@ -51,26 +51,26 @@
 }
 
 :root[data-theme="light"] {
-  --bg: #F7F2F6;
+  --bg: #F6F4FB;
   --bg-alt: var(--mist);
   --band: var(--plum);
   --band-2: var(--berry);
-  --surface: #FDFAFD;
-  --surface-warm: #F3E2EC;
+  --surface: #FDFCFF;
+  --surface-warm: #EFE4F5;
   --text: var(--night);
-  --text-muted: #5B4763;
+  --text-muted: #54497A;
   --accent: var(--plum-ink);
-  --accent-strong: #9C2F5E;
-  --line: rgba(106, 44, 116, .25);
-  --chip: #EEE3F0;
-  --input-bg: #FDFAFD;
+  --accent-strong: #8E2C7E;
+  --line: rgba(91, 46, 158, .22);
+  --chip: #ECE6F7;
+  --input-bg: #FDFCFF;
   --btn-text: var(--night);
   --btn-outline-text: var(--plum);
   --footer-bg: var(--night);
   --glow:
-    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(214, 150, 220, .16), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(233, 169, 192, .14), transparent 70%);
-  --shadow: 0 1px 2px rgba(26, 15, 31, .06), 0 8px 24px rgba(26, 15, 31, .09);
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(140, 110, 255, .15), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(227, 166, 216, .16), transparent 70%);
+  --shadow: 0 1px 2px rgba(22, 15, 38, .06), 0 8px 24px rgba(22, 15, 38, .09);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -173,7 +173,7 @@ section { padding: 3rem 0; }
 
 .nav-toggle {
   background: none;
-  border: 1px solid rgba(245, 240, 245, .5);
+  border: 1px solid rgba(244, 242, 250, .5);
   color: var(--pearl);
   border-radius: var(--radius);
   padding: .45rem .7rem;
@@ -225,9 +225,9 @@ section { padding: 3rem 0; }
   height: 1.9rem;
   padding: 0;
   flex: none;
-  border: 1px solid rgba(245, 240, 245, .5);
+  border: 1px solid rgba(244, 242, 250, .5);
   border-radius: 999px;
-  background: rgba(18, 10, 22, .45);
+  background: rgba(14, 9, 25, .45);
   cursor: pointer;
   transition: background .4s ease, border-color .3s ease;
 }
@@ -255,7 +255,7 @@ section { padding: 3rem 0; }
 .tt-star { fill: var(--plum-ink); }
 .tt-sun { fill: none; stroke: var(--ember); stroke-width: 2; stroke-linecap: round; opacity: 0; transform: translate(-50%, -50%) rotate(-90deg); }
 .tt-sun circle { fill: var(--ember); stroke: none; }
-:root[data-theme="light"] .theme-toggle { background: rgba(220, 211, 227, .35); }
+:root[data-theme="light"] .theme-toggle { background: rgba(214, 216, 238, .35); }
 :root[data-theme="light"] .tt-knob { left: calc(100% - 1.6rem); }
 :root[data-theme="light"] .tt-star { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
 :root[data-theme="light"] .tt-sun { opacity: 1; transform: translate(-50%, -50%); }
@@ -303,7 +303,7 @@ section { padding: 3rem 0; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(26, 15, 31, .55) 0%, rgba(26, 15, 31, .4) 45%, rgba(26, 15, 31, .7) 100%);
+    linear-gradient(180deg, rgba(22, 15, 38, .55) 0%, rgba(22, 15, 38, .4) 45%, rgba(22, 15, 38, .7) 100%);
 }
 .hero-inner { position: relative; z-index: 1; padding: 6rem var(--gutter) 4rem; }
 .hero .eyebrow { color: var(--moonstone); }
@@ -313,13 +313,13 @@ section { padding: 3rem 0; }
   font-weight: 400;
   line-height: 1.05;
   margin: .25rem 0 1.25rem;
-  /* opal-foil lettering */
+  /* mirror-silver lettering */
   background: var(--foil);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 2px 14px rgba(18, 10, 22, .55));
+  filter: drop-shadow(0 2px 14px rgba(14, 9, 25, .55));
   padding: 0 .15em; /* keeps script swashes inside the clipped area */
 }
 .hero h1 .amp { display: block; font-size: .55em; margin: .1em 0; }
@@ -347,9 +347,9 @@ section { padding: 3rem 0; }
 .cd-unit {
   min-width: 4.3rem;
   padding: .55rem .35rem .5rem;
-  border: 1px solid rgba(245, 240, 245, .35);
+  border: 1px solid rgba(244, 242, 250, .35);
   border-radius: var(--radius);
-  background: rgba(18, 10, 22, .38);
+  background: rgba(14, 9, 25, .38);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
@@ -381,7 +381,7 @@ section { padding: 3rem 0; }
   height: var(--size, 1.4rem);
   pointer-events: none;
   color: var(--tint, var(--rose));
-  filter: drop-shadow(0 1px 3px rgba(18, 10, 22, .6)); /* stands out over the photo */
+  filter: drop-shadow(0 1px 3px rgba(14, 9, 25, .6)); /* stands out over the photo */
   animation: clover-burst 1.6s cubic-bezier(.15, .7, .3, 1) forwards;
 }
 @keyframes clover-burst {
@@ -421,7 +421,7 @@ section { padding: 3rem 0; }
 .banner::after {
   content: "";
   position: absolute; inset: 0;
-  background: rgba(26, 15, 31, .5);
+  background: rgba(22, 15, 38, .5);
 }
 .banner-inner { position: relative; z-index: 1; padding: 5rem var(--gutter) 2.25rem; }
 .banner h1 { font-size: clamp(2.6rem, 9vw, 4rem); font-weight: 300; letter-spacing: .04em; }
@@ -451,7 +451,7 @@ section { padding: 3rem 0; }
   background-size: 220% 100%;
   background-position: 0% 0;
   color: var(--btn-text);
-  border: 1px solid #C7B8D2;
+  border: 1px solid #B9B6D6;
   border-radius: var(--radius);
   padding: .7rem 1.6rem;
   font-family: var(--serif-display);
@@ -462,8 +462,8 @@ section { padding: 3rem 0; }
   text-decoration: none;
   transition: background .3s ease, border-color .3s ease, color .3s ease;
 }
-/* the opal catches the light as you hover */
-.btn:hover, .btn:focus-visible { background-position: 100% 0; color: var(--btn-text); box-shadow: 0 0 18px rgba(220, 211, 227, .35); }
+/* the silver catches the light as you hover */
+.btn:hover, .btn:focus-visible { background-position: 100% 0; color: var(--btn-text); box-shadow: 0 0 18px rgba(214, 216, 238, .35); }
 .btn-outline {
   background: transparent;
   color: var(--btn-outline-text);
@@ -500,7 +500,7 @@ section { padding: 3rem 0; }
 .card-body .btn { margin-top: auto; align-self: flex-start; }
 
 .link-cards a.card { text-decoration: none; color: var(--text); transition: transform .4s ease, box-shadow .4s ease; }
-.link-cards a.card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(26, 15, 31,.08), 0 14px 32px rgba(26, 15, 31,.12); }
+.link-cards a.card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(22, 15, 38,.08), 0 14px 32px rgba(22, 15, 38,.12); }
 .link-cards .card-body { padding-bottom: 1.3rem; }
 /* five home cards: 2 + 2 + 1 wide on tablets, 3 + 2 wider on computers (no lonely last card) */
 @media (min-width: 37rem) and (max-width: 51.99rem) {
@@ -619,7 +619,7 @@ section { padding: 3rem 0; }
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(26, 15, 31, .96);
+  background: rgba(22, 15, 38, .96);
   display: none;
   align-items: center;
   justify-content: center;
@@ -864,7 +864,7 @@ section { padding: 3rem 0; }
 }
 .lucky:hover, .lucky:focus-visible { opacity: .9; transform: rotate(-15deg) scale(1.1); }
 .lucky-svg { width: 100%; height: 100%; display: block; }
-.lucky.found { opacity: .95; color: var(--moonstone); filter: drop-shadow(0 0 5px rgba(220, 211, 227, .55)); }
+.lucky.found { opacity: .95; color: var(--moonstone); filter: drop-shadow(0 0 5px rgba(214, 216, 238, .55)); }
 .lucky.just-found { animation: lucky-pop .8s cubic-bezier(.3, 1.6, .5, 1); }
 @keyframes lucky-pop {
   0%   { transform: scale(1) rotate(0); }
@@ -903,9 +903,9 @@ section { padding: 3rem 0; }
   z-index: 320;
   max-width: calc(100% - 2rem);
   padding: .65rem 1.2rem;
-  border: 1px solid rgba(245, 240, 245, .3);
+  border: 1px solid rgba(244, 242, 250, .3);
   border-radius: 999px;
-  background: rgba(18, 10, 22, .85);
+  background: rgba(14, 9, 25, .85);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: var(--pearl);
@@ -957,7 +957,7 @@ section { padding: 3rem 0; }
 }
 .scroll-vine.bloom .vine-clover {
   color: var(--moonstone);
-  filter: drop-shadow(0 0 6px rgba(220, 211, 227, .8));
+  filter: drop-shadow(0 0 6px rgba(214, 216, 238, .8));
   animation: vine-bloom .9s cubic-bezier(.3, 1.6, .5, 1) forwards;
 }
 @keyframes vine-bloom {
@@ -1017,7 +1017,7 @@ section { padding: 3rem 0; }
   display: block;
   width: var(--size);
   height: var(--size);
-  filter: drop-shadow(0 1px 2px rgba(18, 10, 22, .45));
+  filter: drop-shadow(0 1px 2px rgba(14, 9, 25, .45));
   animation: rain-sway var(--sway-dur) ease-in-out infinite alternate;
 }
 @keyframes rain-fall {
@@ -1132,8 +1132,8 @@ section { padding: 3rem 0; }
 .cal-toggle:active { transform: scale(.96); }
 /* over the hero photo: same frosted pill as "Click me!" */
 .cal-menu.on-photo .cal-toggle {
-  border-color: rgba(245, 240, 245, .45);
-  background: rgba(18, 10, 22, .38);
+  border-color: rgba(244, 242, 250, .45);
+  background: rgba(14, 9, 25, .38);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   color: var(--pearl);
@@ -1252,8 +1252,8 @@ section { padding: 3rem 0; }
   max-width: 15rem;
   margin: 0;
   padding: .55rem .55rem 0;
-  background: #F8F4F7;
-  border: 1px solid rgba(26, 15, 31, .08);
+  background: #F7F6FB;
+  border: 1px solid rgba(22, 15, 38, .08);
   box-shadow: 0 2px 4px rgba(0, 0, 0, .18), 0 12px 28px rgba(0, 0, 0, .25);
   transform: rotate(var(--tilt, -2deg));
   transition: transform .5s cubic-bezier(.3, 1.5, .5, 1), box-shadow .4s ease;
@@ -1267,10 +1267,10 @@ section { padding: 3rem 0; }
   width: 4.6rem;
   height: 1.4rem;
   transform: translateX(-50%) rotate(-4deg);
-  background: rgba(233, 169, 192, .62);
+  background: rgba(227, 166, 216, .62);
   box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
 }
-.party-member:nth-child(even) .polaroid::before { background: rgba(220, 211, 227, .7); transform: translateX(-50%) rotate(5deg); }
+.party-member:nth-child(even) .polaroid::before { background: rgba(214, 216, 238, .7); transform: translateX(-50%) rotate(5deg); }
 .polaroid:hover { transform: rotate(0) scale(1.04); box-shadow: 0 4px 8px rgba(0, 0, 0, .2), 0 18px 36px rgba(0, 0, 0, .3); }
 .polaroid.wiggle { animation: wiggle .7s ease; }
 @keyframes wiggle {
@@ -1398,7 +1398,7 @@ a[href^="tel:"] { white-space: nowrap; }
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(245, 240, 245, .45) 0%, rgba(233, 169, 192, .25) 45%, transparent 70%);
+  background: radial-gradient(circle, rgba(244, 242, 250, .45) 0%, rgba(227, 166, 216, .25) 45%, transparent 70%);
   transform: translate(-50%, -50%) scale(0);
   animation: ripple .7s ease-out forwards;
 }
