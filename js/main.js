@@ -284,14 +284,6 @@ if (hero && !prefersCalm()) {
       b.className = `bulb ${TINTS[(i + (side === "right" ? 3 : 0)) % TINTS.length]}`.trim();
       b.style.left = `${x}%`;
       b.style.top = `${y}%`;
-      b.style.setProperty("--tw", `${1.1 + Math.random() * 1.8}s`);
-      b.style.setProperty("--td", `${-Math.random() * 3}s`);
-      // every few bulbs throws off a little star-shaped glint now and then
-      if (Math.random() < 0.35) {
-        b.classList.add("spark");
-        b.style.setProperty("--sd", `${3 + Math.random() * 4}s`);
-        b.style.setProperty("--sdl", `${-Math.random() * 7}s`);
-      }
       b.dataset.at = y / 100;
       strand.appendChild(b);
       bulbs.push(b);

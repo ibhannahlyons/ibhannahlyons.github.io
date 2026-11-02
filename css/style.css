@@ -974,45 +974,14 @@ section { padding: 3rem 0; }
 .bulb.on {
   background: var(--glow-c);
   box-shadow: 0 0 4px 1px var(--glow-c), 0 0 12px 3px var(--halo);
-  animation: twinkle var(--tw, 3s) ease-in-out var(--td, 0s) infinite;
 }
 :root[data-theme="light"] .bulb { background: rgba(91, 46, 158, .18); }
 :root[data-theme="light"] .bulb.on { background: var(--glow-c); box-shadow: 0 0 3px 1px var(--halo), 0 0 10px 3px var(--halo); }
-@keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  30% { opacity: .3; transform: scale(.8); }
-  45% { opacity: 1; transform: scale(1.3); filter: brightness(1.35); }
-  60% { opacity: .85; transform: scale(1); }
-}
-/* the glint: a tiny four-point star that flashes over some bulbs */
-.bulb.spark::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  margin: -7.5px 0 0 -7.5px;
-  background:
-    linear-gradient(var(--glow-c), var(--glow-c)) center / 1px 100% no-repeat,
-    linear-gradient(var(--glow-c), var(--glow-c)) center / 100% 1px no-repeat;
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(0);
-}
-.bulb.spark.on::after { animation: glint var(--sd, 5s) ease-in-out var(--sdl, 0s) infinite; }
-@keyframes glint {
-  0%, 84%, 100% { opacity: 0; transform: scale(0) rotate(0); }
-  91% { opacity: 1; transform: scale(1) rotate(45deg); }
-}
 @media (max-width: 40rem) {
   .fairy-lights { width: 10px; }
   .fairy-lights.left { left: 1px; }
   .fairy-lights.right { right: 1px; }
   .bulb { width: 4px; height: 6px; margin: -3px 0 0 -2px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .bulb.on, .bulb.spark.on::after { animation: none; }
 }
 
 /* ---------- candles above the footer (lit while they're on screen) ---------- */
