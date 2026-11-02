@@ -25,6 +25,44 @@
     </g>
   </symbol>
 
+  <!-- Last day of winter, first of spring: snow drifts in on the left, leaves sprout on the right,
+       with a snowflake and a blossom on either side of a tiny clover -->
+  <g id="sf-arm" fill="none" stroke-width=".9" stroke-linecap="round">
+    <path d="M0 -1.6V-8.5M0 -4.6L-2 -6.4M0 -4.6L2 -6.4M0 -6.9L-1.2 -8M0 -6.9L1.2 -8" />
+  </g>
+  <path id="sf-petal" fill="none" stroke-width=".9" stroke-linejoin="round"
+    d="M0 -1.4C-2.7 -3.1 -3 -6.6 -1.1 -7.8L0 -6.8L1.1 -7.8C3 -6.6 2.7 -3.1 0 -1.4Z" />
+  <path id="sf-leaf" fill="none" stroke-width=".8" stroke-linejoin="round" d="M0 0C1 -2.2 3 -3 5 -2.6C4.2 -.8 2.4 .2 0 0Z" />
+  <symbol id="spring" viewBox="0 0 200 40">
+    <g stroke="currentColor">
+      <path d="M4 20H58M86 20H92M108 20H114M142 20H196" fill="none" stroke-width="1" stroke-linecap="round" />
+      <!-- snowflake -->
+      <g transform="translate(72 20)">
+        <use href="#sf-arm" /><use href="#sf-arm" transform="rotate(60)" /><use href="#sf-arm" transform="rotate(120)" />
+        <use href="#sf-arm" transform="rotate(180)" /><use href="#sf-arm" transform="rotate(240)" /><use href="#sf-arm" transform="rotate(300)" />
+        <circle r="1.2" fill="none" stroke-width=".8" />
+      </g>
+      <!-- blossom -->
+      <g transform="translate(128 20)">
+        <use href="#sf-petal" /><use href="#sf-petal" transform="rotate(72)" /><use href="#sf-petal" transform="rotate(144)" />
+        <use href="#sf-petal" transform="rotate(216)" /><use href="#sf-petal" transform="rotate(288)" />
+      </g>
+      <!-- tiny clover in the middle -->
+      <g fill="none" stroke-width="2.6" stroke-linejoin="round" transform="translate(100 20) scale(.32) translate(-20 -18)">
+        <use href="#clover-leaf" /><use href="#clover-leaf" transform="rotate(90 20 18)" />
+        <use href="#clover-leaf" transform="rotate(180 20 18)" /><use href="#clover-leaf" transform="rotate(270 20 18)" />
+      </g>
+      <!-- sprouting leaves -->
+      <use href="#sf-leaf" transform="translate(150 20) rotate(-25)" />
+      <use href="#sf-leaf" transform="translate(166 20) rotate(205) scale(.85)" />
+    </g>
+    <g fill="currentColor">
+      <circle cx="128" cy="20" r="1.1" />
+      <!-- drifting snow -->
+      <circle cx="46" cy="14" r=".8" /><circle cx="36" cy="25" r=".6" /><circle cx="24" cy="15" r=".5" />
+    </g>
+  </symbol>
+
   <!-- One heart-shaped leaf pointing up from the center (20,18), repeated four times -->
   <g id="clover-leaves" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
     <path id="clover-leaf" d="M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z" />
