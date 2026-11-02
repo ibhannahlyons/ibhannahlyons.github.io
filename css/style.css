@@ -443,6 +443,27 @@ section { padding: 3rem 0; }
 }
 .section-dark .flourish, .section-pine .flourish { color: var(--moonstone); opacity: .8; }
 
+/* the registry's d20: click to roll (it always lands on 18, the wedding date) */
+.d20 {
+  display: block;
+  margin: 0 auto 1.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.d20 .flourish { margin: 0; transition: opacity .3s ease; }
+.d20:hover .flourish, .d20:focus-visible .flourish { opacity: 1; }
+.d20-rules { fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; }
+.d20-die {
+  transform-box: view-box;
+  transform-origin: 100px 20px;
+  transition: transform 1s cubic-bezier(.2, .8, .3, 1);
+}
+.d20-num { fill: currentColor; font-family: var(--serif-display); font-size: 7px; font-weight: 600; }
+.d20-toast svg { display: inline-block; width: 1.1em; height: 1.1em; margin: 0 .2em; vertical-align: -.2em; color: var(--rose); }
+
 /* ---------- buttons ---------- */
 
 .btn {

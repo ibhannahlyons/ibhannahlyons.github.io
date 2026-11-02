@@ -156,6 +156,46 @@ function burstClovers(x, y, count = 18) {
   }
 }
 
+// ---- d20 Easter egg (registry): it always rolls an 18, the wedding date ----
+let d20Toast, d20Timer;
+function sayD20() {
+  if (!d20Toast) {
+    d20Toast = document.createElement("div");
+    d20Toast.className = "lucky-toast d20-toast";
+    d20Toast.setAttribute("role", "status");
+    document.body.appendChild(d20Toast);
+  }
+  d20Toast.innerHTML = `~ Natural 18 ${cloverSvg()} See you March 18! ~`;
+  requestAnimationFrame(() => d20Toast.classList.add("show"));
+  clearTimeout(d20Timer);
+  d20Timer = setTimeout(() => d20Toast.classList.remove("show"), 3600);
+}
+document.addEventListener("click", (e) => {
+  const die = e.target.closest(".d20");
+  if (!die || die.classList.contains("rolling")) return;
+  die.classList.add("rolling");
+  const spinner = die.querySelector(".d20-die");
+  const num = die.querySelector(".d20-num");
+  const land = () => {
+    num.textContent = "18";
+    die.classList.remove("rolling");
+    sayD20();
+    if (!prefersCalm()) {
+      const box = spinner.getBoundingClientRect();
+      burstClovers(box.left + box.width / 2, box.top + box.height / 2, 10);
+    }
+  };
+  if (prefersCalm()) return land();
+  const turns = (Number(die.dataset.turns) || 0) + 2;
+  die.dataset.turns = turns;
+  spinner.style.transform = `rotate(${turns * 360}deg)`;
+  let ticks = 0;
+  const flicker = setInterval(() => {
+    num.textContent = 1 + Math.floor(Math.random() * 20);
+    if (++ticks >= 14) { clearInterval(flicker); land(); }
+  }, 65);
+});
+
 // a gentle rain of clovers drifting down the whole screen
 function cloverRain(count = 30) {
   for (let i = 0; i < count; i++) {
