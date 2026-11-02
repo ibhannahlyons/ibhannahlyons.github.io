@@ -169,28 +169,26 @@ document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
   });
 });
 
-// ---- a secret: tap "4:20" for a soft wisp of smoke ----
-// A few puffs leave one after another, each swaying side to side as it rises,
-// so together they trace a slow serpentine ribbon.
+// ---- a secret: tap "4:20" for a little cartoon curl of smoke ----
+const SMOKE_SVG =
+  '<svg viewBox="0 0 44 128" aria-hidden="true">' +
+  // one thin line rising in lazy S-curves, finishing in a little curl
+  '<path class="line" pathLength="100" d="M22 128 C 12 116, 32 104, 22 92 S 10 70, 22 58 S 35 38, 24 26 C 18 19, 21 11, 27 12 C 32 13, 31 20, 26 20"/>' +
+  '<circle class="ring one" cx="28" cy="6" r="3.4"/>' +
+  '<circle class="ring two" cx="19" cy="-4" r="2.6"/>' +
+  "</svg>";
 document.querySelectorAll("[data-puff]").forEach((spot) => {
   spot.addEventListener("click", () => {
     const box = spot.getBoundingClientRect();
-    const x = box.left + box.width / 2, y = box.top + box.height / 2 - 4;
-    const count = 7;
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement("span");
-      p.className = "smoke-puff";
-      p.style.left = `${x + (Math.random() - 0.5) * 6}px`;
-      p.style.top = `${y}px`;
-      p.style.setProperty("--size", `${12 + Math.random() * 7}px`);
-      p.style.setProperty("--sway", `${(i % 2 ? -1 : 1) * (10 + Math.random() * 6)}px`);
-      p.style.setProperty("--rise", `${110 + Math.random() * 40}px`);
-      p.style.setProperty("--dur", `${(3.8 + Math.random() * 0.8).toFixed(2)}s`);
-      p.style.animationDelay = `${i * 280}ms`;
-      document.body.appendChild(p);
-      p.addEventListener("animationend", () => p.remove());
-      setTimeout(() => p.remove(), 7500); // backup if animationend never fires
-    }
+    const trail = document.createElement("span");
+    trail.className = "smoke-trail";
+    trail.innerHTML = SMOKE_SVG;
+    trail.style.left = `${box.left + box.width / 2}px`;
+    trail.style.top = `${box.top + 2}px`;
+    trail.style.color = getComputedStyle(spot).color; // drawn in the text's own color
+    document.body.appendChild(trail);
+    trail.addEventListener("animationend", (e) => { if (e.target === trail) trail.remove(); });
+    setTimeout(() => trail.remove(), 6000); // backup if animationend never fires
   });
 });
 

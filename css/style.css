@@ -847,30 +847,62 @@ section { padding: 3rem 0; }
 /* ---------- a secret: tap "4:20" on the Details page ---------- */
 
 .secret-puff { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.smoke-puff {
+/* retro-cartoon cigarette smoke: one thin line that draws itself up in lazy
+   S-curves, sways in still air, pops two little rings, then fades */
+.smoke-trail {
   position: fixed;
   z-index: 300;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
+  width: 44px;
+  height: 128px;
   pointer-events: none;
-  background: radial-gradient(circle at 45% 45%, rgba(236, 230, 240, .7), rgba(201, 174, 203, .32) 55%, rgba(201, 174, 203, 0) 72%);
-  opacity: 0;
-  /* ease-in-out between every step = a soft, swaying serpentine rise */
-  animation: smoke-wisp var(--dur, 4.2s) ease-in-out forwards;
+  transform: translate(-50%, -100%);
+  animation: trail-fade 4.6s ease forwards;
 }
-@keyframes smoke-wisp {
-  0%   { transform: translate(-50%, -50%) scale(.45); opacity: 0; filter: blur(1px); }
-  12%  { opacity: .65; }
-  25%  { transform: translate(calc(-50% + var(--sway)), calc(-50% - var(--rise) * .22)) scale(.9); }
-  45%  { transform: translate(calc(-50% - var(--sway)), calc(-50% - var(--rise) * .45)) scale(1.3); opacity: .5; }
-  65%  { transform: translate(calc(-50% + var(--sway) * .7), calc(-50% - var(--rise) * .68)) scale(1.75); filter: blur(4px); }
-  85%  { transform: translate(calc(-50% - var(--sway) * .45), calc(-50% - var(--rise) * .88)) scale(2.15); opacity: .18; }
-  100% { transform: translate(-50%, calc(-50% - var(--rise))) scale(2.5); opacity: 0; filter: blur(8px); }
+.smoke-trail svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 100%;
+  animation: trail-sway 2.8s ease-in-out infinite alternate;
+}
+.smoke-trail .line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: trail-draw 1.6s cubic-bezier(.35, 0, .3, 1) forwards;
+}
+.smoke-trail .ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trail-ring 2.4s ease-out forwards;
+}
+.smoke-trail .ring.two { animation-delay: 1.85s; }
+.smoke-trail .ring.one { animation-delay: 1.45s; }
+@keyframes trail-draw { to { stroke-dashoffset: 0; } }
+@keyframes trail-sway { from { transform: skewX(-5deg); } to { transform: skewX(5deg); } }
+@keyframes trail-ring {
+  0%   { opacity: 0; transform: translateY(0) scale(.5); }
+  20%  { opacity: .9; }
+  100% { opacity: 0; transform: translateY(-22px) scale(1.25); }
+}
+@keyframes trail-fade {
+  0%   { opacity: 0; }
+  6%   { opacity: .95; }
+  62%  { opacity: .95; transform: translate(-50%, -100%); }
+  100% { opacity: 0; transform: translate(-50%, calc(-100% - 16px)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .smoke-puff { animation: smoke-fade 2s ease forwards; transform: translate(-50%, -50%); }
-  @keyframes smoke-fade { 0%, 100% { opacity: 0; } 40% { opacity: .5; } }
+  .smoke-trail svg, .smoke-trail .ring { animation: none; }
+  .smoke-trail .line { animation: none; stroke-dashoffset: 0; }
 }
 
 /* ---------- add to calendar ---------- */
