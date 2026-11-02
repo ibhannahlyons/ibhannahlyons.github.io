@@ -863,6 +863,71 @@ section { padding: 3rem 0; }
 .place-link::after { content: " \2192"; }
 .place-link:hover { color: var(--accent-strong); }
 
+/* ---------- lucky clover hunt ---------- */
+
+.lucky {
+  display: inline-grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: .3rem;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  opacity: .32;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity .4s ease, color .4s ease, transform .4s ease;
+}
+.lucky:hover, .lucky:focus-visible { opacity: .9; transform: rotate(-15deg) scale(1.1); }
+.lucky-svg { width: 100%; height: 100%; display: block; }
+.lucky.found { opacity: .95; color: var(--rose); filter: drop-shadow(0 0 5px rgba(217, 188, 175, .55)); }
+.lucky.just-found { animation: lucky-pop .8s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes lucky-pop {
+  0%   { transform: scale(1) rotate(0); }
+  40%  { transform: scale(1.8) rotate(200deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+.lucky-inline { margin-left: .3rem; vertical-align: middle; width: 1.6rem; height: 1.6rem; }
+.lucky-corner-br, .lucky-corner-bl, .lucky-corner-tr { position: absolute; z-index: 3; }
+.lucky-corner-br { right: .9rem; bottom: .9rem; }
+.lucky-corner-bl { left: .9rem; bottom: .9rem; }
+.lucky-corner-tr { right: .9rem; top: .9rem; }
+
+.lucky-hint {
+  margin: 1rem 0 0 !important;
+  font-style: italic;
+  font-size: .92rem !important;
+  color: var(--mist);
+  opacity: .75;
+}
+.lucky-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 320;
+  max-width: calc(100% - 2rem);
+  padding: .65rem 1.2rem;
+  border: 1px solid rgba(243, 238, 232, .3);
+  border-radius: 999px;
+  background: rgba(20, 27, 38, .85);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: var(--parchment);
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.lucky-toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) {
+  .lucky, .lucky-toast { transition: none; }
+  .lucky.just-found { animation: none; }
+}
+
 /* ---------- a vine that grows along the top as you scroll ---------- */
 
 .scroll-vine {

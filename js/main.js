@@ -244,6 +244,80 @@ if (hero && !prefersCalm()) {
   grow();
 })();
 
+// ---- lucky clover hunt: one hidden clover on each page ----
+(function () {
+  const heading = (text) => [...document.querySelectorAll("h2")].find((h) => h.textContent.trim() === text);
+  // page -> where its clover hides ("inline" sits after a heading; corners sit inside a section)
+  const SPOTS = {
+    home:     { el: () => document.querySelector(".hero"), place: "corner-br" },
+    story:    { el: () => heading("Through the years"), place: "inline" },
+    party:    { el: () => heading("Team Liam"), place: "inline" },
+    details:  { el: () => document.getElementById("schedule"), place: "corner-bl" },
+    travel:   { el: () => document.getElementById("things-to-do"), place: "corner-tr" },
+    registry: { el: () => document.querySelector(".fine-print h3"), place: "inline" },
+  };
+  const TOTAL = Object.keys(SPOTS).length;
+  const file = location.pathname.split("/").pop().replace(".html", "") || "index";
+  const page = file === "index" ? "home" : file;
+  const spot = SPOTS[page];
+  const target = spot && spot.el();
+  if (!target) return;
+
+  const load = () => { try { return JSON.parse(localStorage.getItem("lucky-clovers")) || []; } catch (e) { return []; } };
+  const save = (list) => { try { localStorage.setItem("lucky-clovers", JSON.stringify(list)); } catch (e) {} };
+  let found = load().filter((p) => p in SPOTS);
+
+  const toast = document.createElement("div");
+  toast.className = "lucky-toast";
+  toast.setAttribute("role", "status");
+  document.body.appendChild(toast);
+  let toastTimer;
+  const say = (msg) => {
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 3600);
+  };
+
+  const hint = document.createElement("p");
+  hint.className = "lucky-hint";
+  const footer = document.querySelector(".site-footer");
+  const updateHint = () => {
+    hint.textContent = found.length >= TOTAL
+      ? `You found all ${TOTAL} lucky clovers. Lucky you!`
+      : `psst… a lucky clover is hidden on every page (${found.length} of ${TOTAL} found)`;
+  };
+  if (footer) { updateHint(); footer.appendChild(hint); }
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = `lucky lucky-${spot.place}`;
+  btn.setAttribute("aria-label", "A lucky clover");
+  btn.appendChild(makeClover("lucky-svg", 2.4));
+  if (found.includes(page)) btn.classList.add("found");
+  if (spot.place !== "inline" && getComputedStyle(target).position === "static") target.style.position = "relative";
+  target.appendChild(btn);
+
+  btn.addEventListener("click", () => {
+    const box = btn.getBoundingClientRect();
+    if (found.includes(page)) {
+      say(`You already found this one! (${found.length} of ${TOTAL})`);
+      return;
+    }
+    found = [...found, page];
+    save(found);
+    btn.classList.add("found", "just-found");
+    if (!prefersCalm()) burstClovers(box.left + box.width / 2, box.top + box.height / 2, 8);
+    updateHint();
+    if (found.length >= TOTAL) {
+      say(`You found all ${TOTAL} lucky clovers! Lucky you 🍀`);
+      cloverRain(40);
+    } else {
+      say(`🍀 Lucky clover found! ${found.length} of ${TOTAL}`);
+    }
+  });
+})();
+
 // ---- "Click me!": 18 clovers burst out, one for each day up to the 18th ----
 const burstButton = document.querySelector("[data-clover-burst]");
 if (burstButton) {
