@@ -117,7 +117,7 @@ document.addEventListener("pointerdown", (e) => {
 
 // ---- shared clover drawing ----
 // Drawn inline: a <use> pointing at the sprite file doesn't render when added by script.
-const CLOVER_TINTS = ["var(--lilac)", "var(--rose)", "var(--parchment)", "var(--sage)"];
+const CLOVER_TINTS = ["var(--blush)", "var(--gold)", "var(--ivory)", "var(--sage)"];
 const CLOVER_LEAF = "M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z";
 function cloverSvg(stroke = 2.4) {
   return '<svg viewBox="0 0 40 40" aria-hidden="true">' +
