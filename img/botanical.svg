@@ -63,6 +63,26 @@
     </g>
   </symbol>
 
+  <!-- Crossed skis with poles -->
+  <symbol id="skis" viewBox="0 0 200 40">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20H74M126 20H196" stroke-width="1" />
+      <!-- poles, grips and baskets -->
+      <path d="M93 38L106.5 3M107 38L93.5 3" stroke-width=".9" />
+      <path d="M105.4 5.5L107.6 1.2M94.6 5.5L92.4 1.2" stroke-width="2.2" />
+      <circle cx="94.2" cy="34.8" r="2.3" stroke-width=".8" />
+      <circle cx="105.8" cy="34.8" r="2.3" stroke-width=".8" />
+      <!-- skis with upturned tips -->
+      <path d="M80 37L116 9.5Q120.5 6 119 3" stroke-width="2.6" />
+      <path d="M120 37L84 9.5Q79.5 6 81 3" stroke-width="2.6" />
+    </g>
+    <!-- bindings -->
+    <g fill="currentColor">
+      <rect x="-2.6" y="-1.4" width="5.2" height="2.8" rx=".6" transform="translate(91 28.6) rotate(-37)" />
+      <rect x="-2.6" y="-1.4" width="5.2" height="2.8" rx=".6" transform="translate(109 28.6) rotate(37)" />
+    </g>
+  </symbol>
+
   <!-- One heart-shaped leaf pointing up from the center (20,18), repeated four times -->
   <g id="clover-leaves" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
     <path id="clover-leaf" d="M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z" />
