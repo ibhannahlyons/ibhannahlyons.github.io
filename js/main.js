@@ -169,6 +169,29 @@ document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
   });
 });
 
+// ---- a secret: tap "4:20" for a little puff of smoke ----
+document.querySelectorAll("[data-puff]").forEach((spot) => {
+  spot.addEventListener("click", () => {
+    const box = spot.getBoundingClientRect();
+    const x = box.left + box.width / 2, y = box.top + box.height / 2;
+    for (let i = 0; i < 11; i++) {
+      const p = document.createElement("span");
+      p.className = "smoke-puff";
+      p.style.left = `${x + (Math.random() - 0.5) * 16}px`;
+      p.style.top = `${y + (Math.random() - 0.5) * 8}px`;
+      p.style.setProperty("--size", `${14 + Math.random() * 18}px`);
+      p.style.setProperty("--dx", `${(Math.random() - 0.5) * 70}px`);
+      p.style.setProperty("--dy", `${-(45 + Math.random() * 75)}px`);
+      p.style.setProperty("--grow", (1.8 + Math.random() * 1.4).toFixed(2));
+      p.style.setProperty("--dur", `${(1.6 + Math.random() * 0.8).toFixed(2)}s`);
+      p.style.animationDelay = `${i * 45}ms`;
+      document.body.appendChild(p);
+      p.addEventListener("animationend", () => p.remove());
+      setTimeout(() => p.remove(), 3200); // backup if animationend never fires
+    }
+  });
+});
+
 // ---- galleries + lightbox ----
 // Each [data-gallery="name"] loads data/name.json and photos from img/name/.
 // A gallery with no photos shows its [data-empty] message instead.

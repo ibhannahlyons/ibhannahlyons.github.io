@@ -844,6 +844,29 @@ section { padding: 3rem 0; }
 .gate-row input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .gate-msg { min-height: 1.5em; margin-top: .75rem; font-size: 1rem; color: var(--accent-strong); }
 
+/* ---------- a secret: tap "4:20" on the Details page ---------- */
+
+.secret-puff { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.smoke-puff {
+  position: fixed;
+  z-index: 300;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 40% 40%, rgba(236, 230, 240, .85), rgba(201, 174, 203, .45) 55%, rgba(201, 174, 203, 0) 72%);
+  animation: smoke-puff var(--dur, 1.9s) cubic-bezier(.2, .6, .35, 1) forwards;
+}
+@keyframes smoke-puff {
+  0%   { transform: translate(-50%, -50%) scale(.35); opacity: 0; filter: blur(1px); }
+  15%  { opacity: .9; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(var(--grow, 2.2)); opacity: 0; filter: blur(7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .smoke-puff { animation: smoke-fade 1.4s ease forwards; transform: translate(-50%, -50%); }
+  @keyframes smoke-fade { 0%, 100% { opacity: 0; } 30% { opacity: .7; } }
+}
+
 /* ---------- add to calendar ---------- */
 
 .hero-actions {
