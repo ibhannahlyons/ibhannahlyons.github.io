@@ -21,9 +21,9 @@
         <use href="#sf-petal" /><use href="#sf-petal" transform="rotate(72)" /><use href="#sf-petal" transform="rotate(144)" />
         <use href="#sf-petal" transform="rotate(216)" /><use href="#sf-petal" transform="rotate(288)" />
       </g>
-      <!-- a little squiggle with a loop, carrying winter over into spring -->
+      <!-- one little loop, carrying winter over into spring -->
       <path fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-        d="M82 20C86 20 88 16.5 91 16.5S94.5 22.5 98 22.5C101 22.5 102.5 15 100 14C97.5 13 97 17.5 100.5 19.5C103.5 21.2 106 20 109 18.5S114 18 118 20" />
+        d="M82 20C92 20 95 19 98.5 15.5C101 13 101.5 10.5 100 10.5C98.5 10.5 99 13 101.5 15.5C105 19 108 20 118 20" />
       <!-- sprouting leaves -->
       <use href="#sf-leaf" transform="translate(150 20) rotate(-25)" />
       <use href="#sf-leaf" transform="translate(166 20) rotate(205) scale(.85)" />
