@@ -283,11 +283,24 @@ if (hero && !prefersCalm()) {
   hint.className = "lucky-hint";
   const footer = document.querySelector(".site-footer");
   const updateHint = () => {
-    hint.textContent = found.length >= TOTAL
-      ? `You found all ${TOTAL} lucky clovers. Lucky you!`
-      : `psst… a lucky clover is hidden on every page (${found.length} of ${TOTAL} found)`;
+    if (found.length >= TOTAL) {
+      hint.textContent = `You found all ${TOTAL} lucky clovers. Lucky you! `;
+      const again = document.createElement("button");
+      again.type = "button";
+      again.className = "lucky-reset";
+      again.textContent = "Play again?";
+      again.addEventListener("click", () => {
+        found = [];
+        save(found);
+        btn.classList.remove("found", "just-found");
+        updateHint();
+        say("The clovers are hidden again. Happy hunting! 🍀");
+      });
+      hint.appendChild(again);
+    } else {
+      hint.textContent = `psst… a lucky clover is hidden on every page (${found.length} of ${TOTAL} found)`;
+    }
   };
-  if (footer) { updateHint(); footer.appendChild(hint); }
 
   const btn = document.createElement("button");
   btn.type = "button";
@@ -297,6 +310,7 @@ if (hero && !prefersCalm()) {
   if (found.includes(page)) btn.classList.add("found");
   if (spot.place !== "inline" && getComputedStyle(target).position === "static") target.style.position = "relative";
   target.appendChild(btn);
+  if (footer) { updateHint(); footer.appendChild(hint); }
 
   btn.addEventListener("click", () => {
     const box = btn.getBoundingClientRect();

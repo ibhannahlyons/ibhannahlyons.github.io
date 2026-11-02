@@ -901,6 +901,18 @@ section { padding: 3rem 0; }
   color: var(--mist);
   opacity: .75;
 }
+.lucky-reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-style: italic;
+  color: var(--rose);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.lucky-reset:hover { color: var(--parchment); }
 .lucky-toast {
   position: fixed;
   left: 50%;
