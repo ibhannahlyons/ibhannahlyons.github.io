@@ -196,6 +196,29 @@ document.querySelectorAll(".nav-brand").forEach((brand) => {
   });
 });
 
+// ---- a few clovers drifting slowly across the home photo ----
+const hero = document.querySelector(".hero");
+if (hero && !prefersCalm()) {
+  const field = document.createElement("div");
+  field.className = "hero-drift";
+  field.setAttribute("aria-hidden", "true");
+  for (let i = 0; i < 6; i++) {
+    const d = document.createElement("span");
+    d.className = "drifter";
+    d.appendChild(makeClover("drift-clover", 2));
+    const dur = 26 + Math.random() * 14;
+    d.style.setProperty("--top", `${8 + Math.random() * 78}%`);
+    d.style.setProperty("--size", `${0.9 + Math.random() * 0.8}rem`);
+    d.style.setProperty("--dur", `${dur.toFixed(1)}s`);
+    d.style.setProperty("--delay", `${(-Math.random() * dur).toFixed(1)}s`); // start mid-journey
+    d.style.setProperty("--bob", `${(4 + Math.random() * 3).toFixed(1)}s`);
+    d.style.setProperty("--tint", CLOVER_TINTS[i % 3]);
+    d.style.setProperty("--alpha", (0.35 + Math.random() * 0.25).toFixed(2));
+    field.appendChild(d);
+  }
+  hero.insertBefore(field, hero.querySelector(".hero-inner"));
+}
+
 // ---- "Click me!": 18 clovers burst out, one for each day up to the 18th ----
 const burstButton = document.querySelector("[data-clover-burst]");
 if (burstButton) {

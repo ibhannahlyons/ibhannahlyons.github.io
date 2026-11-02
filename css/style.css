@@ -863,6 +863,39 @@ section { padding: 3rem 0; }
 .place-link::after { content: " \2192"; }
 .place-link:hover { color: var(--accent-strong); }
 
+/* ---------- clovers drifting across the home photo ---------- */
+
+.hero-drift {
+  position: absolute;
+  inset: 0;
+  z-index: 1;               /* above the photo's dark overlay, below the names */
+  overflow: hidden;
+  pointer-events: none;
+}
+.drifter {
+  position: absolute;
+  left: -3rem;
+  top: var(--top);
+  color: var(--tint);
+  opacity: var(--alpha);
+  animation: drift-across var(--dur) linear var(--delay) infinite;
+}
+.drift-clover {
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  animation: drift-bob var(--bob) ease-in-out infinite alternate;
+}
+@keyframes drift-across {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(calc(100vw + 6rem), 3.5rem); }
+}
+@keyframes drift-bob {
+  from { transform: translateY(-10px) rotate(-30deg); }
+  to   { transform: translateY(10px) rotate(40deg); }
+}
+.hero-inner { z-index: 2; }
+
 /* ---------- a secret: tap "L & H" three times for clover rain ---------- */
 
 .rain-drop {
