@@ -259,31 +259,6 @@ if (hero && !prefersCalm()) {
   hero.insertBefore(field, hero.querySelector(".hero-inner"));
 }
 
-// ---- a vine grows along the top as you scroll; its clover blooms at the bottom ----
-(function () {
-  const vine = document.createElement("div");
-  vine.className = "scroll-vine";
-  vine.setAttribute("aria-hidden", "true");
-  vine.innerHTML = '<span class="vine-line"></span>';
-  const tip = makeClover("vine-clover", 2.4);
-  vine.appendChild(tip);
-  document.body.appendChild(vine);
-  let ticking = false;
-  const grow = () => {
-    const room = document.documentElement.scrollHeight - window.innerHeight;
-    const p = room > 40 ? Math.min(1, Math.max(0, window.scrollY / room)) : 0;
-    vine.style.setProperty("--p", p.toFixed(4));
-    vine.classList.toggle("is-hidden", room <= 40);
-    vine.classList.toggle("bloom", p > 0.985);
-    ticking = false;
-  };
-  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(grow); } };
-  window.addEventListener("scroll", request, { passive: true });
-  window.addEventListener("resize", request);
-  window.addEventListener("load", request);
-  grow();
-})();
-
 // ---- lucky clover hunt: one hidden clover on each page ----
 (function () {
   const heading = (text) => [...document.querySelectorAll("h2")].find((h) => h.textContent.trim() === text);
