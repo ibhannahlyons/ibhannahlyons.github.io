@@ -1216,6 +1216,10 @@ section { padding: 3rem 0; }
   color: var(--accent);
 }
 
+/* people slide in from the sides and the polaroids are tilted, so trim anything that pokes
+   past the screen edge (otherwise phones can scroll the page sideways) */
+#team-hannah, #team-liam { overflow-x: clip; }
+
 /* the zigzag: a dotted path down the middle, people alternating sides */
 .party-list {
   position: relative;
