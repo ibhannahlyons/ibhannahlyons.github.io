@@ -169,25 +169,27 @@ document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
   });
 });
 
-// ---- a secret: tap "4:20" for a little puff of smoke ----
+// ---- a secret: tap "4:20" for a soft wisp of smoke ----
+// A few puffs leave one after another, each swaying side to side as it rises,
+// so together they trace a slow serpentine ribbon.
 document.querySelectorAll("[data-puff]").forEach((spot) => {
   spot.addEventListener("click", () => {
     const box = spot.getBoundingClientRect();
-    const x = box.left + box.width / 2, y = box.top + box.height / 2;
-    for (let i = 0; i < 11; i++) {
+    const x = box.left + box.width / 2, y = box.top + box.height / 2 - 4;
+    const count = 7;
+    for (let i = 0; i < count; i++) {
       const p = document.createElement("span");
       p.className = "smoke-puff";
-      p.style.left = `${x + (Math.random() - 0.5) * 16}px`;
-      p.style.top = `${y + (Math.random() - 0.5) * 8}px`;
-      p.style.setProperty("--size", `${14 + Math.random() * 18}px`);
-      p.style.setProperty("--dx", `${(Math.random() - 0.5) * 70}px`);
-      p.style.setProperty("--dy", `${-(45 + Math.random() * 75)}px`);
-      p.style.setProperty("--grow", (1.8 + Math.random() * 1.4).toFixed(2));
-      p.style.setProperty("--dur", `${(1.6 + Math.random() * 0.8).toFixed(2)}s`);
-      p.style.animationDelay = `${i * 45}ms`;
+      p.style.left = `${x + (Math.random() - 0.5) * 6}px`;
+      p.style.top = `${y}px`;
+      p.style.setProperty("--size", `${12 + Math.random() * 7}px`);
+      p.style.setProperty("--sway", `${(i % 2 ? -1 : 1) * (10 + Math.random() * 6)}px`);
+      p.style.setProperty("--rise", `${110 + Math.random() * 40}px`);
+      p.style.setProperty("--dur", `${(3.8 + Math.random() * 0.8).toFixed(2)}s`);
+      p.style.animationDelay = `${i * 280}ms`;
       document.body.appendChild(p);
       p.addEventListener("animationend", () => p.remove());
-      setTimeout(() => p.remove(), 3200); // backup if animationend never fires
+      setTimeout(() => p.remove(), 7500); // backup if animationend never fires
     }
   });
 });
