@@ -83,6 +83,21 @@
     </g>
   </symbol>
 
+  <!-- A little coat of arms: a clover on a shield over crossed swords -->
+  <symbol id="crest" viewBox="0 0 200 40">
+    <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20H72M128 20H196" />
+      <!-- swords, broken where they pass behind the shield; hilts at the bottom -->
+      <path d="M80 34L91.8 25.7M110 13L120 6M120 34L108.2 25.7M90 13L80 6" />
+      <path d="M83 27L88 32M117 27L112 32" />
+      <path d="M90 7H110V19C110 27 100 33 100 33S90 27 90 19Z" />
+      <g stroke-width="2.6" transform="translate(100 18.5) scale(.33) translate(-20 -18)">
+        <use href="#clover-leaf" /><use href="#clover-leaf" transform="rotate(90 20 18)" />
+        <use href="#clover-leaf" transform="rotate(180 20 18)" /><use href="#clover-leaf" transform="rotate(270 20 18)" />
+      </g>
+    </g>
+  </symbol>
+
   <!-- One heart-shaped leaf pointing up from the center (20,18), repeated four times -->
   <g id="clover-leaves" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
     <path id="clover-leaf" d="M20 18 C 16.5 14.5, 13 10.5, 15.6 7.6 C 17.4 5.6, 19.6 6.6, 20 8.6 C 20.4 6.6, 22.6 5.6, 24.4 7.6 C 27 10.5, 23.5 14.5, 20 18 Z" />
