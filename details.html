@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <script>try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
   <script>(function () { var w = 0; function lock() { if (innerWidth === w) return; w = innerWidth; document.documentElement.style.setProperty("--app-h", innerHeight + "px"); } lock(); addEventListener("resize", lock); })();</script>
-  <link rel="stylesheet" href="css/style.css?v=20261101u">
+  <link rel="stylesheet" href="css/style.css?v=20261101v">
 </head>
 <body>
   <header class="site-header">
@@ -82,7 +82,7 @@
       </div>
     </section>
 
-    <section class="section-dark">
+    <section class="section-dark" id="schedule">
       <div class="narrow">
         <div class="center reveal">
           <svg class="flourish" viewBox="0 0 200 40" aria-hidden="true"><use href="img/botanical.svg#sprig"></use></svg>
@@ -100,13 +100,61 @@
       </div>
     </section>
 
-    <section>
-      <div class="narrow reveal">
-        <span class="eyebrow">Good to know</span>
-        <h2>A few notes</h2>
-        <!-- TODO: edit these -->
-        <p class="note">March evenings in Virginia can be chilly. Bring a wrap or a jacket for after sunset.</p>
-        <p class="note">Parking is available on site at the venue.</p>
+    <section id="faq">
+      <div class="narrow">
+        <div class="center reveal">
+          <svg class="flourish" viewBox="0 0 200 40" aria-hidden="true"><use href="img/botanical.svg#sprig"></use></svg>
+          <span class="eyebrow">Good to know</span>
+          <h2>Questions &amp; answers</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>What time should I arrive?</summary>
+            <div class="faq-a"><p>Guests arrive at 4:00 pm, and we'd love everyone seated by 4:20. The ceremony starts at 4:30 pm sharp. The <a href="#schedule">full schedule</a> is above.</p></div>
+          </details>
+          <details>
+            <summary>What should I wear?</summary>
+            <div class="faq-a"><p>Semi-formal. Think a nice dress or jumpsuit, or a suit or slacks with a jacket. Comfortable shoes are a good idea, because you'll want to dance.</p></div>
+          </details>
+          <details>
+            <summary>What will the weather be like?</summary>
+            <div class="faq-a"><p>Mid-March in central Virginia usually means daytime highs around 60°F, dropping into the 30s or 40s after sunset. Bring a wrap or a jacket for the evening.</p></div>
+          </details>
+          <details>
+            <summary>Can I bring a plus-one?</summary>
+            <div class="faq-a"><p>We're keeping our guest list to the people named on your invitation. When it's time to RSVP, you'll see everyone included on yours. Thank you for understanding!</p></div>
+          </details>
+          <details>
+            <summary>Are kids welcome?</summary>
+            <!-- TODO: kids policy -->
+            <div class="faq-a"><p>We'll share this soon, before formal invitations go out.</p></div>
+          </details>
+          <details>
+            <summary>Is there parking?</summary>
+            <div class="faq-a"><p>Yes. Parking is available on site at The Mill at Fine Creek.</p></div>
+          </details>
+          <details>
+            <summary>Will there be a shuttle?</summary>
+            <!-- TODO: shuttle or no shuttle -->
+            <div class="faq-a"><p>We're still working out transportation and will update this soon. In the meantime, the <a href="travel.html">Travel page</a> has hotels and directions.</p></div>
+          </details>
+          <details>
+            <summary>Is the venue accessible?</summary>
+            <div class="faq-a"><p>If you or someone in your party has accessibility needs, please let us know. We'll make sure you're comfortable and taken care of all evening.</p></div>
+          </details>
+          <details>
+            <summary>When do I RSVP?</summary>
+            <div class="faq-a"><p>This is our save-the-date. Formal invitations with RSVP details will follow, and you'll be able to RSVP right here on our website.</p></div>
+          </details>
+          <details>
+            <summary>Where should I stay?</summary>
+            <div class="faq-a"><p>Our hotel is the Residence Inn Short Pump at the Notch, about 15 miles from the Mill. The <a href="travel.html">Travel page</a> has booking info and other options.</p></div>
+          </details>
+          <details>
+            <summary>Do you have a registry?</summary>
+            <div class="faq-a"><p>Your presence is the best gift! If you'd like to give something more, we have a <a href="registry.html">honeymoon fund</a>.</p></div>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -117,6 +165,6 @@
     <p class="eyebrow">March 18, 2028 · Powhatan, Virginia</p>
   </footer>
 
-  <script src="js/main.js?v=20261101u"></script>
+  <script src="js/main.js?v=20261101v"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <script>try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
   <script>(function () { var w = 0; function lock() { if (innerWidth === w) return; w = innerWidth; document.documentElement.style.setProperty("--app-h", innerHeight + "px"); } lock(); addEventListener("resize", lock); })();</script>
-  <link rel="stylesheet" href="css/style.css?v=20261101u">
+  <link rel="stylesheet" href="css/style.css?v=20261101v">
 </head>
 <body>
   <header class="site-header">
@@ -92,6 +92,68 @@
       </div>
     </section>
 
+    <section class="section-mist" id="things-to-do">
+      <div class="wrap">
+        <div class="center reveal">
+          <svg class="flourish" viewBox="0 0 200 40" aria-hidden="true"><use href="img/botanical.svg#sprig"></use></svg>
+          <span class="eyebrow">Make a weekend of it</span>
+          <h2>Things to do nearby</h2>
+          <!-- TODO: swap in your own favorite spots (restaurants, coffee, etc.) -->
+          <p class="narrow">A few favorites around Powhatan and Richmond for anyone coming in from out of town. Shopping and restaurants are also right by our hotel in Short Pump. Hours change, so check before you go.</p>
+        </div>
+        <div class="grid places">
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">Outdoors</span>
+              <h3>Powhatan State Park</h3>
+              <p>Riverside trails and meadows along the James, right in Powhatan near the Mill.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Powhatan+State+Park%2C+Powhatan%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">On the river</span>
+              <h3>Belle Isle</h3>
+              <p>Walk the footbridge out to this island in the James for rocks, rapids and skyline views in the middle of Richmond.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Belle+Isle%2C+Richmond%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">Gardens</span>
+              <h3>Maymont</h3>
+              <p>A 100-acre historic estate with a Japanese garden, a mansion and wildlife exhibits.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Maymont%2C+Richmond%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">Art</span>
+              <h3>Virginia Museum of Fine Arts</h3>
+              <p>Free general admission, a beautiful collection and a sculpture garden.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Virginia+Museum+of+Fine+Arts%2C+Richmond%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">Eat &amp; shop</span>
+              <h3>Carytown</h3>
+              <p>Richmond&#x27;s quirky strip of boutiques, cafés and restaurants, home to the historic Byrd Theatre.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Carytown%2C+Richmond%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+          <article class="card place-card reveal">
+            <div class="card-body">
+              <span class="eyebrow">Breweries</span>
+              <h3>Scott&#x27;s Addition</h3>
+              <p>Richmond&#x27;s brewery and cidery neighborhood, with lots of tasting rooms in a few walkable blocks.</p>
+              <a class="place-link" href="https://www.google.com/maps/search/?api=1&amp;query=Scott%27s+Addition%2C+Richmond%2C+VA" target="_blank" rel="noopener">Open in Maps</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="family-gate">
       <div class="narrow center">
         <button class="gate-toggle" type="button" aria-expanded="false" aria-controls="gate-form">
@@ -116,6 +178,6 @@
     <p class="eyebrow">March 18, 2028 · Powhatan, Virginia</p>
   </footer>
 
-  <script src="js/main.js?v=20261101u"></script>
+  <script src="js/main.js?v=20261101v"></script>
 </body>
 </html>
