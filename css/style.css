@@ -852,7 +852,7 @@ section { padding: 3rem 0; }
 .smoke-trail {
   position: fixed;
   z-index: 300;
-  width: 44px;
+  width: 64px;
   height: 128px;
   pointer-events: none;
   transform: translate(-50%, -100%);
@@ -864,7 +864,7 @@ section { padding: 3rem 0; }
   height: 100%;
   overflow: visible;
   transform-origin: 50% 100%;
-  animation: trail-sway 2.8s ease-in-out infinite alternate;
+  animation: trail-sway 3.4s ease-in-out infinite alternate;
 }
 .smoke-trail .line {
   fill: none;
@@ -888,7 +888,7 @@ section { padding: 3rem 0; }
 .smoke-trail .ring.two { animation-delay: 1.85s; }
 .smoke-trail .ring.one { animation-delay: 1.45s; }
 @keyframes trail-draw { to { stroke-dashoffset: 0; } }
-@keyframes trail-sway { from { transform: skewX(-5deg); } to { transform: skewX(5deg); } }
+@keyframes trail-sway { from { transform: translateX(-5px) skewX(-8deg); } to { transform: translateX(5px) skewX(8deg); } }
 @keyframes trail-ring {
   0%   { opacity: 0; transform: translateY(0) scale(.5); }
   20%  { opacity: .9; }

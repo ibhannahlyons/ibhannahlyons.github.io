@@ -170,12 +170,20 @@ document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
 });
 
 // ---- a secret: tap "4:20" for a little cartoon curl of smoke ----
+// Two versions of the same smoke line, with the curves on opposite sides; the line
+// slowly morphs back and forth between them so it ripples side to side as it rises.
+const SMOKE_A = "M32 128 C 16 116, 48 104, 32 92 S 14 70, 32 58 S 52 38, 34 26 C 25 19, 29 10, 37 11 C 44 12, 43 20, 36 20";
+const SMOKE_B = "M32 128 C 48 116, 16 104, 32 92 S 50 70, 32 58 S 12 38, 30 26 C 21 19, 25 10, 33 11 C 40 12, 39 20, 32 20";
 const SMOKE_SVG =
-  '<svg viewBox="0 0 44 128" aria-hidden="true">' +
-  // one thin line rising in lazy S-curves, finishing in a little curl
-  '<path class="line" pathLength="100" d="M22 128 C 12 116, 32 104, 22 92 S 10 70, 22 58 S 35 38, 24 26 C 18 19, 21 11, 27 12 C 32 13, 31 20, 26 20"/>' +
-  '<circle class="ring one" cx="28" cy="6" r="3.4"/>' +
-  '<circle class="ring two" cx="19" cy="-4" r="2.6"/>' +
+  '<svg viewBox="0 0 64 128" aria-hidden="true">' +
+  `<path class="line" pathLength="100" d="${SMOKE_A}">` +
+  // the ripple is skipped for visitors who prefer reduced motion
+  (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "" :
+    `<animate attributeName="d" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1"` +
+    ` keySplines=".45 0 .55 1;.45 0 .55 1" values="${SMOKE_A};${SMOKE_B};${SMOKE_A}"/>`) +
+  "</path>" +
+  '<circle class="ring one" cx="37" cy="6" r="3.4"/>' +
+  '<circle class="ring two" cx="26" cy="-4" r="2.6"/>' +
   "</svg>";
 document.querySelectorAll("[data-puff]").forEach((spot) => {
   spot.addEventListener("click", () => {
