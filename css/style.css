@@ -989,6 +989,108 @@ section { padding: 3rem 0; }
   .bulb.on { animation: none; }
 }
 
+/* ---------- candles above the footer (lit while they're on screen) ---------- */
+
+.candle-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(.55rem, 2.4vw, 1.3rem);
+  padding: 4.5rem 1rem 1rem;
+  background: var(--footer-bg); /* sits on the footer, so the candles glow on dark in either theme */
+}
+.candle {
+  --stagger: calc(var(--o) * 110ms);
+  position: relative;
+  width: 13px;
+  height: var(--h);
+  border-radius: 3px 3px 2px 2px;
+  background: linear-gradient(90deg, #D4CDE3, #F8F5FC 45%, #CBC2DD);
+}
+/* wick */
+.candle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 1.5px;
+  height: 7px;
+  margin-left: -.75px;
+  border-radius: 1px;
+  background: #3A3042;
+}
+/* melted pool on top */
+.candle::after {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  opacity: .55;
+}
+.flame {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 3px);
+  width: 9px;
+  height: 18px;
+  margin-left: -4.5px;
+  border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+  background: radial-gradient(ellipse at 50% 72%, #FFFDF3 0 22%, #FFDC8F 42%, #FF9F45 72%, rgba(255, 140, 60, 0) 74%);
+  transform-origin: 50% 90%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform .45s cubic-bezier(.3, 1.6, .5, 1) var(--stagger), opacity .35s ease var(--stagger);
+}
+.candle-glow {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 24px);
+  width: 76px;
+  height: 76px;
+  margin-left: -38px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 205, 135, .32), rgba(255, 205, 135, 0) 65%);
+  opacity: 0;
+  transition: opacity .6s ease var(--stagger);
+}
+.candle-row.lit .flame {
+  transform: scale(1);
+  opacity: 1;
+  animation: flicker 2.2s ease-in-out calc(var(--stagger) + .5s) infinite;
+}
+.candle-row.lit .candle-glow { opacity: 1; animation: glow-breathe 3s ease-in-out var(--stagger) infinite; }
+.smoke {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  width: 6px;
+  height: 16px;
+  margin-left: -1px;
+  border-left: 1.5px solid rgba(214, 216, 238, .55);
+  border-radius: 50%;
+  opacity: 0;
+}
+.candle-row.out .smoke { animation: smoke 1.6s ease-out var(--stagger) both; }
+@keyframes flicker {
+  0%, 100% { transform: scale(1) rotate(0); }
+  25% { transform: scale(.94, 1.07) rotate(-2deg); }
+  50% { transform: scale(1.05, .95) rotate(1.5deg); }
+  75% { transform: scale(.97, 1.04) rotate(-1deg); }
+}
+@keyframes glow-breathe { 0%, 100% { opacity: 1; } 50% { opacity: .75; } }
+@keyframes smoke {
+  0% { opacity: 0; transform: translateY(0) scaleY(.6); }
+  20% { opacity: .8; }
+  100% { opacity: 0; transform: translate(4px, -24px) scaleY(1.4) rotate(12deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .candle-row.lit .flame, .candle-row.lit .candle-glow, .candle-row.out .smoke { animation: none; }
+}
+
 /* ---------- clovers drifting across the home photo ---------- */
 
 .hero-drift {
