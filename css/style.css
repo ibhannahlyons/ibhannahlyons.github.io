@@ -519,6 +519,19 @@ section { padding: 3rem 0; }
 .link-cards a.card { text-decoration: none; color: var(--text); transition: transform .4s ease, box-shadow .4s ease; }
 .link-cards a.card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(30,42,56,.08), 0 14px 32px rgba(30,42,56,.12); }
 .link-cards .card-body { padding-bottom: 1.3rem; }
+/* five home cards: 2 + 2 + 1 wide on tablets, 3 + 2 wider on computers (no lonely last card) */
+@media (min-width: 37rem) {
+  .link-cards { grid-template-columns: repeat(2, 1fr); }
+  .link-cards > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .link-cards > :last-child:nth-child(odd) img { aspect-ratio: 21 / 9; }
+}
+@media (min-width: 52rem) {
+  .link-cards { grid-template-columns: repeat(6, 1fr); }
+  .link-cards > * { grid-column: span 2; }
+  .link-cards > :nth-child(4), .link-cards > :nth-child(5) { grid-column: span 3; }
+  .link-cards > :last-child:nth-child(odd) { grid-column: span 3; }
+  .link-cards > :nth-child(4) img, .link-cards > :nth-child(5) img { aspect-ratio: 16 / 9; }
+}
 .link-cards .more {
   font-family: var(--serif-display);
   font-weight: 600;
