@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg">
   <!-- Last day of winter, first of spring: snow drifts in on the left, leaves sprout on the right,
-       with a snowflake and a blossom on either side of a tiny clover -->
+       and a little squiggle carries the snowflake over into a blossom -->
   <g id="sf-arm" fill="none" stroke-width=".9" stroke-linecap="round">
     <path d="M0 -1.6V-8.5M0 -4.6L-2 -6.4M0 -4.6L2 -6.4M0 -6.9L-1.2 -8M0 -6.9L1.2 -8" />
   </g>
@@ -9,7 +9,7 @@
   <path id="sf-leaf" fill="none" stroke-width=".8" stroke-linejoin="round" d="M0 0C1 -2.2 3 -3 5 -2.6C4.2 -.8 2.4 .2 0 0Z" />
   <symbol id="spring" viewBox="0 0 200 40">
     <g stroke="currentColor">
-      <path d="M4 20H58M86 20H92M108 20H114M142 20H196" fill="none" stroke-width="1" stroke-linecap="round" />
+      <path d="M4 20H58M142 20H196" fill="none" stroke-width="1" stroke-linecap="round" />
       <!-- snowflake -->
       <g transform="translate(72 20)">
         <use href="#sf-arm" /><use href="#sf-arm" transform="rotate(60)" /><use href="#sf-arm" transform="rotate(120)" />
@@ -21,11 +21,9 @@
         <use href="#sf-petal" /><use href="#sf-petal" transform="rotate(72)" /><use href="#sf-petal" transform="rotate(144)" />
         <use href="#sf-petal" transform="rotate(216)" /><use href="#sf-petal" transform="rotate(288)" />
       </g>
-      <!-- tiny clover in the middle -->
-      <g fill="none" stroke-width="2.6" stroke-linejoin="round" transform="translate(100 20) scale(.32) translate(-20 -18)">
-        <use href="#clover-leaf" /><use href="#clover-leaf" transform="rotate(90 20 18)" />
-        <use href="#clover-leaf" transform="rotate(180 20 18)" /><use href="#clover-leaf" transform="rotate(270 20 18)" />
-      </g>
+      <!-- a little squiggle with a loop, carrying winter over into spring -->
+      <path fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+        d="M82 20C86 20 88 16.5 91 16.5S94.5 22.5 98 22.5C101 22.5 102.5 15 100 14C97.5 13 97 17.5 100.5 19.5C103.5 21.2 106 20 109 18.5S114 18 118 20" />
       <!-- sprouting leaves -->
       <use href="#sf-leaf" transform="translate(150 20) rotate(-25)" />
       <use href="#sf-leaf" transform="translate(166 20) rotate(205) scale(.85)" />
