@@ -332,15 +332,6 @@ if (hero && !prefersCalm()) {
   });
 })();
 
-// ---- "Click me!": 18 clovers burst out, one for each day up to the 18th ----
-const burstButton = document.querySelector("[data-clover-burst]");
-if (burstButton) {
-  burstButton.addEventListener("click", () => {
-    const box = burstButton.getBoundingClientRect();
-    burstClovers(box.left + box.width / 2, box.top + box.height / 2, 18);
-  });
-}
-
 // ---- "Add to calendar" menus ----
 document.querySelectorAll("[data-cal-menu]").forEach((menu) => {
   const toggle = menu.querySelector(".cal-toggle");

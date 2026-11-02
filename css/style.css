@@ -368,31 +368,6 @@ section { padding: 3rem 0; }
 }
 .countdown-done { font-style: italic; font-size: 1.3rem; }
 
-/* "Click me!" under the countdown: bursts 18 clovers, one for the 18th */
-.clover-button {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  margin-top: 1.4rem;
-  padding: .55rem 1.2rem;
-  border: 1px solid rgba(243, 238, 232, .45);
-  border-radius: 999px;
-  background: rgba(20, 27, 38, .38);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  color: var(--parchment);
-  font-family: var(--serif-display);
-  font-size: .9rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: border-color .3s ease, color .3s ease, transform .18s ease;
-}
-.clover-button svg { width: 1.2rem; height: 1.2rem; color: var(--rose); transition: transform .5s ease; }
-.clover-button:hover { border-color: var(--rose); color: var(--rose); }
-.clover-button:hover svg { transform: rotate(25deg); }
-.clover-button:active { transform: scale(.95); }
 
 .clover-burst {
   position: fixed;
@@ -1124,7 +1099,6 @@ section { padding: 3rem 0; }
   gap: .6rem;
   margin-top: 1.4rem;
 }
-.hero-actions .clover-button { margin-top: 0; }
 .cal-menu { position: relative; display: inline-block; }
 .fact .cal-menu { margin-top: .9rem; }
 .cal-toggle {
