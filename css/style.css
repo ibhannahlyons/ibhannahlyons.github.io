@@ -558,9 +558,12 @@ section { padding: 3rem 0; }
   box-shadow: var(--shadow);
   filter: saturate(.8);
 }
+.story-split > div { text-align: center; } /* centered when stacked on phones */
 @media (min-width: 52rem) {
   .story-split { grid-template-columns: 1fr 1fr; gap: 4rem; }
   .story-split.flip > :first-child { order: 2; }
+  .story-split > div { text-align: left; }
+  .story-split .flourish { margin-left: 0; }
 }
 
 .drop-cap::first-letter {
