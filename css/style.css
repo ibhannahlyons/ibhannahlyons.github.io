@@ -696,8 +696,6 @@ section { padding: 3rem 0; }
 .fact .label { margin-bottom: .25rem; }
 .fact .value { font-family: var(--serif-display); font-size: 1.6rem; line-height: 1.3; }
 
-.welcome-when { font-family: var(--serif-display); font-size: 1.35rem; line-height: 1.4; }
-
 .schedule { list-style: none; margin: 0; padding: 0; }
 .schedule li {
   display: grid;
@@ -716,6 +714,15 @@ section { padding: 3rem 0; }
 .section-dark .schedule time { color: var(--moonstone); }
 .schedule strong { font-family: var(--serif-display); font-size: 1.35rem; font-weight: 500; display: block; }
 .schedule span { font-size: 1rem; }
+.schedule-day { margin-top: 2.25rem; }
+.schedule-day h3 {
+  margin: 0 0 .25rem;
+  padding-bottom: .6rem;
+  font-family: var(--serif-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line);
+}
 
 .note {
   border-left: 2px solid var(--accent);
