@@ -492,6 +492,7 @@ section { padding: 3rem 0; }
   border-color: var(--mauve);
 }
 .btn-outline:hover, .btn-outline:focus-visible { background: var(--mauve); border-color: var(--mauve); color: var(--night); box-shadow: none; }
+.section-dark .btn, .section-pine .btn { color: var(--btn-text); } /* keep the dark text on the silver */
 .section-dark .btn-outline, .section-pine .btn-outline { color: var(--pearl); }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
