@@ -944,46 +944,6 @@ section { padding: 3rem 0; }
   .lucky.just-found { animation: none; }
 }
 
-/* ---------- fairy lights down both edges (they switch on as you scroll) ---------- */
-
-.fairy-lights {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  z-index: 140;
-  width: 14px;
-  pointer-events: none;
-}
-.fairy-lights.left { left: 2px; }
-.fairy-lights.right { right: 2px; transform: scaleX(-1); }
-.fairy-lights svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.fairy-lights path { fill: none; stroke: var(--mauve); stroke-width: 1; opacity: .45; vector-effect: non-scaling-stroke; }
-.bulb {
-  --glow-c: #FFF1CF;
-  --halo: rgba(255, 226, 160, .45);
-  position: absolute;
-  width: 5px;
-  height: 7px;
-  margin: -3.5px 0 0 -2.5px;
-  border-radius: 50% 50% 45% 45%;
-  background: rgba(214, 216, 238, .22);
-  transition: background .5s ease, box-shadow .5s ease;
-}
-.bulb.rose { --glow-c: #F6C9E6; --halo: rgba(227, 166, 216, .5); }
-.bulb.lilac { --glow-c: #DCD6FF; --halo: rgba(170, 150, 255, .5); }
-.bulb.on {
-  background: var(--glow-c);
-  box-shadow: 0 0 4px 1px var(--glow-c), 0 0 12px 3px var(--halo);
-}
-:root[data-theme="light"] .bulb { background: rgba(91, 46, 158, .18); }
-:root[data-theme="light"] .bulb.on { background: var(--glow-c); box-shadow: 0 0 3px 1px var(--halo), 0 0 10px 3px var(--halo); }
-@media (max-width: 40rem) {
-  .fairy-lights { width: 10px; }
-  .fairy-lights.left { left: 1px; }
-  .fairy-lights.right { right: 1px; }
-  .bulb { width: 4px; height: 6px; margin: -3px 0 0 -2px; }
-}
-
 /* ---------- candles above the footer (lit while they're on screen) ---------- */
 
 .candle-row {

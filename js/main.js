@@ -259,52 +259,6 @@ if (hero && !prefersCalm()) {
   hero.insertBefore(field, hero.querySelector(".hero-inner"));
 }
 
-// ---- fairy lights strung down both edges: they switch on from the top as you scroll ----
-(function () {
-  const COUNT = 30;
-  const TINTS = ["", "", "rose", "", "lilac", "", "rose", ""];
-  const bulbs = [];
-  ["left", "right"].forEach((side) => {
-    const strand = document.createElement("div");
-    strand.className = `fairy-lights ${side}`;
-    strand.setAttribute("aria-hidden", "true");
-    const pts = [];
-    for (let i = 0; i < COUNT; i++) pts.push([i % 2 ? 70 : 30, ((i + 0.5) / COUNT) * 100]);
-    // the wire swags from bulb to bulb
-    let d = `M${pts[0][0]} 0`;
-    let prev = [pts[0][0], 0];
-    for (const p of [...pts, [pts[COUNT - 1][0], 100]]) {
-      const midY = (prev[1] + p[1]) / 2;
-      d += ` C${prev[0]} ${midY} ${p[0]} ${midY} ${p[0]} ${p[1]}`;
-      prev = p;
-    }
-    strand.innerHTML = `<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="${d}"/></svg>`;
-    pts.forEach(([x, y], i) => {
-      const b = document.createElement("span");
-      b.className = `bulb ${TINTS[(i + (side === "right" ? 3 : 0)) % TINTS.length]}`.trim();
-      b.style.left = `${x}%`;
-      b.style.top = `${y}%`;
-      b.dataset.at = y / 100;
-      strand.appendChild(b);
-      bulbs.push(b);
-    });
-    document.body.appendChild(strand);
-  });
-  let ticking = false;
-  const light = () => {
-    const room = document.documentElement.scrollHeight - window.innerHeight;
-    const p = room > 40 ? Math.min(1, Math.max(0, window.scrollY / room)) : 1;
-    const reach = 0.12 + p * 0.88; // a few are always on at the top
-    bulbs.forEach((b) => b.classList.toggle("on", b.dataset.at <= reach));
-    ticking = false;
-  };
-  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(light); } };
-  window.addEventListener("scroll", request, { passive: true });
-  window.addEventListener("resize", request);
-  window.addEventListener("load", request);
-  light();
-})();
-
 // ---- a cluster of candles above the footer: they light as you scroll to them, and go out when you leave ----
 (function () {
   const footer = document.querySelector(".site-footer");
