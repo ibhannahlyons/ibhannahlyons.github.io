@@ -76,7 +76,6 @@ can see the file. Don't put anything truly private on that page.
 **On Feb 18, 2027, open the page to all guests:**
 1. On `travel.html`, add a card next to the Residence Inn that links to `cottages-<hash>.html` ("Stay at the Mill").
 2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
-3. Update the rehearsal-dinner "both nights" note once that plan is settled.
 
 ## Wedding party
 
