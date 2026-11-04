@@ -259,31 +259,6 @@ if (hero && !prefersCalm()) {
   hero.insertBefore(field, hero.querySelector(".hero-inner"));
 }
 
-// ---- a cluster of candles above the footer: they light as you scroll to them, and go out when you leave ----
-(function () {
-  const footer = document.querySelector(".site-footer");
-  if (!footer) return;
-  const heights = [30, 48, 24, 62, 38, 70, 34, 54, 26, 44, 22];
-  // light them in a loose, hand-lit order rather than left to right
-  const order = heights.map((_, i) => i).sort(() => Math.random() - 0.5);
-  const row = document.createElement("div");
-  row.className = "candle-row";
-  row.setAttribute("aria-hidden", "true");
-  row.innerHTML = heights.map((h, i) =>
-    `<span class="candle" style="--h:${h}px;--o:${order.indexOf(i)}">` +
-    '<span class="candle-glow"></span><span class="flame"></span><span class="smoke"></span></span>').join("");
-  footer.before(row);
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      row.classList.remove("out");
-      row.classList.add("lit");
-    } else if (row.classList.contains("lit")) {
-      row.classList.remove("lit");
-      row.classList.add("out"); // a little curl of smoke as each one goes out
-    }
-  }, { threshold: 0.6 }).observe(row);
-})();
-
 // ---- lucky clover hunt: one hidden clover on each page ----
 (function () {
   const heading = (text) => [...document.querySelectorAll("h2")].find((h) => h.textContent.trim() === text);
