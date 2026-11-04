@@ -752,7 +752,6 @@ section { padding: 3rem 0; }
 .any-amount h3 { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 400; }
 .any-amount p { max-width: 30rem; }
 .any-amount .card-body .btn { align-self: center; margin-top: .5rem; }
-.any-amount .flourish { color: var(--moonstone); margin-bottom: 1.2rem; }
 /* just the one card (until the honeymoon ideas are back) */
 .fund-solo { grid-template-columns: 1fr; max-width: 38rem; margin: 0 auto; }
 
