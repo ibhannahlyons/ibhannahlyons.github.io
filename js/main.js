@@ -259,6 +259,21 @@ if (hero && !prefersCalm()) {
   hero.insertBefore(field, hero.querySelector(".hero-inner"));
 }
 
+// ---- a burst of clovers the first time a [data-clover-burst] line scrolls into view ----
+(function () {
+  const spot = document.querySelector("[data-clover-burst]");
+  if (!spot || prefersCalm()) return;
+  const watcher = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    watcher.disconnect();
+    setTimeout(() => { // give the text a moment to fade in first
+      const box = spot.getBoundingClientRect();
+      burstClovers(box.left + box.width / 2, box.top + box.height / 2, 24);
+    }, 500);
+  }, { threshold: 1, rootMargin: "-15% 0px -15% 0px" });
+  watcher.observe(spot);
+})();
+
 // ---- lucky clover hunt: one hidden clover on each page ----
 (function () {
   const heading = (text) => [...document.querySelectorAll("h2")].find((h) => h.textContent.trim() === text);
