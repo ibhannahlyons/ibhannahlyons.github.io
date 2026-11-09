@@ -802,6 +802,9 @@ section { padding: 3rem 0; }
   text-transform: uppercase;
 }
 .cottage-note { max-width: 40rem; margin: 2rem auto 0; }
+.cottage-booked { box-shadow: none; }
+.cottage-booked > * { opacity: .55; }
+.cottage-booked s { text-decoration-thickness: 1px; }
 .avail-both { border-color: var(--accent); background: var(--chip); color: var(--accent-strong); }
 
 .steps { counter-reset: step; list-style: none; margin: 1.5rem 0 2rem; padding: 0; }
