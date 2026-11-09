@@ -65,15 +65,12 @@ git mv cottages-OLDHASH.html cottages-NEWHASH.html
 This keeps casual guests out, but it is not real security. The repo is public, so anyone browsing it on GitHub
 can see the file. Don't put anything truly private on that page.
 
-### Cottage timeline
+### Cottage hold
 
-| Dates | Who can book |
-|---|---|
-| Now – Feb 18, 2027 | Family & wedding party (passphrase page) |
-| Feb 18 – Mar 17, 2027 | All invited guests |
-| Mar 17, 2027 | The venue opens the cottages to the public online |
+The Mill holds cottages A–E + H for Friday and all cottages for Saturday until **Feb 15, 2027**, then releases
+them. H is the couple's, so it is never listed as available. The page no longer shows a timeline.
 
-**On Feb 18, 2027, open the page to all guests:**
+**When it's time to open the page to all guests:**
 1. On `travel.html`, add a card next to the Residence Inn that links to `cottages-<hash>.html` ("Stay at the Mill").
 2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
 
