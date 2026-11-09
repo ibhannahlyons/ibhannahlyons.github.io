@@ -790,7 +790,18 @@ section { padding: 3rem 0; }
 .cottage-list-heading { margin-top: 2.5rem; }
 .cottage-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); margin-top: 1.25rem; }
 .cottage-list .value { font-size: 1.5rem; }
-.cottage-list p { font-size: 1rem; }
+.cottage-list p { font-size: 1rem; margin-bottom: .6rem; }
+.cottage-list .fact { display: flex; flex-direction: column; align-items: center; padding-bottom: 1.1rem; }
+.avail {
+  margin-top: auto;
+  padding: .2rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.avail-both { border-color: var(--accent); background: var(--chip); color: var(--accent-strong); }
 
 .steps { counter-reset: step; list-style: none; margin: 1.5rem 0 2rem; padding: 0; }
 .steps li {
