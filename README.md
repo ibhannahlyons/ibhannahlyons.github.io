@@ -49,30 +49,16 @@ The "Contribute any amount" card leaves out the amount.
 
 **Before invites go out:** tap a few Contribute buttons on an iPhone *and* an Android phone and check that the amount and note are prefilled. On desktop Venmo may only open the profile, which is why the page shows a QR code there.
 
-## Family-only cottages page
+## Stay at the Mill (cottages page)
 
-The "Family & wedding party" link at the bottom of `travel.html` asks for a passphrase. The page it opens is
-`cottages-<hash>.html`, where `<hash>` is the first 16 characters of the SHA-256 of the passphrase
-(lowercased, with extra spaces trimmed). Nothing on the public pages links to it, and it is marked `noindex`.
-
-To change the passphrase, rename the file:
-
-```bash
-python -c "import hashlib;print(hashlib.sha256('new passphrase'.encode()).hexdigest()[:16])"
-git mv cottages-OLDHASH.html cottages-NEWHASH.html
-```
-
-This keeps casual guests out, but it is not real security. The repo is public, so anyone browsing it on GitHub
-can see the file. Don't put anything truly private on that page.
+`cottages.html` lists the Mill's cottages, how to book, and rates. It's linked from the "Where to stay"
+cards on `travel.html`. It used to be a hidden, passphrase-only page; the old secret address
+(`cottages-8fd2a997fd810f79.html`) now just redirects to `cottages.html` so links already shared keep working.
 
 ### Cottage hold
 
 The Mill holds cottages A–E + H for Friday and all cottages for Saturday until **Feb 15, 2027**, then releases
 them. H is the couple's, so it is never listed as available. The page no longer shows a timeline.
-
-**When it's time to open the page to all guests:**
-1. On `travel.html`, add a card next to the Residence Inn that links to `cottages-<hash>.html` ("Stay at the Mill").
-2. On the cottages page, change the intro ("we're giving you first pick... keep this page between us") to welcome all guests.
 
 ## Wedding party
 

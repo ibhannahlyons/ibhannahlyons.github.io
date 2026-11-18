@@ -75,33 +75,9 @@ if (countdown) {
   timer = setInterval(tick, 1000);
 }
 
-// ---- family passphrase gate ----
-// The hidden page is named cottages-<first 16 hex of sha256(passphrase)>.html,
-// so the passphrase itself never appears anywhere on the site.
-const gate = document.querySelector("[data-gate]");
-if (gate) {
-  const gateToggle = document.querySelector(".gate-toggle");
-  gateToggle.addEventListener("click", () => {
-    gate.hidden = !gate.hidden;
-    gateToggle.setAttribute("aria-expanded", !gate.hidden);
-    if (!gate.hidden) gate.querySelector("input").focus();
-  });
-  gate.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const msg = gate.querySelector(".gate-msg");
-    const word = gate.querySelector("input").value.trim().toLowerCase().replace(/\s+/g, " ");
-    const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(word));
-    const hash = [...new Uint8Array(bytes)].map((b) => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
-    const page = `cottages-${hash}.html`;
-    const res = await fetch(page, { method: "HEAD", cache: "no-store" }).catch(() => null);
-    if (res && res.ok) location.href = page;
-    else msg.textContent = "That's not quite it. Check the message we sent you.";
-  });
-}
-
 // ---- click animation: a ripple on anything tappable ----
 const quiet = window.matchMedia("(prefers-reduced-motion: reduce)");
-const tappable = ".btn, .nav-toggle, .theme-toggle, .gate-toggle, .link-cards a.card, .gallery button";
+const tappable = ".btn, .nav-toggle, .theme-toggle, .link-cards a.card, .gallery button";
 document.addEventListener("pointerdown", (e) => {
   if (quiet.matches) return;
   const el = e.target.closest(tappable);

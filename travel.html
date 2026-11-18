@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet">
   <script>try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
   <script>(function () { var w = 0; function lock() { if (innerWidth === w) return; w = innerWidth; document.documentElement.style.setProperty("--app-h", innerHeight + "px"); } lock(); addEventListener("resize", lock); })();</script>
-  <link rel="stylesheet" href="css/style.css?v=20261109d">
+  <link rel="stylesheet" href="css/style.css?v=20261118a">
 </head>
 <body>
   <header class="site-header">
@@ -58,7 +58,15 @@
           <h2>Hotels</h2>
           <p class="narrow">Book early, since March weekends fill up fast.</p>
         </div>
-        <div class="grid" style="margin:2rem auto 0; max-width:48rem">
+        <div class="grid" style="margin:2rem auto 0; max-width:60rem">
+          <article class="card card-rose reveal">
+            <div class="card-body">
+              <span class="eyebrow">Right at the venue</span>
+              <h3>Stay at the Mill</h3>
+              <p>Cozy cottages steps from where we say "I do," with a 15% wedding discount. Only a dozen of them, so book before <strong>February 15, 2027</strong>!</p>
+              <a class="btn" href="cottages.html">See the cottages</a>
+            </div>
+          </article>
           <article class="card card-rose reveal">
             <div class="card-body">
               <span class="eyebrow">Our hotel</span>
@@ -130,22 +138,6 @@
       </div>
     </section>
 
-    <section class="family-gate">
-      <div class="narrow center">
-        <button class="gate-toggle" type="button" aria-expanded="false" aria-controls="gate-form">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><use href="img/botanical.svg#clover"></use></svg>
-          Family &amp; wedding party
-        </button>
-        <form id="gate-form" class="gate-form" data-gate hidden>
-          <label for="gate-word">Enter the passphrase we sent you</label>
-          <div class="gate-row">
-            <input id="gate-word" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required>
-            <button class="btn" type="submit">Enter</button>
-          </div>
-          <p class="gate-msg" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -153,6 +145,6 @@
     <p class="eyebrow">March 18, 2028 · Powhatan, Virginia</p>
   </footer>
 
-  <script src="js/main.js?v=20261103k"></script>
+  <script src="js/main.js?v=20261118a"></script>
 </body>
 </html>
