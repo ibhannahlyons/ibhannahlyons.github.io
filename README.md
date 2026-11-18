@@ -51,7 +51,7 @@ The "Contribute any amount" card leaves out the amount.
 
 ## Stay at the Mill (cottages page)
 
-`cottages.html` lists the Mill's cottages, how to book, and rates. It's linked from the "Where to stay"
+`cottages.html` lists the Mill's cottages and how to book. It's linked from the "Where to stay"
 cards on `travel.html`. It used to be a hidden, passphrase-only page; the old secret address
 (`cottages-8fd2a997fd810f79.html`) now just redirects to `cottages.html` so links already shared keep working.
 
