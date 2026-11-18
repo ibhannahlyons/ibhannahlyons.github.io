@@ -58,7 +58,7 @@ cards on `travel.html`. It used to be a hidden, passphrase-only page; the old se
 ### Cottage hold
 
 The Mill holds cottages A–E + H for Friday and all cottages for Saturday until **Feb 15, 2027**, then releases
-them. H is the couple's, so it is never listed as available. The page no longer shows a timeline.
+them. H (the couple's) and D are booked and shown struck through, never as available. The page no longer shows a timeline.
 
 ## Wedding party
 
