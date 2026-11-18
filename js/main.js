@@ -12,23 +12,6 @@ if (nav && toggle) {
   });
 }
 
-// ---- light / dark theme (dark is the default) ----
-const themeToggle = document.querySelector(".theme-toggle");
-function labelThemeToggle() {
-  // a switch: "on" means light mode
-  themeToggle.setAttribute("aria-checked", document.documentElement.dataset.theme === "light");
-}
-if (themeToggle) {
-  labelThemeToggle();
-  themeToggle.addEventListener("click", () => {
-    const light = document.documentElement.dataset.theme !== "light";
-    if (light) document.documentElement.dataset.theme = "light";
-    else delete document.documentElement.dataset.theme;
-    try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
-    labelThemeToggle();
-  });
-}
-
 // ---- fade-ins ----
 const revealer = "IntersectionObserver" in window
   ? new IntersectionObserver((entries) => {
@@ -77,7 +60,7 @@ if (countdown) {
 
 // ---- click animation: a ripple on anything tappable ----
 const quiet = window.matchMedia("(prefers-reduced-motion: reduce)");
-const tappable = ".btn, .nav-toggle, .theme-toggle, .link-cards a.card, .gallery button";
+const tappable = ".btn, .nav-toggle, .link-cards a.card, .gallery button";
 document.addEventListener("pointerdown", (e) => {
   if (quiet.matches) return;
   const el = e.target.closest(tappable);

@@ -213,59 +213,16 @@ section { padding: 3rem 0; }
   text-align: center;
 }
 
-/* light/dark switch: sits left of Menu on phones, after the links on desktop */
+/* Menu button sits at the right on phones */
 .nav-brand { order: 0; }
 .nav-links { order: 1; }
-.theme-toggle { order: 2; margin-left: auto; margin-right: .6rem; }
-.nav-toggle { order: 3; }
-/* sliding switch: knob on the left (sparkle) = dark, on the right (sun) = light */
-.theme-toggle {
-  position: relative;
-  width: 3.5rem;
-  height: 1.9rem;
-  padding: 0;
-  flex: none;
-  border: 1px solid rgba(244, 242, 250, .5);
-  border-radius: 999px;
-  background: rgba(14, 9, 25, .45);
-  cursor: pointer;
-  transition: background .4s ease, border-color .3s ease;
-}
-.tt-knob {
-  position: absolute;
-  top: 50%;
-  left: .2rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 50%;
-  background: var(--pearl);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .35);
-  transform: translateY(-50%);
-  transition: left .35s cubic-bezier(.4, 1.4, .5, 1), background .4s ease;
-}
-.tt-knob svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: .95rem;
-  height: .95rem;
-  transform: translate(-50%, -50%);
-  transition: opacity .3s ease, transform .4s ease;
-}
-.tt-star { fill: var(--plum-ink); }
-.tt-sun { fill: none; stroke: var(--ember); stroke-width: 2; stroke-linecap: round; opacity: 0; transform: translate(-50%, -50%) rotate(-90deg); }
-.tt-sun circle { fill: var(--ember); stroke: none; }
-:root[data-theme="light"] .theme-toggle { background: rgba(214, 216, 238, .35); }
-:root[data-theme="light"] .tt-knob { left: calc(100% - 1.6rem); }
-:root[data-theme="light"] .tt-star { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
-:root[data-theme="light"] .tt-sun { opacity: 1; transform: translate(-50%, -50%); }
-.theme-toggle:hover, .nav-toggle:hover { border-color: var(--moonstone); }
+.nav-toggle { order: 3; margin-left: auto; }
+.nav-toggle:hover { border-color: var(--moonstone); }
 .nav-toggle:hover { color: var(--moonstone); }
 
 @media (min-width: 70rem) { /* full menu bar once all six links fit on one line */
   .nav-toggle { display: none; }
   .nav-links { margin-left: auto; }
-  .theme-toggle { margin: 0 0 0 2rem; }
   .nav-links, .nav.open .nav-links {
     display: flex;
     flex-direction: row;
@@ -1373,7 +1330,6 @@ section { padding: 3rem 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .tt-knob, .tt-knob svg { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .gallery img { transition: none; }
 }
@@ -1386,7 +1342,7 @@ a[href^="tel:"] { white-space: nowrap; }
 /* ---------- click animations ---------- */
 
 /* soft ripple from wherever you tap */
-.btn, .nav-toggle, .theme-toggle, .link-cards a.card, .gallery button {
+.btn, .nav-toggle, .link-cards a.card, .gallery button {
   position: relative;
   overflow: hidden;
 }
@@ -1403,7 +1359,7 @@ a[href^="tel:"] { white-space: nowrap; }
 }
 
 /* a little press-in */
-.btn, .link-cards a.card, .gallery button, .nav-toggle, .theme-toggle {
+.btn, .link-cards a.card, .gallery button, .nav-toggle {
   transition: transform .18s ease, background .3s ease, background-position .8s ease, border-color .3s ease, color .3s ease, box-shadow .4s ease;
 }
 .btn:active, .nav-toggle:active { transform: scale(.96); }

@@ -17,11 +17,11 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 
 Placeholder text is marked with `<!-- TODO -->` comments. Search for `TODO` to find them all.
 
-## Colors: dark and light
+## Colors
 
-The site opens in a dark theme (deep blues and plums). The "Light" button in the nav switches to the
-original parchment look, and each visitor's choice is remembered. Both themes are defined as color
-tokens at the top of `css/style.css`: the defaults are dark, and `:root[data-theme="light"]` holds the light values.
+The site uses a dark theme only (jewel violets and orchid pinks). The light/dark switch was removed in
+Nov 2026. The old light palette is still defined under `:root[data-theme="light"]` at the top of
+`css/style.css` but nothing turns it on.
 
 ## Honeymoon fund
 
