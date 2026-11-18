@@ -568,6 +568,11 @@ section { padding: 3rem 0; }
   .story-split .flourish { margin-left: 0; }
 }
 
+/* "Hannah's side" / "Liam's side" on Our Story */
+.pov { margin-top: 1.75rem; text-align: left; }
+.pov + .pov { padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.pov-name { margin: 0 0 .6rem; font-size: 1.35rem; font-style: italic; color: var(--accent-strong); }
+
 .drop-cap::first-letter {
   float: left;
   font-family: var(--serif-display);
