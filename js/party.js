@@ -6,7 +6,7 @@ function escapeText(s) {
 
 function memberHtml(p, i) {
   const name = escapeText(p.name);
-  const lead = /maid of honor|best man/i.test(p.role || "");
+  const lead = /(maid|matron) of honor|best man/i.test(p.role || "");
   const photo = p.photo
     ? `<img src="${escapeText(p.photo)}" alt="${name}" loading="lazy">`
     : `<span class="party-placeholder" aria-hidden="true">

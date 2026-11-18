@@ -77,10 +77,10 @@ them. H is the couple's, so it is never listed as available. The page no longer 
 ## Wedding party
 
 `party.html` builds its zigzag of polaroids from `data/party.json`: a `hannah` list and a `liam` list,
-each person with `name`, `role` (e.g. "Maid of Honor", "Bridesmaid", "Best Man", "Groomsman"),
+each person with `name`, `role` (e.g. "Maid of Honor" or "Matron of Honor", "Bridesmaid", "Best Man", "Groomsman"),
 `relation` (e.g. "Hannah's sister") and `photo`. Put photos in `img/party/` (portrait, about
 800px tall) and set `"photo": "img/party/their-name.jpg"`. With no photo, a "Photo coming soon"
-placeholder shows. "Maid of Honor" and "Best Man" get a filled badge automatically.
+placeholder shows. "Maid/Matron of Honor" and "Best Man" get a filled badge automatically.
 
 ## Through the years gallery (Our Story page)
 
