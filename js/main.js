@@ -243,7 +243,7 @@ if (hero && !prefersCalm()) {
     party:    { el: () => heading("Team Liam"), place: "inline" },
     details:  { el: () => document.getElementById("schedule"), place: "corner-bl" },
     travel:   { el: () => document.getElementById("things-to-do"), place: "corner-tr" },
-    registry: { el: () => document.querySelector(".fine-print h3"), place: "inline" },
+    registry: { el: () => document.getElementById("fund"), place: "corner-br" },
   };
   const TOTAL = Object.keys(SPOTS).length;
   const file = location.pathname.split("/").pop().replace(".html", "") || "index";
