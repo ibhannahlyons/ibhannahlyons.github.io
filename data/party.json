@@ -13,7 +13,7 @@
     { "name": "Will", "role": "Groomsman", "relation": "One of Liam's high school crew. They've been friends since the hallway days, and he still has the stories to prove it.", "photo": "img/party/will.jpg" },
     { "name": "Ethan", "role": "Groomsman", "relation": "Another member of the high school crew, and proof that the friends you make as teenagers can be the ones who show up for the biggest days.", "photo": "img/party/ethan.jpg" },
     { "name": "Tommy", "role": "Groomsman", "relation": "A high school friend who has stuck by Liam through every phase, haircut and questionable decision since. We're counting on him for the dance floor.", "photo": "img/party/tommy.jpg" },
-    { "name": "Owen", "role": "Groomsman", "relation": "One more from the high school days, and part of the group that's been around long enough to remember Liam before Hannah. He's thrilled with the upgrade.", "photo": "img/party/owen.jpg" },
-    { "name": "Matthew", "role": "Groomsman", "relation": "Rounding out the high school crew, he's been in Liam's corner for years and wasn't about to miss standing beside him now.", "photo": "img/party/matthew.jpg" }
+    { "name": "Matthew", "role": "Groomsman", "relation": "Also from the high school crew, he's been in Liam's corner for years and wasn't about to miss standing beside him now.", "photo": "img/party/matthew.jpg" },
+    { "name": "Owen", "role": "Groomsman", "relation": "Rounding out the high school crew, he's part of the group that's been around long enough to remember Liam before Hannah. He's thrilled with the upgrade.", "photo": "img/party/owen.jpg" }
   ]
 }
