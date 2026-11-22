@@ -2,9 +2,9 @@
   "hannah": [
     { "name": "Patty", "role": "Matron of Honor", "relation": "Hannah's lifelong best friend and inseparable counterpart. From classmates to teammates to clocking in at their very first job together, they've done just about everything side by side.", "photo": "img/party/patty.jpg" },
     { "name": "Sophie", "role": "Bridesmaid", "relation": "Liam's little sister, and very soon Hannah's too. One (of three!) bonus perks of marrying Liam.", "photo": "img/party/sophie.jpg" },
-    { "name": "Kelly", "role": "Bridesmaid", "relation": "Married to Hannah's brother, Max, so she's been a Lyons long enough to know exactly what she's getting herself into. Thankfully she said yes to this anyway.", "photo": "" },
     { "name": "Julia", "role": "Bridesmaid", "relation": "Liam's big sister and keeper of the groom's most embarrassing childhood stories. We suspect she's saving the best ones for the reception.", "photo": "img/party/julia.jpg" },
-    { "name": "Katie", "role": "Bridesmaid", "relation": "Married to Liam's brother, Shawn, so she's already been through the whole \"marrying into the Wilson family\" thing and is here to show Hannah the ropes.", "photo": "img/party/katie.jpg" }
+    { "name": "Katie", "role": "Bridesmaid", "relation": "Married to Liam's brother, Shawn, so she's already been through the whole \"marrying into the Wilson family\" thing and is here to show Hannah the ropes.", "photo": "img/party/katie.jpg" },
+    { "name": "Kelly", "role": "Bridesmaid", "relation": "Married to Hannah's brother, Max, so she's been a Lyons long enough to know exactly what she's getting herself into. Thankfully she said yes to this anyway.", "photo": "" }
   ],
   "liam": [
     { "name": "Shawn", "role": "Best Man", "relation": "Liam's older brother, who has been showing him how it's done since day one. After years of big-brother advice, he gets one more turn at the mic.", "photo": "img/party/shawn.jpg" },
