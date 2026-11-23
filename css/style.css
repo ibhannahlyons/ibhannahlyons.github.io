@@ -4,15 +4,11 @@
   --night: #160F26;
   --aubergine: #2A1A4A;
   --plum: #3B2266;
-  --berry: #4E1F55;
   --mauve: #9C8CC4;
   --moonstone: #D6D8EE;
   --mist: #ECE8F6;
   --pearl: #F4F2FA;
-  --ember: #B5543C;
   --rose: #E3A6D8;
-  /* deep violet for links and small text on light backgrounds (passes WCAG AA) */
-  --plum-ink: #5B2E9E;
   --ink: #0E0919;
   /* mirror silver with a faint violet edge, used on buttons and the hero names */
   --foil: linear-gradient(115deg, #8F8CA8 0%, #F5F5FB 22%, #B4B3CC 42%, #FFFFFF 60%, #CFC8EC 76%, #8F8CA8 100%);
@@ -21,8 +17,7 @@
   --serif-body: "EB Garamond", Georgia, serif;
   --script: "Pinyon Script", cursive;
 
-  /* Theme tokens. Dark (deep amethyst) is the default;
-     [data-theme="light"] below is the lavender-pearl daytime look. */
+  /* theme tokens (the site is dark only) */
   --bg: var(--night);
   --bg-alt: #1D1433;
   --band: var(--aubergine);
@@ -35,7 +30,6 @@
   --accent-strong: var(--rose);
   --line: rgba(214, 216, 238, .28);
   --chip: #2E2150;
-  --input-bg: var(--ink);
   --btn-text: var(--night);
   --btn-outline-text: var(--pearl);
   --footer-bg: var(--ink);
@@ -48,29 +42,6 @@
   --radius: 6px;
   --gutter: 1.25rem;
   --max: 68rem;
-}
-
-:root[data-theme="light"] {
-  --bg: #F6F4FB;
-  --bg-alt: var(--mist);
-  --band: var(--plum);
-  --band-2: var(--berry);
-  --surface: #FDFCFF;
-  --surface-warm: #EFE4F5;
-  --text: var(--night);
-  --text-muted: #54497A;
-  --accent: var(--plum-ink);
-  --accent-strong: #8E2C7E;
-  --line: rgba(91, 46, 158, .22);
-  --chip: #ECE6F7;
-  --input-bg: #FDFCFF;
-  --btn-text: var(--night);
-  --btn-outline-text: var(--plum);
-  --footer-bg: var(--night);
-  --glow:
-    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(140, 110, 255, .15), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(227, 166, 216, .16), transparent 70%);
-  --shadow: 0 1px 2px rgba(22, 15, 38, .06), 0 8px 24px rgba(22, 15, 38, .09);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -149,10 +120,6 @@ section { padding: 3rem 0; }
   top: 0; left: 0; right: 0;
   z-index: 20;
   color: var(--pearl);
-}
-.site-header.solid {
-  position: relative;
-  background: var(--aubergine);
 }
 .nav {
   display: flex;
@@ -526,10 +493,8 @@ section { padding: 3rem 0; }
   .story-split .flourish { margin-left: 0; }
 }
 
-/* "Hannah's side" / "Liam's side" on Our Story */
+/* the proposal story on Our Story */
 .pov { margin-top: 1.75rem; text-align: left; }
-.pov + .pov { padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.pov-name { margin: 0 0 .6rem; font-size: 1.35rem; font-style: italic; color: var(--accent-strong); }
 
 .drop-cap::first-letter {
   float: left;
@@ -752,39 +717,7 @@ section { padding: 3rem 0; }
 .qr-block p:last-child { margin-bottom: 0; }
 @media (min-width: 52rem) { .qr-block { display: flex; } }
 
-.fine-print { font-size: 1rem; }
-.fine-print h3 { font-size: 1.35rem; }
-
 /* ---------- cottages ---------- */
-
-.rates { margin: 2rem 0 1.5rem; }
-.rates .fact {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.5rem 1rem .75rem;
-}
-.rates .value { font-size: 2rem; color: var(--accent-strong); }
-.cottage-list-heading { margin-top: 2.5rem; }
-.cottage-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); margin-top: 1.25rem; }
-.cottage-list .value { font-size: 1.5rem; }
-.cottage-list p { font-size: 1rem; margin-bottom: .6rem; }
-.cottage-list .fact { display: flex; flex-direction: column; align-items: center; padding-bottom: 1.1rem; }
-.avail {
-  margin-top: auto;
-  padding: .2rem .75rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: .85rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.cottage-note { max-width: 40rem; margin: 2rem auto 0; }
-.cottage-booked { box-shadow: none; }
-.cottage-booked > * { opacity: .55; }
-.cottage-booked s { text-decoration-thickness: 1px; }
-.avail-both { border-color: var(--accent); background: var(--chip); color: var(--accent-strong); }
 
 .steps { counter-reset: step; list-style: none; margin: 1.5rem 0 2rem; padding: 0; }
 .steps li {
@@ -805,8 +738,6 @@ section { padding: 3rem 0; }
   font-size: 1.2rem;
   color: var(--accent-strong);
 }
-.timeline li { grid-template-columns: 8.5rem 1fr; }
-.timeline time { font-size: 1.1rem; line-height: 1.35; }
 
 .copy-line {
   display: inline-block;
@@ -1082,7 +1013,7 @@ section { padding: 3rem 0; }
 .cal-toggle .cal-star { fill: var(--moonstone); stroke: none; }
 .cal-toggle:hover, .cal-toggle[aria-expanded="true"] { border-color: var(--accent-strong); color: var(--accent-strong); }
 .cal-toggle:active { transform: scale(.96); }
-/* over the hero photo: same frosted pill as "Click me!" */
+/* over the hero photo: a frosted pill like the countdown boxes */
 .cal-menu.on-photo .cal-toggle {
   border-color: rgba(244, 242, 250, .45);
   background: rgba(14, 9, 25, .38);
@@ -1299,7 +1230,6 @@ section { padding: 3rem 0; }
   color: var(--accent);
 }
 .party-role.lead { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--night); }
-:root[data-theme="light"] .party-role.lead { color: var(--pearl); }
 
 /* each person slides in from their own side */
 .party-member.reveal { transform: translateX(-28px); }
