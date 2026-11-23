@@ -370,13 +370,14 @@ document.querySelectorAll("[data-puff]").forEach((spot) => {
 
 // ---- galleries + lightbox ----
 // Each [data-gallery="name"] loads data/name.json and photos from img/name/.
-// A gallery with no photos shows its [data-empty] message instead.
+// A gallery with no photos (or whose list fails to load) shows its [data-empty] message instead.
 document.querySelectorAll("[data-gallery]").forEach((root) => {
   const name = root.dataset.gallery;
   fetch(`data/${name}.json`, { cache: "no-store" })
-    .then((r) => r.json())
+    .then((r) => (r.ok ? r.json() : []))
+    .catch(() => [])
     .then((photos) => {
-      if (photos.length) buildGallery(root, photos, name);
+      if (Array.isArray(photos) && photos.length) buildGallery(root, photos, name);
       else root.parentElement.querySelector("[data-empty]")?.removeAttribute("hidden");
     });
 });
