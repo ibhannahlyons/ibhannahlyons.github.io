@@ -7,7 +7,13 @@ function escapeText(s) {
 function memberHtml(p, i) {
   const name = escapeText(p.name);
   const lead = /(maid|matron) of honor|best man/i.test(p.role || "");
-  const photo = p.photo
+  // "flipPhoto" is the secret second photo: a tap turns the polaroid over to show it
+  const photo = p.photo && p.flipPhoto
+    ? `<div class="flip-inner">
+         <img class="flip-front" src="${escapeText(p.photo)}" alt="${name}" loading="lazy">
+         <img class="flip-back" src="${escapeText(p.flipPhoto)}" alt="" aria-hidden="true" loading="lazy">
+       </div>`
+    : p.photo
     ? `<img src="${escapeText(p.photo)}" alt="${name}" loading="lazy">`
     : `<span class="party-placeholder" aria-hidden="true">
          <svg viewBox="0 0 40 40"><use href="img/botanical.svg#clover"></use></svg>
@@ -17,7 +23,7 @@ function memberHtml(p, i) {
   const tilt = ((i % 2 ? 1 : -1) * (2 + ((i * 7) % 3))).toFixed(1);
   return `
     <li class="party-member reveal" style="--tilt:${tilt}deg">
-      <figure class="polaroid">
+      <figure class="polaroid${p.photo && p.flipPhoto ? " can-flip" : ""}">
         <div class="polaroid-photo">${photo}</div>
         <figcaption class="polaroid-name" aria-hidden="true">${name}</figcaption>
       </figure>
@@ -44,9 +50,13 @@ async function buildParty() {
       else el.classList.add("in");
     });
   });
-  // a tap gives a polaroid a happy little wiggle
+  // a tap gives a polaroid a happy little wiggle, or flips it over if it has a secret photo
   document.querySelectorAll(".polaroid").forEach((card) => {
     card.addEventListener("click", () => {
+      if (card.classList.contains("can-flip")) {
+        card.classList.toggle("flipped");
+        return;
+      }
       card.classList.remove("wiggle");
       void card.offsetWidth; // restart the animation
       card.classList.add("wiggle");

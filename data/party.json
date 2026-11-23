@@ -7,7 +7,7 @@
     { "name": "Kelly", "role": "Bridesmaid", "relation": "Married to Hannah's brother, Max, so she's been a Lyons long enough to know exactly what she's getting herself into. Thankfully she said yes to this anyway.", "photo": "" }
   ],
   "liam": [
-    { "name": "Shawn", "role": "Best Man", "relation": "Liam's older brother, who has been showing him how it's done since day one. After years of big-brother advice, he gets one more turn at the mic.", "photo": "img/party/shawn.jpg" },
+    { "name": "Shawn", "role": "Best Man", "relation": "Liam's older brother, who has been showing him how it's done since day one. After years of big-brother advice, he gets one more turn at the mic.", "photo": "img/party/shawn-good.jpg", "flipPhoto": "img/party/shawn.jpg" },
     { "name": "Max", "role": "Groomsman", "relation": "Hannah's older brother, which makes him the only groomsman who got to vet the groom long before the rest of us. He signed off, and now he's standing on Liam's side.", "photo": "" },
     { "name": "Brok", "role": "Groomsman", "relation": "Married to Liam's little sister, Sophie, so he already knows what it takes to marry into the Wilson family. Consider him Liam's in-house expert on brothers-in-law.", "photo": "" },
     { "name": "Will", "role": "Groomsman", "relation": "Liam's friend since high school and husband to Patty, Hannah's matron of honor. That gives him a seat on both sides of the aisle, and he's spending it standing beside Liam.", "photo": "img/party/will.jpg" },

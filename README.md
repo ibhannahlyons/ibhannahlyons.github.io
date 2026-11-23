@@ -68,6 +68,10 @@ each person with `name`, `role` (e.g. "Maid of Honor" or "Matron of Honor", "Bri
 800px tall) and set `"photo": "img/party/their-name.jpg"`. With no photo, a "Photo coming soon"
 placeholder shows. "Maid/Matron of Honor" and "Best Man" get a filled badge automatically.
 
+**Secret flip photos (groomsmen):** add `"flipPhoto": "img/party/their-name.jpg"` next to `photo` and the
+polaroid shows `photo` (the nice one) first, then turns over to `flipPhoto` (the bad one) on tap. No hint on
+the page, on purpose. Shawn is set up this way: `shawn-good.jpg` front, `shawn.jpg` back.
+
 ## Through the years gallery (Our Story page)
 
 Photos live in `img/years/` (with a `thumbs/` subfolder; don't edit that by hand), listed in `data/years.json`.
