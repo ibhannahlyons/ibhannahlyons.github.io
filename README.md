@@ -12,16 +12,16 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 | `story.html` | Our story + Through the years gallery |
 | `party.html` | Wedding party (Team Hannah & Team Liam) |
 | `details.html` | Date, venue, schedule |
-| `travel.html` | Hotels, airports |
+| `travel.html` | Hotels, airports, things to do |
+| `cottages.html` | Stay at the Mill: how to book a cottage (linked from Travel) |
 | `registry.html` | Honeymoon fund |
 
-Placeholder text is marked with `<!-- TODO -->` comments. Search for `TODO` to find them all.
+Unfinished bits are marked with `<!-- TODO -->` comments. Search for `TODO` to find them all.
 
 ## Colors
 
-The site uses a dark theme only (jewel violets and orchid pinks). The light/dark switch was removed in
-Nov 2026. The old light palette is still defined under `:root[data-theme="light"]` at the top of
-`css/style.css` but nothing turns it on.
+The site uses a dark theme only (jewel violets and orchid pinks, with mirror-silver buttons and hero
+names). The colors are the tokens at the top of `css/style.css`.
 
 ## Honeymoon fund
 
@@ -51,7 +51,7 @@ The "Contribute any amount" card leaves out the amount.
 
 ## Stay at the Mill (cottages page)
 
-`cottages.html` lists the Mill's cottages and how to book. It's linked from the "Where to stay"
+`cottages.html` explains how to book a cottage at the Mill. It's linked from the "Where to stay"
 cards on `travel.html`. It used to be a hidden, passphrase-only page; the old secret address
 (`cottages-8fd2a997fd810f79.html`) now just redirects to `cottages.html` so links already shared keep working.
 
@@ -99,25 +99,23 @@ so deleting gallery photos never breaks a page.
 - These use the full site address `https://liamandhannah.com/` (the page `<head>`s, the `.ics` file,
   and the Google Calendar links on `index.html` and `details.html`).
 
+## Lucky clover hunt
+
+One clover is hidden on each page (Home, Our Story, Wedding Party, Details, Travel, Honeymoon Fund,
+Stay at the Mill). Where each one hides is the `SPOTS` list in `js/main.js`; add or remove a page there
+and the "x of 7 found" count in the footer follows. Progress is saved in the visitor's browser.
+
 ## Custom domain (liamandhannah.com)
 
-Do these in order, after buying the domain:
+The domain is live. Its DNS has the four GitHub Pages `A` records for the apex and a `www` `CNAME` to
+`ibhannahlyons.github.io`. Keep the `CNAME` file in this repo: deleting it turns the custom domain off.
 
-1. At your domain registrar, add DNS records:
-   - `A` records for `@` (the apex) → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` record for `www` → `ibhannahlyons.github.io`
-2. In this repo, add a file named `CNAME` (no extension) containing one line: `liamandhannah.com`. Commit and push.
-   (Or set it under Settings → Pages → Custom domain, which creates the same file.)
-3. Wait for DNS to resolve (minutes to a few hours). Settings → Pages will show a green check.
-4. Tick **Enforce HTTPS** in Settings → Pages.
+## After changing CSS, JavaScript or the SVG sprite
 
-Don't add the `CNAME` file before DNS is set up. Otherwise github.io will redirect to a domain that doesn't work yet.
-
-## After changing CSS or JavaScript
-
-Each page loads `css/style.css`, `js/main.js` (and `js/registry.js`) with a `?v=...` tag. When you change
-one of those files, bump the tag on every page (search for `?v=`) so browsers fetch the new version
-and nobody gets a stale copy.
+Pages load `css/style.css`, `js/main.js`, `js/party.js`, `js/registry.js` and `img/botanical.svg` with a
+`?v=...` tag (`js/party.js` also uses it for the clovers it draws). When you change one of those files,
+bump its tag everywhere it appears (search for `?v=`) so browsers fetch the new version and nobody gets
+a stale copy.
 
 ## Preview locally
 
