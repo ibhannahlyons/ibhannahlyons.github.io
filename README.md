@@ -101,9 +101,10 @@ so deleting gallery photos never breaks a page.
 
 ## Lucky clover hunt
 
-One clover is hidden on each page (Home, Our Story, Wedding Party, Details, Travel, Honeymoon Fund,
-Stay at the Mill). Where each one hides is the `SPOTS` list in `js/main.js`; add or remove a page there
-and the "x of 7 found" count in the footer follows. Progress is saved in the visitor's browser.
+One clover is hidden on each of the six main pages (Home, Our Story, Wedding Party, Details, Travel,
+Honeymoon Fund). Stay at the Mill is left out on purpose. Where each one hides is the `SPOTS` list in
+`js/main.js`; add or remove a page there and the "x of 6 found" count in the footer follows. Progress is
+saved in the visitor's browser.
 
 ## Custom domain (liamandhannah.com)
 
