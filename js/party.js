@@ -16,7 +16,7 @@ function memberHtml(p, i) {
     : p.photo
     ? `<img src="${escapeText(p.photo)}" alt="${name}" loading="lazy">`
     : `<span class="party-placeholder" aria-hidden="true">
-         <svg viewBox="0 0 40 40"><use href="img/botanical.svg#clover"></use></svg>
+         <svg viewBox="0 0 40 40"><use href="img/botanical.svg?v=20261102k#clover"></use></svg>
          <span>Photo coming soon</span>
        </span>`;
   // a slightly different tilt for every polaroid
@@ -27,7 +27,7 @@ function memberHtml(p, i) {
         <div class="polaroid-photo">${photo}</div>
         <figcaption class="polaroid-name" aria-hidden="true">${name}</figcaption>
       </figure>
-      <span class="party-node" aria-hidden="true"><svg viewBox="0 0 40 40"><use href="img/botanical.svg#clover"></use></svg></span>
+      <span class="party-node" aria-hidden="true"><svg viewBox="0 0 40 40"><use href="img/botanical.svg?v=20261102k#clover"></use></svg></span>
       <div class="party-text">
         <span class="party-role${lead ? " lead" : ""}">${escapeText(p.role)}</span>
         <h3>${name}</h3>
