@@ -244,6 +244,7 @@ if (hero && !prefersCalm()) {
     details:  { el: () => document.getElementById("schedule"), place: "corner-bl" },
     travel:   { el: () => document.getElementById("things-to-do"), place: "corner-tr" },
     registry: { el: () => document.getElementById("fund"), place: "corner-br" },
+    cottages: { el: () => heading("Staying at the Mill"), place: "inline" },
   };
   const TOTAL = Object.keys(SPOTS).length;
   const file = location.pathname.split("/").pop().replace(".html", "") || "index";
