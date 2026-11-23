@@ -58,7 +58,8 @@ cards on `travel.html`. It used to be a hidden, passphrase-only page; the old se
 ### Cottage hold
 
 The Mill holds cottages A–E + H for Friday and all cottages for Saturday until **Feb 15, 2027**, then releases
-them. H (the couple's) and D are booked and shown struck through, never as available. The page no longer shows a timeline.
+them. The page doesn't list cottages or availability (too much to keep current); it tells guests to call
+Rosalie at (804) 372-9810, ext. 2 to see what's still open.
 
 ## Wedding party
 
