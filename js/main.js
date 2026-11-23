@@ -45,7 +45,7 @@ if (countdown) {
     if (left <= 0) {
       clearInterval(timer);
       const sameDay = left > -12 * 3600000; // the rest of the wedding day
-      countdown.innerHTML = `<p class="countdown-done">${sameDay ? "Today's the day!" : "Happily married"}</p>`;
+      countdown.innerHTML = `<p class="countdown-done">${sameDay ? "Today’s the day!" : "Happily married"}</p>`;
       return;
     }
     const s = Math.floor(left / 1000);

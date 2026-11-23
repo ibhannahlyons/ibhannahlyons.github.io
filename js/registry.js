@@ -54,7 +54,7 @@ async function buildFund() {
     <div class="card-body">
       <h3>Contribute any amount</h3>
       <p>${showIdeas
-        ? "Don't see the perfect fit? Give whatever feels right, and we'll put it toward the whole adventure."
+        ? "Don’t see the perfect fit? Give whatever feels right, and we’ll put it toward the whole adventure."
         : "Give whatever feels right. Every bit goes toward our honeymoon adventure, wherever it takes us."}</p>
       <a class="btn" href="${venmoLink(null, "Honeymoon fund")}" target="_blank" rel="noopener">Contribute</a>
     </div>`;
