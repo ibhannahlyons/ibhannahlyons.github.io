@@ -462,6 +462,9 @@ section { padding: 3rem 0; }
   .link-cards > :nth-child(4), .link-cards > :nth-child(5) { grid-column: span 3; }
   .link-cards > :last-child:nth-child(odd) { grid-column: span 3; }
   .link-cards > :nth-child(4) img, .link-cards > :nth-child(5) img { aspect-ratio: 16 / 9; }
+  /* just two cards (while some pages are hidden): half and half */
+  .link-cards > :first-child:nth-last-child(2), .link-cards > :first-child:nth-last-child(2) ~ * { grid-column: span 3; }
+  .link-cards > :first-child:nth-last-child(2) img, .link-cards > :first-child:nth-last-child(2) ~ * img { aspect-ratio: 16 / 9; }
 }
 .link-cards .more {
   font-family: var(--serif-display);

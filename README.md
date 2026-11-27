@@ -18,6 +18,17 @@ No build step. Edit the files, commit, push, and GitHub Pages republishes in a m
 
 Unfinished bits are marked with `<!-- TODO -->` comments. Search for `TODO` to find them all.
 
+## Hidden pages (for now)
+
+**Wedding Party, Details and Honeymoon Fund are hidden** while the save-the-dates go out. They're out of
+the menu on every page and off the Home page cards, their clovers are out of the hunt (so the footer
+says "x of 3"), and opening one of those pages on the live site sends the visitor back to Home. A local
+preview (`localhost`) still shows them, so they can keep being edited.
+
+**To bring them back:** search for `hidden for now` and undo each one: uncomment the menu links, the
+Home cards and the clover `SPOTS` lines in `js/main.js`, and delete the three lines at the top of each
+hidden page's `<head>`. Then bump the `?v=` tag for `js/main.js`.
+
 ## Colors
 
 The site uses a dark theme only (jewel violets and orchid pinks, with mirror-silver buttons and hero

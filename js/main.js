@@ -240,10 +240,10 @@ if (hero && !prefersCalm()) {
   const SPOTS = {
     home:     { el: () => document.querySelector(".hero"), place: "corner-br" },
     story:    { el: () => heading("Through the years"), place: "inline" },
-    party:    { el: () => heading("Team Liam"), place: "inline" },
-    details:  { el: () => document.getElementById("schedule"), place: "corner-bl" },
+    // hidden for now (these pages are hidden): party:    { el: () => heading("Team Liam"), place: "inline" },
+    // hidden for now (these pages are hidden): details:  { el: () => document.getElementById("schedule"), place: "corner-bl" },
     travel:   { el: () => document.getElementById("things-to-do"), place: "corner-tr" },
-    registry: { el: () => document.getElementById("fund"), place: "corner-br" },
+    // hidden for now (these pages are hidden): registry: { el: () => document.getElementById("fund"), place: "corner-br" },
   };
   const TOTAL = Object.keys(SPOTS).length;
   const file = location.pathname.split("/").pop().replace(".html", "") || "index";
